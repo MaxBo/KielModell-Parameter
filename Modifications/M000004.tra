@@ -2062,7 +2062,7 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 $+BENUTZERDEFATTRIBUTE:OBJID;ATTID;CODE;NAME;DATENTYP;MINWERT;MAXWERT;STANDARDWERT;STRINGSTANDARDWERT;KOMMENTAR;MAXSTRINGLAENGE;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;QUERSCHNITTSLOGIK
 AKTIVITAET;TotalTripsRegion;TotalTripsRegion;TotalTripsRegion;Double;MIN;MAX;;;Gesamtzahl der Wege;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="Activity_"+[CODE]: Mat[SUMME]);SUM
 AKTIVITAET;TotalTrips;TotalTrips;TotalTrips;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="AllActivity_"+[CODE]: Mat[SUMME]);SUM
-AKTIVITAET;TripDistanceRegion;TripDistanceRegion;TripDistanceRegion;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_Activity_"+[CODE]: Mat[SUMME]) / [TotalTripsRegion];SUM
+AKTIVITAET;TripDistance;TripDistance;TripDistance;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_Activity_"+[CODE]: Mat[SUMME]) / [TotalTripsRegion];SUM
 MODUS;TripDistance;TripDistance;TripDistance;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_"+[CODE]: Mat[SUMME]) / [Trips_RegionMitEinpendler];SUM
 MODUS;TripDistanceRegion;TripDistanceRegion;TripDistanceRegion;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_Region_"+[CODE]: Mat[SUMME]) / [Trips_Region];SUM
 BEZIRK;ZONE_ACTUAL_TRIPS_A;Trips_actual_to A;Actual Trips to Zone for Activity A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(785)];SUM
