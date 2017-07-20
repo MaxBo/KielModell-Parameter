@@ -1,0 +1,1871 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<PROCEDURES  VERSION = "14">
+  <OPERATIONS>
+    <OPERATION
+      NO = "1"
+      CODE = ""
+      OPERATIONTYPE = "VISEM TripGeneration"
+      ACTIVE = "0"
+      COMMENT = ""
+      COMPUTENODE = "">
+      <VISEMGENERATIONPARA
+        ONLYACTIVEZONES = "0"
+        SUMUPVALUES = "0"
+        DSTRATSET = "PEN_EINP,PEN_EINPfern,PEN_EWeP,PEN_EWferneP,PEN_EWfernhP,PEN_EWfernoP,PEN_EWhP,PEN_EWnaheP,PEN_EWnahhP,PEN_EWnahoP,PEN_EWoP">
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EINP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "1"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EINPfern"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "1"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWeP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.85"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWferneP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.1"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWfernhP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.1"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWfernoP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.1"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWhP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.85"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWnaheP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.05"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWnahhP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.05"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWnahoP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.05"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+        <VISEMDSTRATGENERATIONPARA
+          DEMANDSTRATUMCODE = "PEN_EWoP"
+          MOBILITYRATECONSTANT = "1"
+          MOBILITYRATE = "0.85"
+          STUDYAREAFACTORHOMECONSTANT = "1"
+          STUDYAREAFACTORHOME = "1"
+        />        
+      </VISEMGENERATIONPARA>
+    </OPERATION>
+    <OPERATION
+      NO = "2"
+      CODE = ""
+      OPERATIONTYPE = "Group"
+      ACTIVE = "0"
+      COMMENT = "Pendlermodell"
+      COMPUTENODE = "">
+      <GROUPPARA        ISEXPANDED = "1"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "3"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "0"
+      COMMENT = "Zielpotenzial Arbeit mit RSA"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "VALSTRUCTURALPROP(ZP_PENDLER)"
+        ONLYACTIVE = "0"
+        FORMULA = "[ZP0_A]*[BF_PENDLER]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "4"
+      CODE = ""
+      OPERATIONTYPE = "VISEM Combined"
+      ACTIVE = "1"
+      COMMENT = ""
+      COMPUTENODE = "">
+      <VISEMCOMBINEDPARA        DSTRATSET = "PEN_EINP,PEN_EINPfern,PEN_EWeP,PEN_EWferneP,PEN_EWfernhP,PEN_EWfernoP,PEN_EWhP,PEN_EWnaheP,PEN_EWnahhP,PEN_EWnahoP,PEN_EWoP">
+        <VISEMDISTRIBUTIONPARA
+          TOLERANCEHARDCONSTRAINTS = "5"
+          TOLERANCESOFTCONSTRAINTS = "5"
+          MAXITERATIONS = "250">
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EINP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.5"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EINPfern">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.08"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWeP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.7"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "1"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([CODE]=&quot;NutzenPendlereP&quot;)"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWferneP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.05"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWfernhP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.05"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWfernoP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.05"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWhP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.7"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWnaheP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "2.5"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWnahhP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "2.5"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWnahoP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "2.5"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "0"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([DModelCode] = context[DModelCode] &#xA; &amp; [PersonGroupCode] = context[PersonGroupCode] &#xA; &amp; [ActivityCode] = context[ActivityCode])"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+          <VISEMDGROUPDISTRIBUTIONPARA            PERSONGROUPCODE = "PEN_EWoP">
+            <VISEMDGROUPACTIVITYDISTRIBUTIONPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;Aussen2Aussen&quot;)"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              ACTIVITYCODE = "AP"
+              LOGSUMCOEFF = "0.7"
+              TRANSFORMTYPE = "TRANSFORMATIONTYPE_NONE"
+              SAVEDISTRIBUTIONUTILITYMATRIX = "1"
+              DISTRIBUTIONUTILITYOUTPUTMATRIX = "Matrix([CODE]=&quot;NutzenPendleroP&quot;)"
+            />            
+          </VISEMDGROUPDISTRIBUTIONPARA>
+        </VISEMDISTRIBUTIONPARA>
+        <VISEMMODECHOICEPARA          SPECIFYMODECHOICEPARAPERDESTACTIVITY = "1"          USENESTEDLOGITFORMODECHOICE = "0">
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EINP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_NULL] + [CONST_FUSS_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_NULL] + [CONST_FUSS_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_NULL] + [CONST_MITFAHRER_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_NULL] + [CONST_MITFAHRER_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_NULL] + [CONST_OV_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_NULL] + [CONST_OV_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_NULL] + [CONST_PKW_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_NULL] + [CONST_PKW_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_NULL] + [CONST_RAD_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_NULL] + [CONST_RAD_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EINPfern">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_NULL] + [CONST_FUSS_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_NULL] + [CONST_FUSS_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_NULL] + [CONST_MITFAHRER_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_NULL] + [CONST_MITFAHRER_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_NULL] + [CONST_OV_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_NULL] + [CONST_OV_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_NULL] + [CONST_PKW_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_NULL] + [CONST_PKW_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_NULL] + [CONST_RAD_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_NULL] + [CONST_RAD_EINPEN]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWeP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_EP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_EP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_EP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_EP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_EP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_EP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_EP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_EP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_EP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_EP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWferneP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_EP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_EP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_EP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_EP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_EP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_EP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_EP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_EP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_EP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_EP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWfernhP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_HP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_HP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_HP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_HP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_HP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_HP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_HP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_HP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_HP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_HP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWfernoP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_OP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_OP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_OP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_OP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_OP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_OP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_OP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_OP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_OP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_OP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWhP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_HP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_HP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_HP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_HP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_HP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_HP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_HP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_HP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_HP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_HP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWnaheP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_EP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_EP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_EP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_EP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_EP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_EP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_EP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_EP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_EP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_EP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWnahhP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_HP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_HP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_HP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_HP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_HP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_HP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_HP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_HP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_HP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_HP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWnahoP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_OP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_OP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_OP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_OP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_OP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_OP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_OP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_OP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_OP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_OP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <VISEMDGROUPMODECHOICEPARA            PERSONGROUPCODE = "PEN_EWoP">
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_OP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TFUSS&quot;) * [COEFF_TFUSS] &#xA; + [CONST_FUSS_OP] + [CONST_FUSS_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "F"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_OP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TMITFAHRER] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_MITFAHRER] &#xA; + [CONST_MITFAHRER_OP] + [CONST_MITFAHRER_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "M"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_OP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;PJT_A&quot;) * [COEFF_OV_PJT] &#xA; + Matrix([CODE]=&quot;SINGLETICKET&quot;) &#xA; * [COEFF_COST_OV] &#xA; + [CONST_OV_OP] + [CONST_OV_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "O"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + Matrix([CODE]=&quot;PARKING_A&quot;) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_OP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TTC_boxcox&quot;) * [COEFF_TPKW] &#xA; + Matrix([CODE]=&quot;PkwKosten&quot;) * [COEFF_COST_PKW] &#xA; + TRANSPOSE(Matrix([CODE]=&quot;PARKING_A&quot;)) * [COEFF_PARK_PKW] &#xA; + [CONST_PKW_OP] + [CONST_PKW_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "P"
+              ACTIVITYCODE = "WP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = ""
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = ""
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_OP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "AP"
+            />            
+            <VISEMDGROUPMODEMODECHOICEPARA
+              UTILITYFUNCTION = "Matrix([CODE]=&quot;TRAD&quot;) * [COEFF_TRAD] &#xA; + [CONST_RAD_OP] + [CONST_RAD_EW]"
+              FUNCTIONTYPE = "Logit"
+              PARA_A = "1"
+              PARA_B = "1"
+              PARA_C = "1"
+              MODECODE = "R"
+              ACTIVITYCODE = "WP"
+            />            
+          </VISEMDGROUPMODECHOICEPARA>
+          <NESTEDMODECHOICETREENODE
+            NESTCODE = "Root"
+            TYPE = "NESTNODE"
+            NO = "0"
+            MODECODE = ""
+            PARENTNODENO = "-1"
+          />          
+          <NESTEDMODECHOICETREENODE
+            NESTCODE = ""
+            TYPE = "MODENODE"
+            NO = "1"
+            MODECODE = "F"
+            PARENTNODENO = "0"
+          />          
+          <NESTEDMODECHOICETREENODE
+            NESTCODE = ""
+            TYPE = "MODENODE"
+            NO = "2"
+            MODECODE = "M"
+            PARENTNODENO = "0"
+          />          
+          <NESTEDMODECHOICETREENODE
+            NESTCODE = ""
+            TYPE = "MODENODE"
+            NO = "3"
+            MODECODE = "O"
+            PARENTNODENO = "0"
+          />          
+          <NESTEDMODECHOICETREENODE
+            NESTCODE = ""
+            TYPE = "MODENODE"
+            NO = "4"
+            MODECODE = "P"
+            PARENTNODENO = "0"
+          />          
+          <NESTEDMODECHOICETREENODE
+            NESTCODE = ""
+            TYPE = "MODENODE"
+            NO = "5"
+            MODECODE = "R"
+            PARENTNODENO = "0"
+          />          
+        </VISEMMODECHOICEPARA>
+        <VISEMOUTPUTPARA>
+          <VISEMOUTPUTITEM
+            CALCULATE = "1"
+            PERSONGROUPS = "PEN_EINP,PEN_EINPfern,PEN_EWeP,PEN_EWferneP,PEN_EWfernhP,PEN_EWfernoP,PEN_EWhP,PEN_EWnaheP,PEN_EWnahhP,PEN_EWnahoP,PEN_EWoP"
+            MODES = "F,M,O,P,R"
+            ORIGACTIVITIES = "WP"
+            DESTACTIVITIES = "AP"
+            FROMTIME = "00:00:00"
+            TOTIME = "24:00:00"
+            OUTPUTMATRIX = "Matrix([CODE] = &quot;Pendlermatrix_modelliert&quot;)"
+          />          
+          <VISEMOUTPUTITEM
+            CALCULATE = "1"
+            PERSONGROUPS = "PEN_EWeP,PEN_EWferneP,PEN_EWfernhP,PEN_EWfernoP,PEN_EWhP,PEN_EWnaheP,PEN_EWnahhP,PEN_EWnahoP,PEN_EWoP"
+            MODES = "F,M,O,P,R"
+            ORIGACTIVITIES = "WP"
+            DESTACTIVITIES = "AP"
+            FROMTIME = "00:00:00"
+            TOTIME = "24:00:00"
+            OUTPUTMATRIX = "Matrix([CODE]=&quot;Pendlermatrix_modelliert_ohne_Einpendler&quot;)"
+          />          
+        </VISEMOUTPUTPARA>
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EINP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EINPfern"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWeP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWferneP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWfernhP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWfernoP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWhP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWnaheP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWnahhP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWnahoP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+        <VISEMDEMANDSTRATUMPARA
+          DEMANDSTRATUMCODE = "PEN_EWoP"
+          USERUBBERBANDINGFORDISTRIBUTION = "0"
+          RUBBERBANDINGFORDISTRIBUTIONWEIGHT = "1"
+        />        
+      </VISEMCOMBINEDPARA>
+    </OPERATION>
+  </OPERATIONS>
+</PROCEDURES>

@@ -1,0 +1,49 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 26.10.16
+* Matrizen für Nachfragemodell einfügen
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+9;Trans;DEU
+* 
+* Tabelle: Matrizen (geändert)
+* 
+$*MATRIX:NR;NACHFRMODELLCODE;AKTIVCODE;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET
+8;VisemT;;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z
+9;VisemT;;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z
+10;VisemT;;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z
+11;VisemT;;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z
+12;VisemT;;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z
+13;VisemT;;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z;A,B,E,F,G,K,M,O,R,S,T,U,V,W,Z
+19;VisemT;A;;
+477;;A;;
+478;;B;;
+479;;E;;
+480;;F;;
+481;;G;;
+482;;K;;
+483;;M;;
+484;;O;;
+485;;R;;
+486;;S;;
+487;;T;;
+488;;U;;
+489;;V;;
+490;;Z;;
+510;;A;;
+511;;B;;
+512;;E;;
+513;;F;;
+514;;G;;
+515;;K;;
+516;;M;;
+517;;O;;
+518;;R;;
+519;;S;;
+520;;T;;
+521;;U;;
+522;;V;;
+523;;Z;;
+611;VisemT;;W;A

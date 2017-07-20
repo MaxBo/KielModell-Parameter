@@ -1,0 +1,24 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1500">
+  <MAINZONE    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "TYPENO"
+          FROMRANGE = "3"
+          TORANGE = "9"
+        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINZONE>
+  <MAINODPAIR    USEFILTER = "1"    COMPLEMENT = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "FROMMAINZONE\TYPENO"          VALUE = "9"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "TOMAINZONE\TYPENO"          VALUE = "9"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINODPAIR>
+</FILTER>

@@ -1,0 +1,104 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1600">
+  <NODE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "TYPENO"          VALUE = "12"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </NODE>
+  <LINK
+    USEFILTER = "1"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <GREATERVAL          ATTRIBUTE = "Z_GES"          VALUE = "0"        />        
+      </CONDITION>
+      <BRACKET        OPERATION = "OP_AND">
+        <CONDITION          OPERATION = "OP_NONE"          COMPLEMENT = "0">
+          <GREATERVAL            ATTRIBUTE = "REVERSELINK\Z_GES"            VALUE = "0"          />          
+        </CONDITION>
+        <CONDITION          OPERATION = "OP_OR"          COMPLEMENT = "0">
+          <EQUALVAL            ATTRIBUTE = "REVERSELINK\KFZ_GES"            VALUE = "0"          />          
+        </CONDITION>
+      </BRACKET>
+    </CONDITIONS>
+  </LINK>
+  <TURN
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "VIANODE\TYPENO"          VALUE = "10,11,12,13,20,21,22,30,31"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TURN>
+  <ZONE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "NUMCONNECTORS_TSYS(OF)"
+          FROMRANGE = "0"
+          TORANGE = "0"
+        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ZONE>
+  <CONNECTOR
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "ZONENO"
+          FROMRANGE = "406230"
+          TORANGE = "406237"
+        />        
+      </CONDITION>
+    </CONDITIONS>
+  </CONNECTOR>
+  <MAINZONE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "TYPENO"
+          FROMRANGE = "0"
+          TORANGE = "1"
+        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINZONE>
+  <TERRITORY    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <LESSVAL          ATTRIBUTE = "NO"          VALUE = "5"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TERRITORY>
+  <ODPAIR
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    CALCNETWORKVOLUMES = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <NOTEQUALVAL          ATTRIBUTE = "MAINODPAIR\FROMMAINZONE\TYPENO"          VALUE = "9"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ODPAIR>
+  <PUTPATH    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS    />    
+  </PUTPATH>
+  <MAINODPAIR    USEFILTER = "0"    COMPLEMENT = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "FROMMAINZONE\TYPENO"          VALUE = "0"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "TOMAINZONE\TYPENO"          VALUE = "0"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINODPAIR>
+</FILTER>

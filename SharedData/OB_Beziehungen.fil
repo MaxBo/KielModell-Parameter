@@ -1,0 +1,78 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1500">
+  <NODE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <GREATERVAL          ATTRIBUTE = "COUNTACTIVE:TURNS"          VALUE = "0"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </NODE>
+  <LINK
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "TYPENO"          VALUE = "96"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </LINK>
+  <TURN
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "VIANODE\TYPENO"          VALUE = "10,11,12,13,20,21,22,30,31"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TURN>
+  <ZONE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "METHODCONNSHARES"          VALUE = "METHODCONNSHARES_EACHODPAIR"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ZONE>
+  <MAINZONE    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "TYPENO"
+          FROMRANGE = "0"
+          TORANGE = "1"
+        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINZONE>
+  <TERRITORY    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <LESSVAL          ATTRIBUTE = "NO"          VALUE = "5"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TERRITORY>
+  <ODPAIR
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    CALCNETWORKVOLUMES = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <NOTEQUALVAL          ATTRIBUTE = "MAINODPAIR\FROMMAINZONE\TYPENO"          VALUE = "9"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ODPAIR>
+  <PUTPATH    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS    />    
+  </PUTPATH>
+  <MAINODPAIR    USEFILTER = "1"    COMPLEMENT = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "FROMMAINZONE\TYPENO"          VALUE = "0"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "TOMAINZONE\TYPENO"          VALUE = "0"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINODPAIR>
+</FILTER>

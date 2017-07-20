@@ -1,0 +1,17 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 22.02.17
+* Von:  C:\Users\BvL\Desktop\Modellstand 02-17\Temp\Temp_Mod35.ver
+* Nach: *
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10;Trans;DEU
+
+* 
+* Tabelle: Matrizen (geändert)
+* 
+$*MATRIX:NR;DATNAME
+112;TRAD_066_Pedelec
+

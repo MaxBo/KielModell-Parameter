@@ -1,0 +1,10 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1500">
+  <ZONE    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "TYPENO"          VALUE = "1,2"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ZONE>
+</FILTER>

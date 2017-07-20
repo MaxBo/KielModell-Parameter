@@ -1,0 +1,68 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1500">
+  <NODE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <ISEMPTY          ATTRIBUTE = "GGR-KT"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </NODE>
+  <LINK
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "1">
+        <CONTAINEDIN          ATTRIBUTE = "TYPENO"          VALUE = "0"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <GREATERVAL
+          ATTRIBUTE = "VOLVEHPRT(AP)"
+          RELATION = "REVERSELINK"
+          QUANTOR = "ALL"
+          VALUE = "0"
+        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "VOLVEHPRT(AP)"          VALUE = "0"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </LINK>
+  <TURN
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "TYPENO"          VALUE = "4"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <GREATERVAL          ATTRIBUTE = "VOLVEHPRT(AP)"          VALUE = "0"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TURN>
+  <MAINZONE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <LESSEQUALVAL          ATTRIBUTE = "TYPENO"          VALUE = "1"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINZONE>
+  <TERRITORY    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <LESSEQUALVAL          ATTRIBUTE = "NO"          VALUE = "4"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TERRITORY>
+  <MAINODPAIR    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "FROMMAINZONE\TYPENO"          VALUE = "1"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_OR"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "TOMAINZONE\TYPENO"          VALUE = "1"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINODPAIR>
+</FILTER>

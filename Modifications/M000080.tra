@@ -1,0 +1,21 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 2017-05-02
+*
+* Tabelle: Versionsblock
+*
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10.000;Trans;DEU
+
+*
+* Tabelle: Matrizen (eingefügt)
+*
+$+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;PGRUPPENCODE;AKTIVCODE;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;INITMATRIX;SAVEMATRIX;LOADMATRIX;MATRIXFOLDER;CALIBRATIONCODE
+6000;Visem_OV_zurArbeit;Visem_OV_zurArbeit;Nachfrage;Bezirk;;;Visem_OV_zurArbeit;2;DATEN;;;;;;O;;;;;;;0;1;0;;
+6001;Visem_OV_vonArbeit;Visem_OV_vonArbeit;Nachfrage;Bezirk;;;Visem_OV_vonArbeit;2;DATEN;;;;;;O;;;;;;;0;1;0;;
+6002;Visem_OV_zurBildung;Visem_OV_zurBildung;Nachfrage;Bezirk;;;Visem_OV_zurBildung;2;DATEN;;;;;;O;;;;;;;0;1;0;;
+6003;Visem_OV_vonBildung;Visem_OV_vonBildung;Nachfrage;Bezirk;;;Visem_OV_vonBildung;2;DATEN;;;;;;O;;;;;;;0;1;0;;
+6004;Visem_OV_zurEinkaufErledigung;Visem_OV_zurEinkaufErledigung;Nachfrage;Bezirk;;;Visem_OV_zurEinkaufErledigung;2;DATEN;;;;;;O;;;;;;;0;1;0;;
+6005;Visem_OV_vonEinkaufErledigung;Visem_OV_vonEinkaufErledigung;Nachfrage;Bezirk;;;Visem_OV_vonEinkaufErledigung;2;DATEN;;;;;;O;;;;;;;0;1;0;;
+6006;Visem_OV_Sonstiges;Visem_OV_Sonstiges;Nachfrage;Bezirk;;;Visem_OV_Sonstiges;2;DATEN;;;;;;O;;;;;;;0;1;0;;
+

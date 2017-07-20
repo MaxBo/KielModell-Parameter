@@ -1,0 +1,14 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<PROCEDURES  VERSION = "14">
+  <OPERATIONS>
+    <OPERATION
+      NO = "5"
+      CODE = ""
+      OPERATIONTYPE = "CombinationOfMatrices"
+      ACTIVE = "1"
+      COMMENT = "T_akt Box-Cox transformieren"
+      COMPUTENODE = "">
+      <MATRIXFORMULAPARA        FORMULA = "Matrix([CODE]=&quot;TTC_boxcox&quot;) := 2.89 * (POW(Matrix([CODE]=&quot;TTC&quot;) * 60, .8) - 1) / .8 / 60"      />      
+    </OPERATION>
+  </OPERATIONS>
+</PROCEDURES>

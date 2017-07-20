@@ -1,0 +1,47 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1500">
+  <LINK
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "TYPENO"          VALUE = "1"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </LINK>
+  <ZONE    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "TYPENO"          VALUE = "1,2"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ZONE>
+  <MAINZONE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "NO"          VALUE = "3"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINZONE>
+  <TERRITORY    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "NO"          VALUE = "3"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TERRITORY>
+  <ODPAIR
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    CALCNETWORKVOLUMES = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "FROMZONE\TYPENO"          VALUE = "1"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <CONTAINEDIN          ATTRIBUTE = "TOZONE\TYPENO"          VALUE = "1"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ODPAIR>
+</FILTER>

@@ -1,0 +1,8 @@
+step,a1,a2,haupt_ap,lab_hap
+1,,,7,Sonstiges
+2,EVOIJ,,6,vonEinkaufErledigung
+3,,EVOIJ,5,zurEinkaufErledigung
+4,KGMZU,,4,vonBildung
+5,,KGMZU,3,zurBildung
+6,AY,,2,vonArbeit
+7,,AY,1,zurArbeit

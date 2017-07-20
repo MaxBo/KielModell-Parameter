@@ -1,0 +1,85 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1500">
+  <LINK
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <GREATERVAL          ATTRIBUTE = "VOLPERSPUT(AP)"          VALUE = "0"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </LINK>
+  <TURN
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "VIANODENO"          VALUE = "3204082"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TURN>
+  <ZONE    USEFILTER = "0"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <LESSVAL          ATTRIBUTE = "NO"          VALUE = "400000"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ZONE>
+  <MAINZONE    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "TYPENO"
+          FROMRANGE = "3"
+          TORANGE = "4"
+        />        
+      </CONDITION>
+    </CONDITIONS>
+  </MAINZONE>
+  <ODPAIR
+    USEFILTER = "0"
+    COMPLEMENT = "0"
+    CALCNETWORKVOLUMES = "1">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <NOTEQUALVAL          ATTRIBUTE = "MAINODPAIR\FROMMAINZONE\TYPENO"          VALUE = "9"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </ODPAIR>
+  <MAINODPAIR    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <BRACKET        OPERATION = "OP_NONE">
+        <CONDITION          OPERATION = "OP_NONE"          COMPLEMENT = "0">
+          <EQUALVAL            ATTRIBUTE = "FROMMAINZONE\TYPENO"            VALUE = "3"          />          
+        </CONDITION>
+        <CONDITION          OPERATION = "OP_OR"          COMPLEMENT = "0">
+          <EQUALVAL            ATTRIBUTE = "TOMAINZONE\TYPENO"            VALUE = "3"          />          
+        </CONDITION>
+      </BRACKET>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "FROMMAINZONE\TYPENO"
+          FROMRANGE = "3"
+          TORANGE = "8"
+        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <CONTAINEDIN
+          ATTRIBUTE = "TOMAINZONE\TYPENO"
+          FROMRANGE = "3"
+          TORANGE = "8"
+        />        
+      </CONDITION>
+      <BRACKET        OPERATION = "OP_AND">
+        <CONDITION          OPERATION = "OP_NONE"          COMPLEMENT = "0">
+          <GREATEREQUALVAL            ATTRIBUTE = "MATVALUE(662)"            VALUE = "1000"          />          
+        </CONDITION>
+        <CONDITION          OPERATION = "OP_OR"          COMPLEMENT = "0">
+          <GREATEREQUALVAL            ATTRIBUTE = "REVERSEMAINODPAIR\MATVALUE(662)"            VALUE = "1000"          />          
+        </CONDITION>
+      </BRACKET>
+    </CONDITIONS>
+  </MAINODPAIR>
+</FILTER>

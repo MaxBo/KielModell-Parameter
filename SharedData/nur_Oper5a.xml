@@ -1,0 +1,5 @@
+<PROCEDURES VERSION="14">
+  <OPERATIONS><OPERATION ACTIVE="1" CODE="absdas" COMMENT="T_akt Box-Cox transformieren" COMPUTENODE="" NO="5" OPERATIONTYPE="CombinationOfMatrices">
+      <MATRIXFORMULAPARA FORMULA="Matrix([CODE]=&quot;TTC_boxcox&quot;) := 2.89 * (POW(Matrix([CODE]=&quot;TTC&quot;) * 60, .8) - 1) / .8 / 60"></MATRIXFORMULAPARA>      
+    </OPERATION>
+  </OPERATIONS></PROCEDURES>

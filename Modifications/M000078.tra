@@ -1,0 +1,63 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 2017-02-20
+*
+* Tabelle: Versionsblock
+*
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10.000;Trans;DEU
+
+*
+* Tabelle: Matritzen(eingefügt)
+*
+$*MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;PGRUPPENCODE;AKTIVCODE;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;INITMATRIX;SAVEMATRIX;LOADMATRIX;MATRIXFOLDER;CALIBRATIONCODE
+250;PJT_A;Empfundene Reisezeit für Hauptaktivität eigener Arbeitsplatz;Kenngröße;Bezirk;;;PJT_A;2;DATEN;;;;;;;;;;A;;;0;1;0;M;
+251;PJT_B;Empfundene Reisezeit für Hauptaktivität Privater Besuch (fremde Wohnun;Kenngröße;Bezirk;;;PJT_B;2;DATEN;;;;;;;;;;B;;;0;1;0;M;
+252;PJT_E;Empfundene Reisezeit für Hauptaktivität sonstiger Einkauf;Kenngröße;Bezirk;;;PJT_E;2;DATEN;;;;;;;;;;E;;;0;1;0;M;
+253;PJT_F;Empfundene Reisezeit für Hauptaktivität Erholung/Sport im Freien;Kenngröße;Bezirk;;;PJT_F;2;DATEN;;;;;;;;;;F;;;0;1;0;M;
+254;PJT_G;Empfundene Reisezeit für Hauptaktivität Grundschule;Kenngröße;Bezirk;;;PJT_G;2;DATEN;;;;;;;;;;G;;;0;1;0;M;
+255;PJT_K;Empfundene Reisezeit für Hauptaktivität Kinderkrippe/-garten;Kenngröße;Bezirk;;;PJT_K;2;DATEN;;;;;;;;;;K;;;0;1;0;M;
+256;PJT_M;Empfundene Reisezeit für Hauptaktivität weiterführende Schule;Kenngröße;Bezirk;;;PJT_M;2;DATEN;;;;;;;;;;M;;;0;1;0;M;
+257;PJT_O;Empfundene Reisezeit für Hauptaktivität Öffentliche Einrichtung;Kenngröße;Bezirk;;;PJT_O;2;DATEN;;;;;;;;;;O;;;0;1;0;M;
+258;PJT_R;Empfundene Reisezeit für Hauptaktivität Gaststätte/Kneipe;Kenngröße;Bezirk;;;PJT_R;2;DATEN;;;;;;;;;;R;;;0;1;0;M;
+259;PJT_S;Empfundene Reisezeit für Hauptaktivität Sportstätte;Kenngröße;Bezirk;;;PJT_S;2;DATEN;;;;;;;;;;S;;;0;1;0;M;
+260;PJT_T;Empfundene Reisezeit für Hauptaktivität Kultur, Theater, Kino;Kenngröße;Bezirk;;;PJT_T;2;DATEN;;;;;;;;;;T;;;0;1;0;M;
+261;PJT_U;Empfundene Reisezeit für Hauptaktivität andere Bildungseinrichtung;Kenngröße;Bezirk;;;PJT_U;2;DATEN;;;;;;;;;;U;;;0;1;0;M;
+262;PJT_V;Empfundene Reisezeit für Hauptaktivität Einkauf täglicher Bedarf;Kenngröße;Bezirk;;;PJT_V;2;DATEN;;;;;;;;;;V;;;0;1;0;M;
+263;PJT_Z;Empfundene Reisezeit für Hauptaktivität Berufsschule;Kenngröße;Bezirk;;;PJT_Z;2;DATEN;;;;;;;;;;Z;;;0;1;0;M;
+200;SINGLETICKET;Fahrpreis Einzelticket;Kenngröße;Bezirk;Xg;;Singelticket;2;DATEN;;;;;;O;;;;;;;0;1;0;M;
+150;PARKING_A;Parkwiderstand für Hauptaktivität eigener Arbeitsplatz;Kenngröße;Bezirk;;;PARKING_A;2;DATEN;;;;;;;;;;A;;;0;1;0;M;
+151;PARKING_B;Parkwiderstand für Hauptaktivität Privater Besuch (fremde Wohnun;Kenngröße;Bezirk;;;PARKING_B;2;DATEN;;;;;;;;;;B;;;0;1;0;M;
+152;PARKING_E;Parkwiderstand für Hauptaktivität sonstiger Einkauf;Kenngröße;Bezirk;;;PARKING_E;2;DATEN;;;;;;;;;;E;;;0;1;0;M;
+153;PARKING_F;Parkwiderstand für Hauptaktivität Erholung/Sport im Freien;Kenngröße;Bezirk;;;PARKING_F;2;DATEN;;;;;;;;;;F;;;0;1;0;M;
+154;PARKING_G;Parkwiderstand für Hauptaktivität Grundschule;Kenngröße;Bezirk;;;PARKING_G;2;DATEN;;;;;;;;;;G;;;0;1;0;M;
+155;PARKING_K;Parkwiderstand für Hauptaktivität Kinderkrippe/-garten;Kenngröße;Bezirk;;;PARKING_K;2;DATEN;;;;;;;;;;K;;;0;1;0;M;
+156;PARKING_M;Parkwiderstand für Hauptaktivität weiterführende Schule;Kenngröße;Bezirk;;;PARKING_M;2;DATEN;;;;;;;;;;M;;;0;1;0;M;
+157;PARKING_O;Parkwiderstand für Hauptaktivität Öffentliche Einrichtung;Kenngröße;Bezirk;;;PARKING_O;2;DATEN;;;;;;;;;;O;;;0;1;0;M;
+158;PARKING_R;Parkwiderstand für Hauptaktivität Gaststätte/Kneipe;Kenngröße;Bezirk;;;PARKING_R;2;DATEN;;;;;;;;;;R;;;0;1;0;M;
+159;PARKING_S;Parkwiderstand für Hauptaktivität Sportstätte;Kenngröße;Bezirk;;;PARKING_S;2;DATEN;;;;;;;;;;S;;;0;1;0;M;
+160;PARKING_T;Parkwiderstand für Hauptaktivität Kultur, Theater, Kino;Kenngröße;Bezirk;;;PARKING_T;2;DATEN;;;;;;;;;;T;;;0;1;0;M;
+161;PARKING_U;Parkwiderstand für Hauptaktivität andere Bildungseinrichtung;Kenngröße;Bezirk;;;PARKING_U;2;DATEN;;;;;;;;;;U;;;0;1;0;M;
+162;PARKING_V;Parkwiderstand für Hauptaktivität Einkauf täglicher Bedarf;Kenngröße;Bezirk;;;PARKING_V;2;DATEN;;;;;;;;;;V;;;0;1;0;M;
+163;PARKING_Z;Parkwiderstand für Hauptaktivität Berufsschule;Kenngröße;Bezirk;;;PARKING_Z;2;DATEN;;;;;;;;;;Z;;;0;1;0;M;
+
+* 
+* Tabelle: Aktivitäten(geändert)
+* 
+$*AKTIVITAET:CODE;PARKING_ZONE_0;PARKING_ZONE_1;PARKING_ZONE_2;PARKING_ZONE_3;PARKING_ZONE_4;PARKING_ZONE_5;PARKING_ZONE_6;PARKING_ZONE_7;PARKING_ZONE_8
+A;0;10;4;0;0;0;0;0;0
+B;0;10;4;0;0;0;0;0;0
+E;0;8;4;0;0;0;0;0;0
+F;0;6;3;0;0;0;0;0;0
+G;0;4;3;0;0;0;0;0;0
+K;0;4;3;0;0;0;0;0;0
+M;0;10;4;0;0;0;0;0;0
+O;0;6;3;0;0;0;0;0;0
+R;0;6;3;0;0;0;0;0;0
+S;0;6;3;0;0;0;0;0;0
+T;0;6;3;0;0;0;0;0;0
+U;0;8;4;0;0;0;0;0;0
+V;0;4;2;0;0;0;0;0;0
+W;0;4;4;0;0;0;0;0;0
+Y;0;10;4;0;0;0;0;0;0
+Z;0;10;4;0;0;0;0;0;0

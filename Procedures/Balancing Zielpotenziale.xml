@@ -1,0 +1,174 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<PROCEDURES  VERSION = "14">
+  <OPERATIONS>
+    <OPERATION
+      NO = "34"
+      CODE = ""
+      OPERATIONTYPE = "Group"
+      ACTIVE = "1"
+      COMMENT = "Ziel-/VM-Wahl mt RSA"
+      COMPUTENODE = "">
+      <GROUPPARA        ISEXPANDED = "1"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "35"
+      CODE = ""
+      OPERATIONTYPE = "AddIn"
+      ACTIVE = "1"
+      COMMENT = "Kalibriere Modal Split und Wegelängen"
+      COMPUTENODE = "">
+      <ADDINPARA        ADDINID = "GGR_CALIBRATE_DEMAND_MODEL"        ADDINPARAMETER = ""      />      
+    </OPERATION>
+    <OPERATION
+      NO = "36"
+      CODE = ""
+      OPERATIONTYPE = "AddIn"
+      ACTIVE = "1"
+      COMMENT = "Logsums setzen"
+      COMPUTENODE = "">
+      <ADDINPARA        ADDINID = "GGR_SET_LOGSUM_PARAMS"        ADDINPARAMETER = ""      />      
+    </OPERATION>
+    <OPERATION
+      NO = "37"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Zielpotenzial Arbeit mit RSA"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "VALSTRUCTURALPROP(ZP_A)"
+        ONLYACTIVE = "0"
+        FORMULA = "[ZP0_A]*[BF_A]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "38"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Zielpotenzial Schule mit RSA"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "VALSTRUCTURALPROP(ZP_M)"
+        ONLYACTIVE = "0"
+        FORMULA = "[ZP0_M]*[BF_M]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "39"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Zielpotenzial Hochschule mit RSA"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "VALSTRUCTURALPROP(ZP_U)"
+        ONLYACTIVE = "0"
+        FORMULA = "[ZP0_U]*[BF_U]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "40"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Zielpotenzial Berufsschule mit RSA"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "VALSTRUCTURALPROP(ZP_Z)"
+        ONLYACTIVE = "0"
+        FORMULA = "[ZP0_Z]*[BF_Z]"
+      />      
+    </OPERATION>
+	
+    <OPERATION
+      NO = "42"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Modify Bilanzfaktor Arbeit"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "BF_A"
+        ONLYACTIVE = "0"
+        FORMULA = "[BF_A] * [ZONE_KF_A]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "43"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Modify Bilanzfaktor Schule"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "BF_M"
+        ONLYACTIVE = "0"
+        FORMULA = "[BF_M] * [ZONE_KF_M]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "44"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Modify Bilanzfaktor Hochschule"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "BF_U"
+        ONLYACTIVE = "0"
+        FORMULA = "[BF_U] * [ZONE_KF_U]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "45"
+      CODE = ""
+      OPERATIONTYPE = "EditAttribute"
+      ACTIVE = "1"
+      COMMENT = "Modify Bilanzfaktor Berufsschule"
+      COMPUTENODE = "">
+      <ATTRIBUTEFORMULAPARA
+        NETOBJECTTYPE = "ZONE"
+        INCLUDESUBCATEGORIES = "0"
+        RESULTATTRNAME = "BF_Z"
+        ONLYACTIVE = "0"
+        FORMULA = "[BF_Z] * [ZONE_KF_Z]"
+      />      
+    </OPERATION>
+    <OPERATION
+      NO = "46"
+      CODE = ""
+      OPERATIONTYPE = "Goto"
+      ACTIVE = "1"
+      COMMENT = ""
+      COMPUTENODE = "">
+      <JUMPBACKPARA
+        CONVERGENCECRITERIONTYPE = "THRESHOLD"
+        MAXCOUNTER = "5"
+        MINCOUNTER = "1"
+        JUMPTO = "34"
+        A = "0.01"
+        B = "5"
+        C = "10"
+        DIFFERENCEATTID = "VOLVEHPRT(AP)"
+        DIFFERENCEMATRIX = ""
+        DIFFERENCENETOBJTYPE = "ATTR"
+        NETATTID = "NOT_CONVERGED_ANY_ACTIVITY"
+        THRESHOLDVALUE = "0"
+      />      
+    </OPERATION>  </OPERATIONS>
+</PROCEDURES>

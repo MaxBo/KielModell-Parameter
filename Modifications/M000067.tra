@@ -1,0 +1,188 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 20.04.17
+* Von:  C:\Users\BvL\Desktop\Modellstand 02-17\Temp\Temp_Mod67.ver
+* Nach: C:\Users\BvL\Desktop\Modellstand 02-17\Kiel.vpdbx*
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10;Trans;DEU
+
+* 
+* Tabelle: Anbindungen (eingefügt)
+* 
+$+ANBINDUNG:BEZNR;KNOTNR;RICHTUNG;TYPNR;VSYSSET;LAENGE;T0-VSYS(F);T0-VSYS(LKW);T0-VSYS(OF);T0-VSYS(PKW);T0-VSYS(R);GEWICHT(IV)
+402001;2000004747;Q;5;OF;0,37391348125897861km;27s;27s;300s;27s;27s;1
+402001;2000004747;Z;5;OF;0,37391348125897861km;27s;27s;300s;27s;27s;1
+406302;2000004746;Q;5;OF;0,50344663729016426km;36s;36s;360s;36s;36s;1
+406302;2000004746;Z;5;OF;0,50344663729016426km;36s;36s;360s;36s;36s;1
+407302;2000004749;Q;5;OF;0,28118673954139234km;20s;20s;240s;20s;20s;1
+407302;2000004749;Z;5;OF;0,28118673954139234km;20s;20s;240s;20s;20s;1
+
+* 
+* Tabelle: Linienrouten (eingefügt)
+* 
+$+LINIENROUTE:LINNAME;NAME;RICHTUNGCODE;ISTRINGLINIE
+Kiel-Schönberger Strand;1;>;0
+Kiel-Schönberger Strand;1;<;0
+
+* 
+* Tabelle: Linienrouten-Verläufe (eingefügt)
+* 
+$+LINIENROUTENELEMENT:LINNAME;LINROUTENAME;RICHTUNGCODE;INDEX;ISTROUTENPUNKT;KNOTNR;HPUNKTNR;NACHLAENGE
+Kiel-Schönberger Strand;1;>;1;1;2000004749;2000004749;3,8522964397360169km
+Kiel-Schönberger Strand;1;>;2;0;4244182;;0km
+Kiel-Schönberger Strand;1;>;3;1;2000004748;2000004748;2,2484646691676482km
+Kiel-Schönberger Strand;1;>;4;1;2000004747;2000004747;3,8256452164536983km
+Kiel-Schönberger Strand;1;>;5;0;4244183;;0km
+Kiel-Schönberger Strand;1;>;6;1;2000004746;2000004746;5,7163710236701455km
+Kiel-Schönberger Strand;1;>;7;0;4244184;;0km
+Kiel-Schönberger Strand;1;>;8;0;4244186;;0km
+Kiel-Schönberger Strand;1;>;9;0;4244185;;0km
+Kiel-Schönberger Strand;1;>;10;0;4244181;;0km
+Kiel-Schönberger Strand;1;>;11;0;4244187;;0km
+Kiel-Schönberger Strand;1;>;12;1;2000004744;2000004744;1,6002123114826527km
+Kiel-Schönberger Strand;1;>;13;1;2000004743;2000004743;3,1933310455446491km
+Kiel-Schönberger Strand;1;>;14;0;4244180;;0km
+Kiel-Schönberger Strand;1;>;15;1;2000004741;2000004741;1,0786152375381941km
+Kiel-Schönberger Strand;1;>;16;1;2000004740;2000004740;4,0891851083661246km
+Kiel-Schönberger Strand;1;>;17;0;4244179;;0km
+Kiel-Schönberger Strand;1;>;18;0;4244188;;0km
+Kiel-Schönberger Strand;1;>;19;1;8000199;8000199;0km
+Kiel-Schönberger Strand;1;<;1;1;8000199;8000199;4,0891851083661246km
+Kiel-Schönberger Strand;1;<;2;0;4244188;;0km
+Kiel-Schönberger Strand;1;<;3;0;4244179;;0km
+Kiel-Schönberger Strand;1;<;4;1;2000004740;2000004740;1,0786152375381941km
+Kiel-Schönberger Strand;1;<;5;1;2000004741;2000004741;3,1933310455446491km
+Kiel-Schönberger Strand;1;<;6;0;4244180;;0km
+Kiel-Schönberger Strand;1;<;7;1;2000004743;2000004743;1,6002123114826527km
+Kiel-Schönberger Strand;1;<;8;1;2000004744;2000004744;5,7163710236701455km
+Kiel-Schönberger Strand;1;<;9;0;4244187;;0km
+Kiel-Schönberger Strand;1;<;10;0;4244181;;0km
+Kiel-Schönberger Strand;1;<;11;0;4244185;;0km
+Kiel-Schönberger Strand;1;<;12;0;4244186;;0km
+Kiel-Schönberger Strand;1;<;13;0;4244184;;0km
+Kiel-Schönberger Strand;1;<;14;1;2000004746;2000004746;3,8256452164536983km
+Kiel-Schönberger Strand;1;<;15;0;4244183;;0km
+Kiel-Schönberger Strand;1;<;16;1;2000004747;2000004747;2,2484646691676482km
+Kiel-Schönberger Strand;1;<;17;1;2000004748;2000004748;3,8522964397360169km
+Kiel-Schönberger Strand;1;<;18;0;4244182;;0km
+Kiel-Schönberger Strand;1;<;19;1;2000004749;2000004749;0km
+
+* 
+* Tabelle: Fahrzeitprofile (eingefügt)
+* 
+$+FAHRZEITPROFIL:LINNAME;LINROUTENAME;RICHTUNGCODE;NAME;FZGKOMBNR;REFELEMINDEX
+Kiel-Schönberger Strand;1;>;1;0;0
+Kiel-Schönberger Strand;1;<;1;0;0
+
+* 
+* Tabelle: Fahrzeitprofil-Verläufe (eingefügt)
+* 
+$+FAHRZEITPROFILELEMENT:LINNAME;LINROUTENAME;RICHTUNGCODE;FZPROFILNAME;INDEX;LRELEMINDEX;AUS;EIN;ANKUNFT;ABFAHRT
+Kiel-Schönberger Strand;1;>;1;1;1;0;1;00:00:00;00:00:00
+Kiel-Schönberger Strand;1;>;1;2;3;1;1;00:04:00;00:05:00
+Kiel-Schönberger Strand;1;>;1;3;4;1;1;00:07:00;00:08:00
+Kiel-Schönberger Strand;1;>;1;4;6;1;1;00:11:00;00:11:00
+Kiel-Schönberger Strand;1;>;1;5;12;1;1;00:15:00;00:16:00
+Kiel-Schönberger Strand;1;>;1;6;13;1;1;00:18:00;00:18:00
+Kiel-Schönberger Strand;1;>;1;7;15;1;1;00:21:00;00:22:00
+Kiel-Schönberger Strand;1;>;1;8;16;1;1;00:23:00;00:23:00
+Kiel-Schönberger Strand;1;>;1;9;19;1;0;00:28:00;00:28:00
+Kiel-Schönberger Strand;1;<;1;1;1;0;1;00:00:00;00:00:00
+Kiel-Schönberger Strand;1;<;1;2;4;1;1;00:05:00;00:05:00
+Kiel-Schönberger Strand;1;<;1;3;5;1;1;00:06:00;00:07:00
+Kiel-Schönberger Strand;1;<;1;4;7;1;1;00:09:00;00:09:00
+Kiel-Schönberger Strand;1;<;1;5;8;1;1;00:11:00;00:12:00
+Kiel-Schönberger Strand;1;<;1;6;14;1;1;00:16:00;00:16:00
+Kiel-Schönberger Strand;1;<;1;7;16;1;1;00:19:00;00:20:00
+Kiel-Schönberger Strand;1;<;1;8;17;1;1;00:23:00;00:24:00
+Kiel-Schönberger Strand;1;<;1;9;19;1;0;00:28:00;00:28:00
+
+* 
+* Tabelle: Fahrplanfahrten (eingefügt)
+* 
+$+FAHRPLANFAHRT:NR;NAME;ABFAHRT;LINNAME;LINROUTENAME;RICHTUNGCODE;FZPROFILNAME;VONFZPELEMINDEX;NACHFZPELEMINDEX;BETREIBERNR;TAKTFAHRTGRPNR
+117078441;;05:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078443;;05:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078444;;06:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078445;;07:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078446;;08:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078447;;09:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078448;;10:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078449;;11:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078450;;12:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078451;;13:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078452;;14:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078453;;15:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078454;;16:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078455;;17:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078456;;18:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078457;;19:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078458;;20:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078459;;21:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078460;;22:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078461;;23:47:00;Kiel-Schönberger Strand;1;>;1;1;9;22;0
+117078462;;06:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078463;;07:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078464;;08:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078465;;09:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078466;;10:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078467;;11:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078468;;12:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078469;;13:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078470;;14:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078471;;15:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078472;;16:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078473;;17:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078474;;18:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078475;;19:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078476;;20:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078477;;21:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078478;;22:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+117078479;;23:43:00;Kiel-Schönberger Strand;1;<;1;1;9;22;0
+
+* 
+* Tabelle: Fahrplanfahrtabschnitte (eingefügt)
+* 
+$+FAHRPLANFAHRTABSCHNITT:FPLFAHRTNR;NR;VONFZPELEMINDEX;NACHFZPELEMINDEX;VTAGNR;FZGKOMBNR;FZGKOMBSET
+117078441;1;1;9;1;0;
+117078443;1;1;9;1;0;
+117078444;1;1;9;1;0;
+117078445;1;1;9;1;0;
+117078446;1;1;9;1;0;
+117078447;1;1;9;1;0;
+117078448;1;1;9;1;0;
+117078449;1;1;9;1;0;
+117078450;1;1;9;1;0;
+117078451;1;1;9;1;0;
+117078452;1;1;9;1;0;
+117078453;1;1;9;1;0;
+117078454;1;1;9;1;0;
+117078455;1;1;9;1;0;
+117078456;1;1;9;1;0;
+117078457;1;1;9;1;0;
+117078458;1;1;9;1;0;
+117078459;1;1;9;1;0;
+117078460;1;1;9;1;0;
+117078461;1;1;9;1;0;
+117078462;1;1;9;1;0;
+117078463;1;1;9;1;0;
+117078464;1;1;9;1;0;
+117078465;1;1;9;1;0;
+117078466;1;1;9;1;0;
+117078467;1;1;9;1;0;
+117078468;1;1;9;1;0;
+117078469;1;1;9;1;0;
+117078470;1;1;9;1;0;
+117078471;1;1;9;1;0;
+117078472;1;1;9;1;0;
+117078473;1;1;9;1;0;
+117078474;1;1;9;1;0;
+117078475;1;1;9;1;0;
+117078476;1;1;9;1;0;
+117078477;1;1;9;1;0;
+117078478;1;1;9;1;0;
+117078479;1;1;9;1;0;
+

@@ -1,0 +1,23 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 13.09.16
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR	FILETYPE	LANGUAGE	UNIT
+9.00	Att	DEU	KM
+
+* 
+* Tabelle: Oberbezirke
+* 
+$OBERBEZIRK:NR	CODE	NAME	TYPNR	ANZBEZ	SUM:BEZIRKE\ANZPERSONEN(EWEP_WAW)	SUM:BEZIRKE\ANZPERSONEN(EWHP_WAW)	SUM:BEZIRKE\ANZPERSONEN(EWOP_WAW)	SUM:BEZIRKE\ANZPERSONEN(PEN_WAW)
+1		Rendsburg-Eckernförde	1	262	64978	32867	3842	0
+2		Plön	1	120	34482	18459	1963	0
+3		Kiel	1	462	52145	40087	12597	0
+4		Neumünster	1	17	18388	12656	2515	0
+100		Schleswig/Flensburg	0	18	0	0	0	6664
+101		SH Süd	0	31	0	0	0	10285
+102		Hamburg/Restdeutschland	0	14	0	0	0	3141
+103	Westküste	Westküste	0	11	0	0	0	2906
+104	Holstein	Holstein	0	15	0	0	0	4240
+
