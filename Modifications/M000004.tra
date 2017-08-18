@@ -1,6 +1,6 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-07-20
+* 2017-07-26
 *
 * Tabelle: Versionsblock
 *
@@ -1777,7 +1777,7 @@ SToP_WVVW;SToP_WVVW;VisemT;WVVW;SToP_V
 * Tabelle: Benutzerdefinierte Attribute (eingefügt)
 *
 $+BENUTZERDEFATTRIBUTE:OBJID;ATTID;CODE;NAME;DATENTYP;MINWERT;MAXWERT;STANDARDWERT;STRINGSTANDARDWERT;KOMMENTAR;MAXSTRINGLAENGE;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;QUERSCHNITTSLOGIK
-Bezirk;Binnendistanz;Binnendistanz;Binnendistanz;Double;MIN;MAX;;;geschätzte Binnendistanz in km;255;3;FORMEL;SQRT([FLAECHEKM2]) / 3;SUM
+Bezirk;BinnendistEstimated;BinnendistEstimated;Binnendistanz geschaetzt;Double;MIN;MAX;;;geschätzte Binnendistanz in km;255;3;FORMEL;SQRT([FLAECHEKM2]) / 3;SUM
 Netz;faktor_binnenpendler;faktor_binnenpendler;faktor_binnenpendler;Double;MIN;MAX;1.28;;;255;3;DATEN;;SUM
 Netz;faktor_einpendler;faktor_einpendler;faktor_einpendler;Double;MIN;MAX;1.430976;;;255;3;DATEN;;SUM
 Netz;faktor_auspendler;faktor_auspendler;faktor_auspendler;Double;MIN;MAX;1.27264235846709;;;255;3;DATEN;;SUM
@@ -2011,17 +2011,17 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 114;TTC;tAkt Pkw;Kenngröße;Bezirk;Pkw;;TTC;2;DATEN;;;;;;;;;;;;;0;0;1;;
 115;TTC_boxcox;tAkt Pkw BoxCox-Transformiert;Kenngröße;Bezirk;Pkw;;TTC_boxcox;2;DATEN;;;;;;P;;;;;;;0;0;1;;
 116;PkwKosten;Pkw Fahrtkosten;Kenngröße;Bezirk;Pkw;;PkwKosten;2;FORMEL;Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw") * [COST_PER_KM_PKW];;;;;;;;;;;;0;0;0;;
-1;Visem_P;Pkw regional;Nachfrage;Bezirk;Pkw;;Visem_P;2;DATEN;;;;;;P;;;;;;;0;0;0;;
-30;Pkw_Wirtschaftsverkehr;Pkw-Wirtschaftsverkehr;Nachfrage;Bezirk;B_P;;Pkw_Wirtschaftsverkehr;2;DATEN;;;;;;P;;;;;;;0;0;0;;
-31;Lieferfahrzeuge;Lieferfahrzeuge;Nachfrage;Bezirk;B_Li;;Lieferfahrzeuge;2;DATEN;;;;;;P;;;;;;;0;0;0;;
-32;Lkw_bis_12to;Lkw zw. 3,5 und 12 to;Nachfrage;Bezirk;B_L1;;Lkw_bis_12to;2;DATEN;;;;;;Lkw;;;;;;;0;0;0;;
-33;Lkw_über_12to;Lkw > 3,5 to;Nachfrage;Bezirk;B_L2;;Lkw_über_12to;2;DATEN;;;;;;Lkw;;;;;;;0;0;0;;
-34;FernverkehrPkw;Pkw-Fernverkehr;Nachfrage;Bezirk;FV;;FernverkehrPkw;2;DATEN;;;;;;P;;;;;;;0;0;0;;
-35;FernverkehrLkw;Lkw-Fernverkehr;Nachfrage;Bezirk;LkwFern;;FernverkehrLkw;2;DATEN;;;;;;Lkw;;;;;;;0;0;0;;
+1;Visem_P;Pkw regional;Nachfrage;Bezirk;Pkw;;Visem_P;2;DATEN;;;;;;P;;;;;;;0;0;1;;
+30;Pkw_Wirtschaftsverkehr;Pkw-Wirtschaftsverkehr;Nachfrage;Bezirk;B_P;;Pkw_Wirtschaftsverkehr;2;DATEN;;;;;;P;;;;;;;0;0;1;;
+31;Lieferfahrzeuge;Lieferfahrzeuge;Nachfrage;Bezirk;B_Li;;Lieferfahrzeuge;2;DATEN;;;;;;P;;;;;;;0;0;1;;
+32;Lkw_bis_12to;Lkw zw. 3,5 und 12 to;Nachfrage;Bezirk;B_L1;;Lkw_bis_12to;2;DATEN;;;;;;Lkw;;;;;;;0;0;1;;
+33;Lkw_über_12to;Lkw > 3,5 to;Nachfrage;Bezirk;B_L2;;Lkw_über_12to;2;DATEN;;;;;;Lkw;;;;;;;0;0;1;;
+34;FernverkehrPkw;Pkw-Fernverkehr;Nachfrage;Bezirk;FV;;FernverkehrPkw;2;DATEN;;;;;;P;;;;;;;0;0;1;;
+35;FernverkehrLkw;Lkw-Fernverkehr;Nachfrage;Bezirk;LkwFern;;FernverkehrLkw;2;DATEN;;;;;;Lkw;;;;;;;0;0;1;;
 36;Schwerverkehr;Schwerverkehr ohne Busse;Nachfrage;Bezirk;SV;;Schwerverkehr;2;FORMEL;Matrix([CODE]="Lkw_bis_12to") + Matrix([CODE]="Lkw_über_12to") + Matrix([CODE]="FernverkehrLkw");;;;;Lkw;;;;;;;0;0;0;;
 37;Kfz_35;Kfz bis 3,5 to;Nachfrage;Bezirk;Kfz_35;;Kfz_35;2;FORMEL;Matrix([CODE]="Visem_P") + Matrix([CODE]="Pkw_Wirtschaftsverkehr") + Matrix([CODE]="Lieferfahrzeuge") + Matrix([CODE]="FernverkehrPkw");;;;;P;;;;;;;0;0;0;;
-2;Visem_O;ÖPNV;Nachfrage;Bezirk;Xg;;Visem_O;2;DATEN;;;;;;O;;;;;;;0;0;0;;
-90;FernverkehrBahn;Fernverkehr Bahn;Nachfrage;Bezirk;XFV;;FernverkehrBahn;2;DATEN;;;;;;O;;;;;;;0;0;0;;
+2;Visem_O;ÖPNV;Nachfrage;Bezirk;Xg;;Visem_O;2;DATEN;;;;;;O;;;;;;;0;0;1;;
+90;FernverkehrBahn;Fernverkehr Bahn;Nachfrage;Bezirk;XFV;;FernverkehrBahn;2;DATEN;;;;;;O;;;;;;;0;0;1;;
 3;Visem_Gesamt;Fahrten incl. Einpendler;Nachfrage;Bezirk;;;Visem_Gesamt;2;DATEN;;;;;;;;;;;;;0;1;0;;
 4;Visem_F;Fahrten Fuss incl. Einpendler;Nachfrage;Bezirk;;;Visem_F;2;DATEN;;;;;;F;;;;;;;0;1;0;;
 5;Visem_R;Fahrten Rad incl. Einpendler;Nachfrage;Bezirk;;;Visem_R;2;DATEN;;;;;;R;;;;;;;0;1;0;;

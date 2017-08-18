@@ -23,13 +23,13 @@
       OPERATIONTYPE = "AddIn"
       ACTIVE = "1"
       COMMENT = "Lade Matrizen"
-      EXECUTED = "1"
-      STARTTIME = "2017-4-26 2:33:26"
-      ENDTIME = "2017-4-26 2:33:43"
-      DURATION = "17s"
-      MESSAGES = "Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;AddIn VISEM_Kiel: Matrix No 13.0: File Demand_Total_OBB does not exist in C:\601 aktuelles Szenario\Modellstand 02-17\Matrices or C:\601 aktuelles Szenario\Modellstand 02-17\Scenarios\S000068\Matrices&#xA;AddIn VISEM_Kiel: Matrix No 14.0: File Demand_F_OBB does not exist in C:\601 aktuelles Szenario\Modellstand 02-17\Matrices or C:\601 aktuelles Szenario\Modellstand 02-17\Scenarios\S000068\Matrices&#xA;AddIn VISEM_Kiel: Matrix No 15.0: File Demand_R_OBB does not exist in C:\601 aktuelles Szenario\Modellstand 02-17\Matrices or C:\601 aktuelles Szenario\Modellstand 02-17\Scenarios\S000068\Matrices&#xA;AddIn VISEM_Kiel: Matrix No 16.0: File Demand_O_OBB does not exist in C:\601 aktuelles Szenario\Modellstand 02-17\Matrices or C:\601 aktuelles Szenario\Modellstand 02-17\Scenarios\S000068\Matrices&#xA;AddIn VISEM_Kiel: Matrix No 17.0: File Demand_M_OBB does not exist in C:\601 aktuelles Szenario\Modellstand 02-17\Matrices or C:\601 aktuelles Szenario\Modellstand 02-17\Scenarios\S000068\Matrices&#xA;AddIn VISEM_Kiel: Matrix No 18.0: File Demand_P_OBB does not exist in C:\601 aktuelles Szenario\Modellstand 02-17\Matrices or C:\601 aktuelles Szenario\Modellstand 02-17\Scenarios\S000068\Matrices&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 5886 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 406202;406210;406211;406212;504112;513222 : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 5886 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 406202;406210;406211;406212;504112;513222 : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;AddIn VISEM_Kiel: Load 38 matrices, 6 not found&#xA;"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
       RESULTMESSAGE = ""
-      SUCCESS = "1"
+      SUCCESS = "0"
       COMPUTENODE = "">
       <ADDINPARA        ADDINID = "GGR_LOAD_MATRICES"        ADDINPARAMETER = ""      />      
     </OPERATION>
@@ -2653,21 +2653,37 @@
     <OPERATION
       NO = "13"
       CODE = ""
+      OPERATIONTYPE = "Group"
+      ACTIVE = "1"
+      COMMENT = "Parkmatrizen berechnen"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <GROUPPARA        ISEXPANDED = "1"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "14"
+      CODE = ""
       OPERATIONTYPE = "AddIn"
       ACTIVE = "1"
-      COMMENT = ""
-      EXECUTED = "1"
-      STARTTIME = "2017-4-26 2:34:13"
-      ENDTIME = "2017-4-26 2:34:14"
-      DURATION = "0min"
-      MESSAGES = "CComMatrix::SetValueRaw at 0 failed. Value is not finite: 0&#xA;AddIn VISEM_Kiel: Es kam zu einem Fehler in der Hauptanwendung des AddIns: Ausnahmefehler aufgetreten. Visum.Visum.1601 CComMatrix::SetValueRaw at 0 failed. Value is not finite: 0&#xA;Weitere Informationen finden Sie im Fenster &apos;Meldungen&apos;.&#xA;Fehler bei der Ausführung von Verfahrensschritt  13: &quot;AddIn&quot;.&#xA;"
+      COMMENT = "Parkmatrizen berechnen"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
       RESULTMESSAGE = ""
       SUCCESS = "0"
       COMPUTENODE = "">
       <ADDINPARA        ADDINID = "GGR_PREPROCESS_PARKING"        ADDINPARAMETER = ""      />      
     </OPERATION>
     <OPERATION
-      NO = "14"
+      NO = "15"
       CODE = ""
       OPERATIONTYPE = "Group"
       ACTIVE = "1"
@@ -2683,7 +2699,7 @@
       <GROUPPARA        ISEXPANDED = "1"      />      
     </OPERATION>
     <OPERATION
-      NO = "15"
+      NO = "16"
       CODE = ""
       OPERATIONTYPE = "AddIn"
       ACTIVE = "1"
@@ -2699,7 +2715,7 @@
       <ADDINPARA        ADDINID = "GGR_SAVE_MATRICES"        ADDINPARAMETER = ""      />      
     </OPERATION>
     <OPERATION
-      NO = "16"
+      NO = "17"
       CODE = ""
       OPERATIONTYPE = "AddIn"
       ACTIVE = "1"
@@ -2713,6 +2729,38 @@
       SUCCESS = "0"
       COMPUTENODE = "">
       <ADDINPARA        ADDINID = "GGR_INIT_MATRICES"        ADDINPARAMETER = ""      />      
+    </OPERATION>
+    <OPERATION
+      NO = "18"
+      CODE = ""
+      OPERATIONTYPE = "Group"
+      ACTIVE = "0"
+      COMMENT = "Matrizen wieder laden"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <GROUPPARA        ISEXPANDED = "1"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "19"
+      CODE = ""
+      OPERATIONTYPE = "AddIn"
+      ACTIVE = "0"
+      COMMENT = "Lade Matrizen"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <ADDINPARA        ADDINID = "GGR_LOAD_MATRICES"        ADDINPARAMETER = ""      />      
     </OPERATION>
   </OPERATIONS>
   <FUNCTIONS>

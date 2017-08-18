@@ -64296,12 +64296,20 @@
         />        
       </LINCOMB>
     </IMPEDANCEFUNCTIONS>
-    <IMPEDANCEFUNCTIONS      TSYSCODE = "Pkw"      USEDETAILEDCALCULATION = "0">
+    <IMPEDANCEFUNCTIONS      TSYSCODE = "Pkw"      USEDETAILEDCALCULATION = "1">
       <LINCOMB        NETOBJECTTYPE = "">
         <LINCOMBITEM
           NO = "1"
           FIRSTATTRCOEFF = "100"
           FIRSTATTRNAME = "TCUR_PRTSYS(Pkw)"
+          OPERATION = "None"
+          SECONDATTRCOEFF = "0"
+          SECONDATTRNAME = "1.0"
+        />        
+        <LINCOMBITEM
+          NO = "2"
+          FIRSTATTRCOEFF = "6"
+          FIRSTATTRNAME = "LENGTH"
           OPERATION = "None"
           SECONDATTRCOEFF = "0"
           SECONDATTRNAME = "1.0"
@@ -64312,6 +64320,22 @@
           NO = "1"
           FIRSTATTRCOEFF = "100"
           FIRSTATTRNAME = "TCUR_PRTSYS(Pkw)"
+          OPERATION = "None"
+          SECONDATTRCOEFF = "0"
+          SECONDATTRNAME = "1.0"
+        />        
+        <LINCOMBITEM
+          NO = "2"
+          FIRSTATTRCOEFF = "6"
+          FIRSTATTRNAME = "LENGTH"
+          OPERATION = "None"
+          SECONDATTRCOEFF = "0"
+          SECONDATTRNAME = "1.0"
+        />        
+        <LINCOMBITEM
+          NO = "3"
+          FIRSTATTRCOEFF = "6000"
+          FIRSTATTRNAME = "MALUSAUFFAHRT"
           OPERATION = "None"
           SECONDATTRCOEFF = "0"
           SECONDATTRNAME = "1.0"

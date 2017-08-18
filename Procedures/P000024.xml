@@ -52,50 +52,6 @@
     <OPERATION
       NO = "4"
       CODE = ""
-      OPERATIONTYPE = "PrTAssignment"
-      ACTIVE = "1"
-      COMMENT = "Pkw-Umlegung"
-      EXECUTED = "0"
-      STARTTIME = ""
-      ENDTIME = ""
-      DURATION = ""
-      MESSAGES = ""
-      RESULTMESSAGE = ""
-      SUCCESS = "0"
-      COMPUTENODE = "">
-      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Equilibrium"        DSEGSET = "B_L1,B_L2,B_Li,B_P,FV,LkwFern,Pkw">
-        <EQUILIBRIUMPARA>
-          <EQUIINITIALSOLUTIONPARA            USECURRENTSOLUTION = "1">
-            <DEMANDSHAREPARA>
-              <ATTRIBUTE                NAME = "DEMANDSHARE">
-                <ATTRITEM                  SUBATTR1 = "1"                  VALUE = "50"                />                
-                <ATTRITEM                  SUBATTR1 = "2"                  VALUE = "30"                />                
-                <ATTRITEM                  SUBATTR1 = "3"                  VALUE = "20"                />                
-                <ATTRITEM                  SUBATTR1 = "4"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "5"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "6"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "7"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "8"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "9"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "10"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "11"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "12"                  VALUE = "0"                />                
-              </ATTRIBUTE>
-            </DEMANDSHAREPARA>
-          </EQUIINITIALSOLUTIONPARA>
-          <EQUISTOPCRITERIAPARA
-            MAXNUMOUTERIT = "20"
-            MAXABSIMPDEV = "0"
-            MAXRELIMPDEV = "0"
-            MAXRELATIVEGAP = "0.0001">
-            <NETBALANCING              GENERALVALUE = "5"            />            
-          </EQUISTOPCRITERIAPARA>
-        </EQUILIBRIUMPARA>
-      </PRTASSIGNMENTPARA>
-    </OPERATION>
-    <OPERATION
-      NO = "5"
-      CODE = ""
       OPERATIONTYPE = "PuTOperatingIndicators"
       ACTIVE = "1"
       COMMENT = "um die Busse je Streckenabschnitt zu berechnen"
@@ -225,6 +181,50 @@
         </PUTOPINDINFRASTRUCTURECOSTPARA>
         <PUTOPINDADDITIONALATTRPARA          CALCULATE = "0"          CALCULATEFORTERRITORIES = "0"        />        
       </PUTOPINDPARAMETERS>
+    </OPERATION>
+    <OPERATION
+      NO = "5"
+      CODE = ""
+      OPERATIONTYPE = "PrTAssignment"
+      ACTIVE = "1"
+      COMMENT = "Pkw-Umlegung"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Equilibrium"        DSEGSET = "B_L1,B_L2,B_Li,B_P,FV,LkwFern,Pkw">
+        <EQUILIBRIUMPARA>
+          <EQUIINITIALSOLUTIONPARA            USECURRENTSOLUTION = "1">
+            <DEMANDSHAREPARA>
+              <ATTRIBUTE                NAME = "DEMANDSHARE">
+                <ATTRITEM                  SUBATTR1 = "1"                  VALUE = "50"                />                
+                <ATTRITEM                  SUBATTR1 = "2"                  VALUE = "30"                />                
+                <ATTRITEM                  SUBATTR1 = "3"                  VALUE = "20"                />                
+                <ATTRITEM                  SUBATTR1 = "4"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "5"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "6"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "7"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "8"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "9"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "10"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "11"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "12"                  VALUE = "0"                />                
+              </ATTRIBUTE>
+            </DEMANDSHAREPARA>
+          </EQUIINITIALSOLUTIONPARA>
+          <EQUISTOPCRITERIAPARA
+            MAXNUMOUTERIT = "20"
+            MAXABSIMPDEV = "0"
+            MAXRELIMPDEV = "0"
+            MAXRELATIVEGAP = "0.0001">
+            <NETBALANCING              GENERALVALUE = "5"            />            
+          </EQUISTOPCRITERIAPARA>
+        </EQUILIBRIUMPARA>
+      </PRTASSIGNMENTPARA>
     </OPERATION>
     <OPERATION
       NO = "6"
@@ -4984,7 +4984,7 @@
         </ATTRIBUTE>
       </VDFUNCTIONS>
     </VDFUNCTIONSPARAMETERS>
-    <IMPEDANCEFUNCTIONS      TSYSCODE = "F"      USEDETAILEDCALCULATION = "1">
+    <IMPEDANCEFUNCTIONS      TSYSCODE = "F"      USEDETAILEDCALCULATION = "0">
       <LINCOMB        NETOBJECTTYPE = "">
         <LINCOMBITEM
           NO = "1"
@@ -5096,7 +5096,7 @@
         />        
       </LINCOMB>
     </IMPEDANCEFUNCTIONS>
-    <IMPEDANCEFUNCTIONS      TSYSCODE = "Pkw"      USEDETAILEDCALCULATION = "0">
+    <IMPEDANCEFUNCTIONS      TSYSCODE = "Pkw"      USEDETAILEDCALCULATION = "1">
       <LINCOMB        NETOBJECTTYPE = "">
         <LINCOMBITEM
           NO = "1"
@@ -5120,6 +5120,22 @@
           NO = "1"
           FIRSTATTRCOEFF = "100"
           FIRSTATTRNAME = "TCUR_PRTSYS(Pkw)"
+          OPERATION = "None"
+          SECONDATTRCOEFF = "0"
+          SECONDATTRNAME = "1.0"
+        />        
+        <LINCOMBITEM
+          NO = "2"
+          FIRSTATTRCOEFF = "6"
+          FIRSTATTRNAME = "LENGTH"
+          OPERATION = "None"
+          SECONDATTRCOEFF = "0"
+          SECONDATTRNAME = "1.0"
+        />        
+        <LINCOMBITEM
+          NO = "3"
+          FIRSTATTRCOEFF = "6000"
+          FIRSTATTRNAME = "MALUSAUFFAHRT"
           OPERATION = "None"
           SECONDATTRCOEFF = "0"
           SECONDATTRNAME = "1.0"
@@ -5156,7 +5172,7 @@
         />        
       </LINCOMB>
     </IMPEDANCEFUNCTIONS>
-    <IMPEDANCEFUNCTIONS      TSYSCODE = "R"      USEDETAILEDCALCULATION = "1">
+    <IMPEDANCEFUNCTIONS      TSYSCODE = "R"      USEDETAILEDCALCULATION = "0">
       <LINCOMB        NETOBJECTTYPE = "">
         <LINCOMBITEM
           NO = "1"
