@@ -26,6 +26,7 @@ $*MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 262;PJT_V;Empfundene Reisezeit für Hauptaktivität Einkauf täglicher Bedarf;Kenngröße;Bezirk;;;PJT_V;2;DATEN;;;;;;;;;;V;;;1;1;1;M;
 263;PJT_Z;Empfundene Reisezeit für Hauptaktivität Berufsschule;Kenngröße;Bezirk;;;PJT_Z;2;DATEN;;;;;;;;;;Z;;;1;1;1;M;
 200;SINGLETICKET;Fahrpreis Einzelticket;Kenngröße;Bezirk;Xg;;Singelticket;2;DATEN;;;;;;O;;;;;;;1;1;1;M;
+202;OVDIS;OV Reiseweite;Kenngröße;Bezirk;Xg;;OVDIS;2;DATEN;;;;;;O;;;;;;;1;1;1;M;
 150;PARKING_A;Parkwiderstand für Hauptaktivität eigener Arbeitsplatz;Kenngröße;Bezirk;;;PARKING_A;2;DATEN;;;;;;;;;;A;;;1;1;1;M;
 151;PARKING_B;Parkwiderstand für Hauptaktivität Privater Besuch (fremde Wohnun;Kenngröße;Bezirk;;;PARKING_B;2;DATEN;;;;;;;;;;B;;;1;1;1;M;
 152;PARKING_E;Parkwiderstand für Hauptaktivität sonstiger Einkauf;Kenngröße;Bezirk;;;PARKING_E;2;DATEN;;;;;;;;;;E;;;1;1;1;M;

@@ -1,6 +1,6 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-07-26
+* 2017-08-19
 *
 * Tabelle: Versionsblock
 *
@@ -1777,7 +1777,7 @@ SToP_WVVW;SToP_WVVW;VisemT;WVVW;SToP_V
 * Tabelle: Benutzerdefinierte Attribute (eingefügt)
 *
 $+BENUTZERDEFATTRIBUTE:OBJID;ATTID;CODE;NAME;DATENTYP;MINWERT;MAXWERT;STANDARDWERT;STRINGSTANDARDWERT;KOMMENTAR;MAXSTRINGLAENGE;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;QUERSCHNITTSLOGIK
-Bezirk;BinnendistEstimated;BinnendistEstimated;Binnendistanz geschaetzt;Double;MIN;MAX;;;geschätzte Binnendistanz in km;255;3;FORMEL;SQRT([FLAECHEKM2]) / 3;SUM
+Bezirk;Binnendistanz_area;Binnendistanz_area;Binnendistanz_area;Double;MIN;MAX;;;geschätzte Binnendistanz in km;255;3;FORMEL;SQRT([FLAECHEKM2]) / 3;SUM
 Netz;faktor_binnenpendler;faktor_binnenpendler;faktor_binnenpendler;Double;MIN;MAX;1.28;;;255;3;DATEN;;SUM
 Netz;faktor_einpendler;faktor_einpendler;faktor_einpendler;Double;MIN;MAX;1.430976;;;255;3;DATEN;;SUM
 Netz;faktor_auspendler;faktor_auspendler;faktor_auspendler;Double;MIN;MAX;1.27264235846709;;;255;3;DATEN;;SUM
@@ -1787,63 +1787,63 @@ Netz;faktor_auspendler;faktor_auspendler;faktor_auspendler;Double;MIN;MAX;1.2726
 *
 $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;PGRUPPENCODE;AKTIVCODE;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;INITMATRIX;SAVEMATRIX;LOADMATRIX;MATRIXFOLDER;CALIBRATIONCODE
 700;Activity_A;Gesamtzahl der Wege zu Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;Activity_A;2;DATEN;;;;;;;;;;A;;;0;0;0;;
-800;VL_Activity_A;Fahrleistung Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;VL_Activity_A;2;FORMEL;Matrix([CODE] = "Activity_A")*Matrix([CODE] = "DIS");;;;;;;;;A;;;0;0;0;;
+800;VL_Activity_A;Fahrleistung Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;VL_Activity_A;2;FORMEL;Matrix([CODE] = "Activity_A")*Matrix([CODE] = "KM");;;;;;;;;A;;;0;0;0;;
 900;Activity_A_OBB;Oberbezirks-Matrix Aktivität eigener Arbeitsplatz;Nachfrage;Oberbezirk;;;Activity_A_OBB;2;DATEN;;;;;;;;;;A;;;0;0;0;;
 780;Pendler_A_OBB;Oberbezirks-Matrix Pendleraktivität eigener Arbeitsplatz;Nachfrage;Oberbezirk;;;Pendler_A_OBB;2;DATEN;;;;;;;;;;A;;;0;0;0;;
 701;Activity_B;Gesamtzahl der Wege zu Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Bezirk;;;Activity_B;2;DATEN;;;;;;;;;;B;;;0;0;0;;
-801;VL_Activity_B;Fahrleistung Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Bezirk;;;VL_Activity_B;2;FORMEL;Matrix([CODE] = "Activity_B")*Matrix([CODE] = "DIS");;;;;;;;;B;;;0;0;0;;
+801;VL_Activity_B;Fahrleistung Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Bezirk;;;VL_Activity_B;2;FORMEL;Matrix([CODE] = "Activity_B")*Matrix([CODE] = "KM");;;;;;;;;B;;;0;0;0;;
 901;Activity_B_OBB;Oberbezirks-Matrix Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Oberbezirk;;;Activity_B_OBB;2;DATEN;;;;;;;;;;B;;;0;0;0;;
 702;Activity_E;Gesamtzahl der Wege zu Aktivität sonstiger Einkauf;Nachfrage;Bezirk;;;Activity_E;2;DATEN;;;;;;;;;;E;;;0;0;0;;
-802;VL_Activity_E;Fahrleistung Aktivität sonstiger Einkauf;Nachfrage;Bezirk;;;VL_Activity_E;2;FORMEL;Matrix([CODE] = "Activity_E")*Matrix([CODE] = "DIS");;;;;;;;;E;;;0;0;0;;
+802;VL_Activity_E;Fahrleistung Aktivität sonstiger Einkauf;Nachfrage;Bezirk;;;VL_Activity_E;2;FORMEL;Matrix([CODE] = "Activity_E")*Matrix([CODE] = "KM");;;;;;;;;E;;;0;0;0;;
 902;Activity_E_OBB;Oberbezirks-Matrix Aktivität sonstiger Einkauf;Nachfrage;Oberbezirk;;;Activity_E_OBB;2;DATEN;;;;;;;;;;E;;;0;0;0;;
 703;Activity_F;Gesamtzahl der Wege zu Aktivität Erholung/Sport im Freien;Nachfrage;Bezirk;;;Activity_F;2;DATEN;;;;;;;;;;F;;;0;0;0;;
-803;VL_Activity_F;Fahrleistung Aktivität Erholung/Sport im Freien;Nachfrage;Bezirk;;;VL_Activity_F;2;FORMEL;Matrix([CODE] = "Activity_F")*Matrix([CODE] = "DIS");;;;;;;;;F;;;0;0;0;;
+803;VL_Activity_F;Fahrleistung Aktivität Erholung/Sport im Freien;Nachfrage;Bezirk;;;VL_Activity_F;2;FORMEL;Matrix([CODE] = "Activity_F")*Matrix([CODE] = "KM");;;;;;;;;F;;;0;0;0;;
 903;Activity_F_OBB;Oberbezirks-Matrix Aktivität Erholung/Sport im Freien;Nachfrage;Oberbezirk;;;Activity_F_OBB;2;DATEN;;;;;;;;;;F;;;0;0;0;;
 704;Activity_G;Gesamtzahl der Wege zu Aktivität Grundschule;Nachfrage;Bezirk;;;Activity_G;2;DATEN;;;;;;;;;;G;;;0;0;0;;
-804;VL_Activity_G;Fahrleistung Aktivität Grundschule;Nachfrage;Bezirk;;;VL_Activity_G;2;FORMEL;Matrix([CODE] = "Activity_G")*Matrix([CODE] = "DIS");;;;;;;;;G;;;0;0;0;;
+804;VL_Activity_G;Fahrleistung Aktivität Grundschule;Nachfrage;Bezirk;;;VL_Activity_G;2;FORMEL;Matrix([CODE] = "Activity_G")*Matrix([CODE] = "KM");;;;;;;;;G;;;0;0;0;;
 904;Activity_G_OBB;Oberbezirks-Matrix Aktivität Grundschule;Nachfrage;Oberbezirk;;;Activity_G_OBB;2;DATEN;;;;;;;;;;G;;;0;0;0;;
 705;Activity_K;Gesamtzahl der Wege zu Aktivität Kinderkrippe/-garten;Nachfrage;Bezirk;;;Activity_K;2;DATEN;;;;;;;;;;K;;;0;0;0;;
-805;VL_Activity_K;Fahrleistung Aktivität Kinderkrippe/-garten;Nachfrage;Bezirk;;;VL_Activity_K;2;FORMEL;Matrix([CODE] = "Activity_K")*Matrix([CODE] = "DIS");;;;;;;;;K;;;0;0;0;;
+805;VL_Activity_K;Fahrleistung Aktivität Kinderkrippe/-garten;Nachfrage;Bezirk;;;VL_Activity_K;2;FORMEL;Matrix([CODE] = "Activity_K")*Matrix([CODE] = "KM");;;;;;;;;K;;;0;0;0;;
 905;Activity_K_OBB;Oberbezirks-Matrix Aktivität Kinderkrippe/-garten;Nachfrage;Oberbezirk;;;Activity_K_OBB;2;DATEN;;;;;;;;;;K;;;0;0;0;;
 706;Activity_M;Gesamtzahl der Wege zu Aktivität weiterführende Schule;Nachfrage;Bezirk;;;Activity_M;2;DATEN;;;;;;;;;;M;;;0;0;0;;
-806;VL_Activity_M;Fahrleistung Aktivität weiterführende Schule;Nachfrage;Bezirk;;;VL_Activity_M;2;FORMEL;Matrix([CODE] = "Activity_M")*Matrix([CODE] = "DIS");;;;;;;;;M;;;0;0;0;;
+806;VL_Activity_M;Fahrleistung Aktivität weiterführende Schule;Nachfrage;Bezirk;;;VL_Activity_M;2;FORMEL;Matrix([CODE] = "Activity_M")*Matrix([CODE] = "KM");;;;;;;;;M;;;0;0;0;;
 906;Activity_M_OBB;Oberbezirks-Matrix Aktivität weiterführende Schule;Nachfrage;Oberbezirk;;;Activity_M_OBB;2;DATEN;;;;;;;;;;M;;;0;0;0;;
 781;Pendler_M_OBB;Oberbezirks-Matrix Pendleraktivität weiterführende Schule;Nachfrage;Oberbezirk;;;Pendler_M_OBB;2;DATEN;;;;;;;;;;M;;;0;0;0;;
 707;Activity_O;Gesamtzahl der Wege zu Aktivität Öffentliche Einrichtung;Nachfrage;Bezirk;;;Activity_O;2;DATEN;;;;;;;;;;O;;;0;0;0;;
-807;VL_Activity_O;Fahrleistung Aktivität Öffentliche Einrichtung;Nachfrage;Bezirk;;;VL_Activity_O;2;FORMEL;Matrix([CODE] = "Activity_O")*Matrix([CODE] = "DIS");;;;;;;;;O;;;0;0;0;;
+807;VL_Activity_O;Fahrleistung Aktivität Öffentliche Einrichtung;Nachfrage;Bezirk;;;VL_Activity_O;2;FORMEL;Matrix([CODE] = "Activity_O")*Matrix([CODE] = "KM");;;;;;;;;O;;;0;0;0;;
 907;Activity_O_OBB;Oberbezirks-Matrix Aktivität Öffentliche Einrichtung;Nachfrage;Oberbezirk;;;Activity_O_OBB;2;DATEN;;;;;;;;;;O;;;0;0;0;;
 708;Activity_R;Gesamtzahl der Wege zu Aktivität Gaststätte/Kneipe;Nachfrage;Bezirk;;;Activity_R;2;DATEN;;;;;;;;;;R;;;0;0;0;;
-808;VL_Activity_R;Fahrleistung Aktivität Gaststätte/Kneipe;Nachfrage;Bezirk;;;VL_Activity_R;2;FORMEL;Matrix([CODE] = "Activity_R")*Matrix([CODE] = "DIS");;;;;;;;;R;;;0;0;0;;
+808;VL_Activity_R;Fahrleistung Aktivität Gaststätte/Kneipe;Nachfrage;Bezirk;;;VL_Activity_R;2;FORMEL;Matrix([CODE] = "Activity_R")*Matrix([CODE] = "KM");;;;;;;;;R;;;0;0;0;;
 908;Activity_R_OBB;Oberbezirks-Matrix Aktivität Gaststätte/Kneipe;Nachfrage;Oberbezirk;;;Activity_R_OBB;2;DATEN;;;;;;;;;;R;;;0;0;0;;
 709;Activity_S;Gesamtzahl der Wege zu Aktivität Sportstätte;Nachfrage;Bezirk;;;Activity_S;2;DATEN;;;;;;;;;;S;;;0;0;0;;
-809;VL_Activity_S;Fahrleistung Aktivität Sportstätte;Nachfrage;Bezirk;;;VL_Activity_S;2;FORMEL;Matrix([CODE] = "Activity_S")*Matrix([CODE] = "DIS");;;;;;;;;S;;;0;0;0;;
+809;VL_Activity_S;Fahrleistung Aktivität Sportstätte;Nachfrage;Bezirk;;;VL_Activity_S;2;FORMEL;Matrix([CODE] = "Activity_S")*Matrix([CODE] = "KM");;;;;;;;;S;;;0;0;0;;
 909;Activity_S_OBB;Oberbezirks-Matrix Aktivität Sportstätte;Nachfrage;Oberbezirk;;;Activity_S_OBB;2;DATEN;;;;;;;;;;S;;;0;0;0;;
 710;Activity_T;Gesamtzahl der Wege zu Aktivität Kultur, Theater, Kino;Nachfrage;Bezirk;;;Activity_T;2;DATEN;;;;;;;;;;T;;;0;0;0;;
-810;VL_Activity_T;Fahrleistung Aktivität Kultur, Theater, Kino;Nachfrage;Bezirk;;;VL_Activity_T;2;FORMEL;Matrix([CODE] = "Activity_T")*Matrix([CODE] = "DIS");;;;;;;;;T;;;0;0;0;;
+810;VL_Activity_T;Fahrleistung Aktivität Kultur, Theater, Kino;Nachfrage;Bezirk;;;VL_Activity_T;2;FORMEL;Matrix([CODE] = "Activity_T")*Matrix([CODE] = "KM");;;;;;;;;T;;;0;0;0;;
 910;Activity_T_OBB;Oberbezirks-Matrix Aktivität Kultur, Theater, Kino;Nachfrage;Oberbezirk;;;Activity_T_OBB;2;DATEN;;;;;;;;;;T;;;0;0;0;;
 711;Activity_U;Gesamtzahl der Wege zu Aktivität andere Bildungseinrichtung;Nachfrage;Bezirk;;;Activity_U;2;DATEN;;;;;;;;;;U;;;0;0;0;;
-811;VL_Activity_U;Fahrleistung Aktivität andere Bildungseinrichtung;Nachfrage;Bezirk;;;VL_Activity_U;2;FORMEL;Matrix([CODE] = "Activity_U")*Matrix([CODE] = "DIS");;;;;;;;;U;;;0;0;0;;
+811;VL_Activity_U;Fahrleistung Aktivität andere Bildungseinrichtung;Nachfrage;Bezirk;;;VL_Activity_U;2;FORMEL;Matrix([CODE] = "Activity_U")*Matrix([CODE] = "KM");;;;;;;;;U;;;0;0;0;;
 911;Activity_U_OBB;Oberbezirks-Matrix Aktivität andere Bildungseinrichtung;Nachfrage;Oberbezirk;;;Activity_U_OBB;2;DATEN;;;;;;;;;;U;;;0;0;0;;
 782;Pendler_U_OBB;Oberbezirks-Matrix Pendleraktivität andere Bildungseinrichtung;Nachfrage;Oberbezirk;;;Pendler_U_OBB;2;DATEN;;;;;;;;;;U;;;0;0;0;;
 712;Activity_V;Gesamtzahl der Wege zu Aktivität Einkauf täglicher Bedarf;Nachfrage;Bezirk;;;Activity_V;2;DATEN;;;;;;;;;;V;;;0;0;0;;
-812;VL_Activity_V;Fahrleistung Aktivität Einkauf täglicher Bedarf;Nachfrage;Bezirk;;;VL_Activity_V;2;FORMEL;Matrix([CODE] = "Activity_V")*Matrix([CODE] = "DIS");;;;;;;;;V;;;0;0;0;;
+812;VL_Activity_V;Fahrleistung Aktivität Einkauf täglicher Bedarf;Nachfrage;Bezirk;;;VL_Activity_V;2;FORMEL;Matrix([CODE] = "Activity_V")*Matrix([CODE] = "KM");;;;;;;;;V;;;0;0;0;;
 912;Activity_V_OBB;Oberbezirks-Matrix Aktivität Einkauf täglicher Bedarf;Nachfrage;Oberbezirk;;;Activity_V_OBB;2;DATEN;;;;;;;;;;V;;;0;0;0;;
 713;Activity_W;Gesamtzahl der Wege zu Aktivität Eigene Wohnung;Nachfrage;Bezirk;;;Activity_W;2;DATEN;;;;;;;;;;W;;;0;0;0;;
-813;VL_Activity_W;Fahrleistung Aktivität Eigene Wohnung;Nachfrage;Bezirk;;;VL_Activity_W;2;FORMEL;Matrix([CODE] = "Activity_W")*Matrix([CODE] = "DIS");;;;;;;;;W;;;0;0;0;;
+813;VL_Activity_W;Fahrleistung Aktivität Eigene Wohnung;Nachfrage;Bezirk;;;VL_Activity_W;2;FORMEL;Matrix([CODE] = "Activity_W")*Matrix([CODE] = "KM");;;;;;;;;W;;;0;0;0;;
 913;Activity_W_OBB;Oberbezirks-Matrix Aktivität Eigene Wohnung;Nachfrage;Oberbezirk;;;Activity_W_OBB;2;DATEN;;;;;;;;;;W;;;0;0;0;;
 714;Activity_Z;Gesamtzahl der Wege zu Aktivität Berufsschule;Nachfrage;Bezirk;;;Activity_Z;2;DATEN;;;;;;;;;;Z;;;0;0;0;;
-814;VL_Activity_Z;Fahrleistung Aktivität Berufsschule;Nachfrage;Bezirk;;;VL_Activity_Z;2;FORMEL;Matrix([CODE] = "Activity_Z")*Matrix([CODE] = "DIS");;;;;;;;;Z;;;0;0;0;;
+814;VL_Activity_Z;Fahrleistung Aktivität Berufsschule;Nachfrage;Bezirk;;;VL_Activity_Z;2;FORMEL;Matrix([CODE] = "Activity_Z")*Matrix([CODE] = "KM");;;;;;;;;Z;;;0;0;0;;
 914;Activity_Z_OBB;Oberbezirks-Matrix Aktivität Berufsschule;Nachfrage;Oberbezirk;;;Activity_Z_OBB;2;DATEN;;;;;;;;;;Z;;;0;0;0;;
 783;Pendler_Z_OBB;Oberbezirks-Matrix Pendleraktivität Berufsschule;Nachfrage;Oberbezirk;;;Pendler_Z_OBB;2;DATEN;;;;;;;;;;Z;;;0;0;0;;
 715;Activity_Y;Gesamtzahl der Wege zu Aktivität Fernpendler;Nachfrage;Bezirk;;;Activity_Y;2;DATEN;;;;;;;;;;Y;;;0;0;0;;
-815;VL_Activity_Y;Fahrleistung Aktivität Fernpendler;Nachfrage;Bezirk;;;VL_Activity_Y;2;FORMEL;Matrix([CODE] = "Activity_Y")*Matrix([CODE] = "DIS");;;;;;;;;Y;;;0;0;0;;
+815;VL_Activity_Y;Fahrleistung Aktivität Fernpendler;Nachfrage;Bezirk;;;VL_Activity_Y;2;FORMEL;Matrix([CODE] = "Activity_Y")*Matrix([CODE] = "KM");;;;;;;;;Y;;;0;0;0;;
 915;Activity_Y_OBB;Oberbezirks-Matrix Aktivität Fernpendler;Nachfrage;Oberbezirk;;;Activity_Y_OBB;2;DATEN;;;;;;;;;;Y;;;0;0;0;;
 784;Pendler_Y_OBB;Oberbezirks-Matrix Pendleraktivität Fernpendler;Nachfrage;Oberbezirk;;;Pendler_Y_OBB;2;DATEN;;;;;;;;;;Y;;;0;0;0;;
 716;Activity_I;Gesamtzahl der Wege zu Aktivität Baumarkt_KfzHandel;Nachfrage;Bezirk;;;Activity_I;2;DATEN;;;;;;;;;;I;;;0;0;0;;
-816;VL_Activity_I;Fahrleistung Aktivität Baumarkt_KfzHandel;Nachfrage;Bezirk;;;VL_Activity_I;2;FORMEL;Matrix([CODE] = "Activity_I")*Matrix([CODE] = "DIS");;;;;;;;;I;;;0;0;0;;
+816;VL_Activity_I;Fahrleistung Aktivität Baumarkt_KfzHandel;Nachfrage;Bezirk;;;VL_Activity_I;2;FORMEL;Matrix([CODE] = "Activity_I")*Matrix([CODE] = "KM");;;;;;;;;I;;;0;0;0;;
 916;Activity_I_OBB;Oberbezirks-Matrix Aktivität Baumarkt_KfzHandel;Nachfrage;Oberbezirk;;;Activity_I_OBB;2;DATEN;;;;;;;;;;I;;;0;0;0;;
 717;Activity_J;Gesamtzahl der Wege zu Aktivität Möbel;Nachfrage;Bezirk;;;Activity_J;2;DATEN;;;;;;;;;;J;;;0;0;0;;
-817;VL_Activity_J;Fahrleistung Aktivität Möbel;Nachfrage;Bezirk;;;VL_Activity_J;2;FORMEL;Matrix([CODE] = "Activity_J")*Matrix([CODE] = "DIS");;;;;;;;;J;;;0;0;0;;
+817;VL_Activity_J;Fahrleistung Aktivität Möbel;Nachfrage;Bezirk;;;VL_Activity_J;2;FORMEL;Matrix([CODE] = "Activity_J")*Matrix([CODE] = "KM");;;;;;;;;J;;;0;0;0;;
 917;Activity_J_OBB;Oberbezirks-Matrix Aktivität Möbel;Nachfrage;Oberbezirk;;;Activity_J_OBB;2;DATEN;;;;;;;;;;J;;;0;0;0;;
 718;AllActivity_A;Gesamtzahl der Gesamtwege zu Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;AllActivity_A;2;DATEN;;;;;;;;;;A;;;0;1;0;;
 785;Pendler_A;Gesamtzahl der PendlerGesamtwege zu Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;Pendler_A;2;DATEN;;;;;;;;;;A;;;0;1;0;;
@@ -1978,31 +1978,40 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 1010;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
 1011;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
 1012;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1013;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1014;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1015;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1016;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1017;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1018;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1019;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1020;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1021;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1022;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1023;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1024;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1025;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1026;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1027;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
-1028;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;
-1029;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;
-1030;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;
-1031;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;
-1032;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;
-1033;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;
+1013;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1014;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1015;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1016;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1017;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1018;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1019;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1020;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1021;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1022;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1023;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1024;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1025;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1026;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1027;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1028;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1029;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1030;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1031;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1032;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1033;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;
+1034;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;
+1035;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;
+1036;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;
+1037;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;
+1038;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;
+1039;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;
+1040;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;
 1000;No_Connection_Forward;Keine ÖV-Verbindung in Zeitscheibe Hinweg;Kenngröße;Bezirk;Xg;;No_Connection_Forward;2;FORMEL;;;;;;O;;;;;;;0;0;0;;
 1001;No_Connection_Backward;Keine ÖV-Verbindung in Zeitscheibe Rückweg;Kenngröße;Bezirk;Xg;;No_Connection_Backward;2;FORMEL;;;;;;O;;;;;;;0;0;0;;
 1002;weighted_skim_matrix;Empfundene Reisezeit incl. SWZ, mit Aktivitäten gewichtet;Kenngröße;Bezirk;Xg;;weighted_skim_matrix;2;FORMEL;;;;;;O;;;;;;;0;0;0;;
 200;SINGLETICKET;Fahrpreis Einzelticket;Kenngröße;Bezirk;Xg;;Singelticket;2;DATEN;;;;;;O;;;;;;;0;0;1;;
+201;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;
+202;OVDIS;OV Reiseweite;Kenngröße;Bezirk;Xg;;OVDIS;2;DATEN;;;;;;O;;;;;;;0;0;1;;
 1003;PJT_All;Empfundene Reisezeit alle Aktivitäten;Kenngröße;Bezirk;Xg;;PJT_All;2;FORMEL;((Matrix([CODE] = "PJT" & [FROMTIME]=21600 & [TOTIME]=32400) + 0.8 * POW((Matrix([CODE] = "XADT" & [FROMTIME]=21600 & [TOTIME]=32400) * 4 + 1) , 0.8)) + TRANSPOSE(Matrix([CODE] = "PJT" & [FROMTIME]=21600 & [TOTIME]=32400) + 0.8 * POW((Matrix([CODE] = "XADT" & [FROMTIME]=21600 & [TOTIME]=32400) * 4 + 1) , 0.8))) * 0.5;;;;;;;;;;;;0;0;0;;
 110;DIS;Fahrweite Pkw;Kenngröße;Bezirk;Pkw;;DIS;2;DATEN;;;;;;;;;;;;;0;0;1;;
 111;TFUSS;tFuss;Kenngröße;Bezirk;F;;TFUSS;2;DATEN;;;;;;F;;;;;;;0;0;1;;
@@ -2011,6 +2020,8 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 114;TTC;tAkt Pkw;Kenngröße;Bezirk;Pkw;;TTC;2;DATEN;;;;;;;;;;;;;0;0;1;;
 115;TTC_boxcox;tAkt Pkw BoxCox-Transformiert;Kenngröße;Bezirk;Pkw;;TTC_boxcox;2;DATEN;;;;;;P;;;;;;;0;0;1;;
 116;PkwKosten;Pkw Fahrtkosten;Kenngröße;Bezirk;Pkw;;PkwKosten;2;FORMEL;Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw") * [COST_PER_KM_PKW];;;;;;;;;;;;0;0;0;;
+117;SFUSS;sFuss;Kenngröße;Bezirk;F;;SFUSS;2;FORMEL;Matrix([CODE] = "TFUSS") * 4.5 / 60;;;;;F;;;;;;;0;0;0;;
+118;KM;Reiseweite;Kenngröße;Bezirk;;;KM;2;FORMEL;If (Matrix([CODE] = "TFUSS") > 100.0 ,If(Matrix([CODE] = "TRAD") < 999.0 ,Matrix([CODE] = "TRAD") * 16 / 60.0,Matrix([CODE] = "DIS")),Matrix([CODE] = "SFUSS"));;;;;;;;;;;;0;0;0;;
 1;Visem_P;Pkw regional;Nachfrage;Bezirk;Pkw;;Visem_P;2;DATEN;;;;;;P;;;;;;;0;0;1;;
 30;Pkw_Wirtschaftsverkehr;Pkw-Wirtschaftsverkehr;Nachfrage;Bezirk;B_P;;Pkw_Wirtschaftsverkehr;2;DATEN;;;;;;P;;;;;;;0;0;1;;
 31;Lieferfahrzeuge;Lieferfahrzeuge;Nachfrage;Bezirk;B_Li;;Lieferfahrzeuge;2;DATEN;;;;;;P;;;;;;;0;0;1;;
@@ -2038,12 +2049,12 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 16;Demand_O_OBB;Fahrten OV Regionsbewohner Oberbezirk;Nachfrage;Oberbezirk;;;Demand_O_OBB;2;DATEN;;;;;;O;;;;;;;0;0;0;;
 17;Demand_M_OBB;Fahrten PkwMitfahrer Regionsbewohner Oberbezirk;Nachfrage;Oberbezirk;;;Demand_M_OBB;2;DATEN;;;;;;M;;;;;;;0;0;0;;
 18;Demand_P_OBB;Fahrten PkwFahrer Regionsbewohner Oberbezirk;Nachfrage;Oberbezirk;;;Demand_P_OBB;2;DATEN;;;;;;P;;;;;;;0;0;0;;
-6100;VL_F;Verkehrsleistung incl. EinpendlerFuss;Nachfrage;Bezirk;;;VL_F;2;FORMEL;Matrix([CODE]="Visem_F") * Matrix([CODE]="DIS");;;;;F;;;;;;;0;0;0;;
-6101;VL_Region_F;Verkehrsleistung ohne Einpendler Fuss;Nachfrage;Bezirk;;;VL_Region_F;2;FORMEL;Matrix([CODE]="Demand_F") * Matrix([CODE]="DIS");;;;;F;;;;;;;0;0;0;;
-6102;VL_R;Verkehrsleistung incl. EinpendlerRad;Nachfrage;Bezirk;;;VL_R;2;FORMEL;Matrix([CODE]="Visem_R") * Matrix([CODE]="DIS");;;;;R;;;;;;;0;0;0;;
-6103;VL_Region_R;Verkehrsleistung ohne Einpendler Rad;Nachfrage;Bezirk;;;VL_Region_R;2;FORMEL;Matrix([CODE]="Demand_R") * Matrix([CODE]="DIS");;;;;R;;;;;;;0;0;0;;
-6104;VL_O;Verkehrsleistung incl. EinpendlerOV;Nachfrage;Bezirk;;;VL_O;2;FORMEL;Matrix([CODE]="Visem_O") * Matrix([CODE]="DIS");;;;;O;;;;;;;0;0;0;;
-6105;VL_Region_O;Verkehrsleistung ohne Einpendler OV;Nachfrage;Bezirk;;;VL_Region_O;2;FORMEL;Matrix([CODE]="Demand_O") * Matrix([CODE]="DIS");;;;;O;;;;;;;0;0;0;;
+6100;VL_F;Verkehrsleistung incl. EinpendlerFuss;Nachfrage;Bezirk;;;VL_F;2;FORMEL;Matrix([CODE]="Visem_F") * Matrix([CODE]="KM");;;;;F;;;;;;;0;0;0;;
+6101;VL_Region_F;Verkehrsleistung ohne Einpendler Fuss;Nachfrage;Bezirk;;;VL_Region_F;2;FORMEL;Matrix([CODE]="Demand_F") * Matrix([CODE]="KM");;;;;F;;;;;;;0;0;0;;
+6102;VL_R;Verkehrsleistung incl. EinpendlerRad;Nachfrage;Bezirk;;;VL_R;2;FORMEL;Matrix([CODE]="Visem_R") * Matrix([CODE]="KM");;;;;R;;;;;;;0;0;0;;
+6103;VL_Region_R;Verkehrsleistung ohne Einpendler Rad;Nachfrage;Bezirk;;;VL_Region_R;2;FORMEL;Matrix([CODE]="Demand_R") * Matrix([CODE]="KM");;;;;R;;;;;;;0;0;0;;
+6104;VL_O;Verkehrsleistung incl. EinpendlerOV;Nachfrage;Bezirk;;;VL_O;2;FORMEL;Matrix([CODE]="Visem_O") * Matrix([CODE]="OVDIS");;;;;O;;;;;;;0;0;0;;
+6105;VL_Region_O;Verkehrsleistung ohne Einpendler OV;Nachfrage;Bezirk;;;VL_Region_O;2;FORMEL;Matrix([CODE]="Demand_O") * Matrix([CODE]="OVDIS");;;;;O;;;;;;;0;0;0;;
 6106;VL_M;Verkehrsleistung incl. EinpendlerPkwMitfahrer;Nachfrage;Bezirk;;;VL_M;2;FORMEL;Matrix([CODE]="Visem_M") * Matrix([CODE]="DIS");;;;;M;;;;;;;0;0;0;;
 6107;VL_Region_M;Verkehrsleistung ohne Einpendler PkwMitfahrer;Nachfrage;Bezirk;;;VL_Region_M;2;FORMEL;Matrix([CODE]="Demand_M") * Matrix([CODE]="DIS");;;;;M;;;;;;;0;0;0;;
 6108;VL_P;Verkehrsleistung incl. EinpendlerPkwFahrer;Nachfrage;Bezirk;;;VL_P;2;FORMEL;Matrix([CODE]="Visem_P") * Matrix([CODE]="DIS");;;;;P;;;;;;;0;0;0;;

@@ -1,5 +1,5 @@
 <?xml  version = "1.0"  encoding = "UTF-8"?>
-<PROCEDURES  VERSION = "19">
+<PROCEDURES  VERSION = "20">
   <OPERATIONS>
     <OPERATION
       NO = "1"
@@ -233,6 +233,12 @@
             />            
             <SINGLESKIMMATRIXPARA
               NAME = "FARE"
+              CALCULATE = "1"
+              SAVETOFILE = "0"
+              OPEN = "0"
+            />            
+            <SINGLESKIMMATRIXPARA
+              NAME = "JOURNEYDIST"
               CALCULATE = "1"
               SAVETOFILE = "0"
               OPEN = "0"
@@ -605,6 +611,12 @@
               OPEN = "0"
             />            
             <SINGLESKIMMATRIXPARA
+              NAME = "JOURNEYDIST"
+              CALCULATE = "1"
+              SAVETOFILE = "0"
+              OPEN = "0"
+            />            
+            <SINGLESKIMMATRIXPARA
               NAME = "PERCEIVEDJOURNEYTIME"
               CALCULATE = "1"
               SAVETOFILE = "0"
@@ -967,6 +979,12 @@
             />            
             <SINGLESKIMMATRIXPARA
               NAME = "FARE"
+              CALCULATE = "1"
+              SAVETOFILE = "0"
+              OPEN = "0"
+            />            
+            <SINGLESKIMMATRIXPARA
+              NAME = "JOURNEYDIST"
               CALCULATE = "1"
               SAVETOFILE = "0"
               OPEN = "0"
@@ -1339,6 +1357,12 @@
               OPEN = "0"
             />            
             <SINGLESKIMMATRIXPARA
+              NAME = "JOURNEYDIST"
+              CALCULATE = "1"
+              SAVETOFILE = "0"
+              OPEN = "0"
+            />            
+            <SINGLESKIMMATRIXPARA
               NAME = "PERCEIVEDJOURNEYTIME"
               CALCULATE = "1"
               SAVETOFILE = "0"
@@ -1701,6 +1725,12 @@
             />            
             <SINGLESKIMMATRIXPARA
               NAME = "FARE"
+              CALCULATE = "1"
+              SAVETOFILE = "0"
+              OPEN = "0"
+            />            
+            <SINGLESKIMMATRIXPARA
+              NAME = "JOURNEYDIST"
               CALCULATE = "1"
               SAVETOFILE = "0"
               OPEN = "0"
@@ -2073,6 +2103,12 @@
               OPEN = "0"
             />            
             <SINGLESKIMMATRIXPARA
+              NAME = "JOURNEYDIST"
+              CALCULATE = "1"
+              SAVETOFILE = "0"
+              OPEN = "0"
+            />            
+            <SINGLESKIMMATRIXPARA
               NAME = "PERCEIVEDJOURNEYTIME"
               CALCULATE = "1"
               SAVETOFILE = "0"
@@ -2435,6 +2471,12 @@
             />            
             <SINGLESKIMMATRIXPARA
               NAME = "FARE"
+              CALCULATE = "1"
+              SAVETOFILE = "0"
+              OPEN = "0"
+            />            
+            <SINGLESKIMMATRIXPARA
+              NAME = "JOURNEYDIST"
               CALCULATE = "1"
               SAVETOFILE = "0"
               OPEN = "0"
