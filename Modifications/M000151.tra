@@ -14,13 +14,13 @@ $VERSION:VERSNR;FILETYPE;LANGUAGE
 * 
 $-HALTEPUNKT:NR
 39049596
-42659793
+*42659793
 
 * 
 * Tabelle: Haltestellenbereiche (gelöscht)
 * 
-$-HALTESTELLENBEREICH:NR
-16203660
+*$-HALTESTELLENBEREICH:NR
+*16203660
 
 * 
 * Tabelle: Anbindungen (gelöscht)
