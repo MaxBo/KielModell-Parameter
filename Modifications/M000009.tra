@@ -1,11 +1,11 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-08-19
+* 2017-09-14
 *
 * Tabelle: Versionsblock
 *
-$VERSION:VERSNR;FILETYPE;LANGUAGE
-10.000;Trans;DEU
+$VERSION:VERSNR;FILETYPE;LANGUAGE;UNIT
+10.0;Trans;DEU;KM
 
 *
 * Tabelle: Strukturgrößenwerte (eingefügt)
