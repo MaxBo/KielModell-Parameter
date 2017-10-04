@@ -25,6 +25,8 @@ $*MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 261;PJT_U;Empfundene Reisezeit für Hauptaktivität andere Bildungseinrichtung;Kenngröße;Bezirk;;;PJT_U;2;DATEN;;;;;;;;;;U;;;1;1;1;M;
 262;PJT_V;Empfundene Reisezeit für Hauptaktivität Einkauf täglicher Bedarf;Kenngröße;Bezirk;;;PJT_V;2;DATEN;;;;;;;;;;V;;;1;1;1;M;
 263;PJT_Z;Empfundene Reisezeit für Hauptaktivität Berufsschule;Kenngröße;Bezirk;;;PJT_Z;2;DATEN;;;;;;;;;;Z;;;1;1;1;M;
+264;PJT_I;Empfundene Reisezeit für Hauptaktivität Baumarkt;Kenngröße;Bezirk;;;PJT_I;2;DATEN;;;;;;;;;;I;;;1;1;1;M;
+265;PJT_J;Empfundene Reisezeit für Hauptaktivität Möbelkauf;Kenngröße;Bezirk;;;PJT_J;2;DATEN;;;;;;;;;;J;;;1;1;1;M;
 200;SINGLETICKET;Fahrpreis Einzelticket;Kenngröße;Bezirk;Xg;;Singelticket;2;DATEN;;;;;;O;;;;;;;1;1;1;M;
 202;OVDIS;OV Reiseweite;Kenngröße;Bezirk;Xg;;OVDIS;2;DATEN;;;;;;O;;;;;;;1;1;1;M;
 150;PARKING_A;Parkwiderstand für Hauptaktivität eigener Arbeitsplatz;Kenngröße;Bezirk;;;PARKING_A;2;DATEN;;;;;;;;;;A;;;1;1;1;M;
@@ -41,4 +43,6 @@ $*MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 161;PARKING_U;Parkwiderstand für Hauptaktivität andere Bildungseinrichtung;Kenngröße;Bezirk;;;PARKING_U;2;DATEN;;;;;;;;;;U;;;1;1;1;M;
 162;PARKING_V;Parkwiderstand für Hauptaktivität Einkauf täglicher Bedarf;Kenngröße;Bezirk;;;PARKING_V;2;DATEN;;;;;;;;;;V;;;1;1;1;M;
 163;PARKING_Z;Parkwiderstand für Hauptaktivität Berufsschule;Kenngröße;Bezirk;;;PARKING_Z;2;DATEN;;;;;;;;;;Z;;;1;1;1;M;
+164;PARKING_I;Parkwiderstand für Hauptaktivität Einkauf Baumarkt;Kenngröße;Bezirk;;;PARKING_I;2;DATEN;;;;;;;;;;I;;;1;1;1;M;
+165;PARKING_J;Parkwiderstand für Hauptaktivität Möbelkauf;Kenngröße;Bezirk;;;PARKING_J;2;DATEN;;;;;;;;;;J;;;1;1;1;M;
 

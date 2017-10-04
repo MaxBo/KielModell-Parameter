@@ -1,0 +1,23 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<FILTER  VERSIONNO = "1600">
+  <LINK
+    USEFILTER = "1"
+    COMPLEMENT = "0"
+    UNDIRECTED = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "DTVW_8000"          VALUE = "1"        />        
+      </CONDITION>
+      <CONDITION        OPERATION = "OP_AND"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "Z_VALID"          VALUE = "1"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </LINK>
+  <TERRITORY    USEFILTER = "1"    COMPLEMENT = "0">
+    <CONDITIONS>
+      <CONDITION        OPERATION = "OP_NONE"        COMPLEMENT = "0">
+        <EQUALVAL          ATTRIBUTE = "NO"          VALUE = "3"        />        
+      </CONDITION>
+    </CONDITIONS>
+  </TERRITORY>
+</FILTER>

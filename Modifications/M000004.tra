@@ -1,6 +1,6 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-08-26
+* 2017-10-04
 *
 * Tabelle: Versionsblock
 *
@@ -1777,7 +1777,11 @@ SToP_WVVW;SToP_WVVW;VisemT;WVVW;SToP_V
 * Tabelle: Benutzerdefinierte Attribute (eingefügt)
 *
 $+BENUTZERDEFATTRIBUTE:OBJID;ATTID;CODE;NAME;DATENTYP;MINWERT;MAXWERT;STANDARDWERT;STRINGSTANDARDWERT;KOMMENTAR;MAXSTRINGLAENGE;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;QUERSCHNITTSLOGIK
+Netz;DistanceKorrBisKm_OV;DistanceKorrBisKm_OV;DistanceKorrBisKm_OV;Double;MIN;MAX;3.0;;;255;3;DATEN;;SUM
+Netz;DistanceKorrFaktor_OV;DistanceKorrFaktor_OV;DistanceKorrFaktor_OV;Double;MIN;MAX;-1.5;;;255;3;DATEN;;SUM
 Bezirk;Binnendistanz_area;Binnendistanz_area;Binnendistanz_area;Double;MIN;MAX;;;geschätzte Binnendistanz in km;255;3;FORMEL;SQRT([FLAECHEKM2]) / 3;SUM
+Netz;DistanceKorrBisKm_Pkw;DistanceKorrBisKm_Pkw;DistanceKorrBisKm_Pkw;Double;MIN;MAX;1.2;;;255;3;DATEN;;SUM
+Netz;DistanceKorrFaktor_Pkw;DistanceKorrFaktor_Pkw;DistanceKorrFaktor_Pkw;Double;MIN;MAX;-5;;;255;3;DATEN;;SUM
 Netz;faktor_binnenpendler;faktor_binnenpendler;faktor_binnenpendler;Double;MIN;MAX;1.28;;;255;3;DATEN;;SUM
 Netz;faktor_einpendler;faktor_einpendler;faktor_einpendler;Double;MIN;MAX;1.430976;;;255;3;DATEN;;SUM
 Netz;faktor_auspendler;faktor_auspendler;faktor_auspendler;Double;MIN;MAX;1.27264235846709;;;255;3;DATEN;;SUM
@@ -1787,64 +1791,187 @@ Netz;faktor_auspendler;faktor_auspendler;faktor_auspendler;Double;MIN;MAX;1.2726
 *
 $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;PGRUPPENCODE;AKTIVCODE;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;INITMATRIX;SAVEMATRIX;LOADMATRIX;MATRIXFOLDER;CALIBRATIONCODE;NACHFRMODELLCODE
 700;Activity_A;Gesamtzahl der Wege zu Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;Activity_A;2;DATEN;;;;;;;;;;A;;;0;0;0;;;
-800;VL_Activity_A;Fahrleistung Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;VL_Activity_A;2;FORMEL;Matrix([CODE] = "Activity_A")*Matrix([CODE] = "KM");;;;;;;;;A;;;0;0;0;;;
+800;VL_Activity_A;Fahrleistung Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;VL_Activity_A;2;FORMEL;Matrix([CODE] = "Activity_A") * Matrix([CODE] = "KM");;;;;;;;;A;;;0;0;0;;;
 900;Activity_A_OBB;Oberbezirks-Matrix Aktivität eigener Arbeitsplatz;Nachfrage;Oberbezirk;;;Activity_A_OBB;2;DATEN;;;;;;;;;;A;;;0;0;0;;;
+850;Activity_VL_A_OBB;Oberbezirks-Matrix VL Aktivität eigener Arbeitsplatz;Nachfrage;Oberbezirk;;;Activity_VL_A_OBB;2;DATEN;;;;;;;;;;A;;;0;0;0;;;
 780;Pendler_A_OBB;Oberbezirks-Matrix Pendleraktivität eigener Arbeitsplatz;Nachfrage;Oberbezirk;;;Pendler_A_OBB;2;DATEN;;;;;;;;;;A;;;0;0;0;;;
 701;Activity_B;Gesamtzahl der Wege zu Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Bezirk;;;Activity_B;2;DATEN;;;;;;;;;;B;;;0;0;0;;;
-801;VL_Activity_B;Fahrleistung Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Bezirk;;;VL_Activity_B;2;FORMEL;Matrix([CODE] = "Activity_B")*Matrix([CODE] = "KM");;;;;;;;;B;;;0;0;0;;;
+801;VL_Activity_B;Fahrleistung Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Bezirk;;;VL_Activity_B;2;FORMEL;Matrix([CODE] = "Activity_B") * Matrix([CODE] = "KM");;;;;;;;;B;;;0;0;0;;;
 901;Activity_B_OBB;Oberbezirks-Matrix Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Oberbezirk;;;Activity_B_OBB;2;DATEN;;;;;;;;;;B;;;0;0;0;;;
+851;Activity_VL_B_OBB;Oberbezirks-Matrix VL Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Oberbezirk;;;Activity_VL_B_OBB;2;DATEN;;;;;;;;;;B;;;0;0;0;;;
 702;Activity_E;Gesamtzahl der Wege zu Aktivität sonstiger Einkauf;Nachfrage;Bezirk;;;Activity_E;2;DATEN;;;;;;;;;;E;;;0;0;0;;;
-802;VL_Activity_E;Fahrleistung Aktivität sonstiger Einkauf;Nachfrage;Bezirk;;;VL_Activity_E;2;FORMEL;Matrix([CODE] = "Activity_E")*Matrix([CODE] = "KM");;;;;;;;;E;;;0;0;0;;;
+802;VL_Activity_E;Fahrleistung Aktivität sonstiger Einkauf;Nachfrage;Bezirk;;;VL_Activity_E;2;FORMEL;Matrix([CODE] = "Activity_E") * Matrix([CODE] = "KM");;;;;;;;;E;;;0;0;0;;;
 902;Activity_E_OBB;Oberbezirks-Matrix Aktivität sonstiger Einkauf;Nachfrage;Oberbezirk;;;Activity_E_OBB;2;DATEN;;;;;;;;;;E;;;0;0;0;;;
+852;Activity_VL_E_OBB;Oberbezirks-Matrix VL Aktivität sonstiger Einkauf;Nachfrage;Oberbezirk;;;Activity_VL_E_OBB;2;DATEN;;;;;;;;;;E;;;0;0;0;;;
 703;Activity_F;Gesamtzahl der Wege zu Aktivität Erholung/Sport im Freien;Nachfrage;Bezirk;;;Activity_F;2;DATEN;;;;;;;;;;F;;;0;0;0;;;
-803;VL_Activity_F;Fahrleistung Aktivität Erholung/Sport im Freien;Nachfrage;Bezirk;;;VL_Activity_F;2;FORMEL;Matrix([CODE] = "Activity_F")*Matrix([CODE] = "KM");;;;;;;;;F;;;0;0;0;;;
+803;VL_Activity_F;Fahrleistung Aktivität Erholung/Sport im Freien;Nachfrage;Bezirk;;;VL_Activity_F;2;FORMEL;Matrix([CODE] = "Activity_F") * Matrix([CODE] = "KM");;;;;;;;;F;;;0;0;0;;;
 903;Activity_F_OBB;Oberbezirks-Matrix Aktivität Erholung/Sport im Freien;Nachfrage;Oberbezirk;;;Activity_F_OBB;2;DATEN;;;;;;;;;;F;;;0;0;0;;;
+853;Activity_VL_F_OBB;Oberbezirks-Matrix VL Aktivität Erholung/Sport im Freien;Nachfrage;Oberbezirk;;;Activity_VL_F_OBB;2;DATEN;;;;;;;;;;F;;;0;0;0;;;
 704;Activity_G;Gesamtzahl der Wege zu Aktivität Grundschule;Nachfrage;Bezirk;;;Activity_G;2;DATEN;;;;;;;;;;G;;;0;0;0;;;
-804;VL_Activity_G;Fahrleistung Aktivität Grundschule;Nachfrage;Bezirk;;;VL_Activity_G;2;FORMEL;Matrix([CODE] = "Activity_G")*Matrix([CODE] = "KM");;;;;;;;;G;;;0;0;0;;;
+804;VL_Activity_G;Fahrleistung Aktivität Grundschule;Nachfrage;Bezirk;;;VL_Activity_G;2;FORMEL;Matrix([CODE] = "Activity_G") * Matrix([CODE] = "KM");;;;;;;;;G;;;0;0;0;;;
 904;Activity_G_OBB;Oberbezirks-Matrix Aktivität Grundschule;Nachfrage;Oberbezirk;;;Activity_G_OBB;2;DATEN;;;;;;;;;;G;;;0;0;0;;;
+854;Activity_VL_G_OBB;Oberbezirks-Matrix VL Aktivität Grundschule;Nachfrage;Oberbezirk;;;Activity_VL_G_OBB;2;DATEN;;;;;;;;;;G;;;0;0;0;;;
 705;Activity_K;Gesamtzahl der Wege zu Aktivität Kinderkrippe/-garten;Nachfrage;Bezirk;;;Activity_K;2;DATEN;;;;;;;;;;K;;;0;0;0;;;
-805;VL_Activity_K;Fahrleistung Aktivität Kinderkrippe/-garten;Nachfrage;Bezirk;;;VL_Activity_K;2;FORMEL;Matrix([CODE] = "Activity_K")*Matrix([CODE] = "KM");;;;;;;;;K;;;0;0;0;;;
+805;VL_Activity_K;Fahrleistung Aktivität Kinderkrippe/-garten;Nachfrage;Bezirk;;;VL_Activity_K;2;FORMEL;Matrix([CODE] = "Activity_K") * Matrix([CODE] = "KM");;;;;;;;;K;;;0;0;0;;;
 905;Activity_K_OBB;Oberbezirks-Matrix Aktivität Kinderkrippe/-garten;Nachfrage;Oberbezirk;;;Activity_K_OBB;2;DATEN;;;;;;;;;;K;;;0;0;0;;;
+855;Activity_VL_K_OBB;Oberbezirks-Matrix VL Aktivität Kinderkrippe/-garten;Nachfrage;Oberbezirk;;;Activity_VL_K_OBB;2;DATEN;;;;;;;;;;K;;;0;0;0;;;
 706;Activity_M;Gesamtzahl der Wege zu Aktivität weiterführende Schule;Nachfrage;Bezirk;;;Activity_M;2;DATEN;;;;;;;;;;M;;;0;0;0;;;
-806;VL_Activity_M;Fahrleistung Aktivität weiterführende Schule;Nachfrage;Bezirk;;;VL_Activity_M;2;FORMEL;Matrix([CODE] = "Activity_M")*Matrix([CODE] = "KM");;;;;;;;;M;;;0;0;0;;;
+806;VL_Activity_M;Fahrleistung Aktivität weiterführende Schule;Nachfrage;Bezirk;;;VL_Activity_M;2;FORMEL;Matrix([CODE] = "Activity_M") * Matrix([CODE] = "KM");;;;;;;;;M;;;0;0;0;;;
 906;Activity_M_OBB;Oberbezirks-Matrix Aktivität weiterführende Schule;Nachfrage;Oberbezirk;;;Activity_M_OBB;2;DATEN;;;;;;;;;;M;;;0;0;0;;;
+856;Activity_VL_M_OBB;Oberbezirks-Matrix VL Aktivität weiterführende Schule;Nachfrage;Oberbezirk;;;Activity_VL_M_OBB;2;DATEN;;;;;;;;;;M;;;0;0;0;;;
 781;Pendler_M_OBB;Oberbezirks-Matrix Pendleraktivität weiterführende Schule;Nachfrage;Oberbezirk;;;Pendler_M_OBB;2;DATEN;;;;;;;;;;M;;;0;0;0;;;
 707;Activity_O;Gesamtzahl der Wege zu Aktivität Öffentliche Einrichtung;Nachfrage;Bezirk;;;Activity_O;2;DATEN;;;;;;;;;;O;;;0;0;0;;;
-807;VL_Activity_O;Fahrleistung Aktivität Öffentliche Einrichtung;Nachfrage;Bezirk;;;VL_Activity_O;2;FORMEL;Matrix([CODE] = "Activity_O")*Matrix([CODE] = "KM");;;;;;;;;O;;;0;0;0;;;
+807;VL_Activity_O;Fahrleistung Aktivität Öffentliche Einrichtung;Nachfrage;Bezirk;;;VL_Activity_O;2;FORMEL;Matrix([CODE] = "Activity_O") * Matrix([CODE] = "KM");;;;;;;;;O;;;0;0;0;;;
 907;Activity_O_OBB;Oberbezirks-Matrix Aktivität Öffentliche Einrichtung;Nachfrage;Oberbezirk;;;Activity_O_OBB;2;DATEN;;;;;;;;;;O;;;0;0;0;;;
+857;Activity_VL_O_OBB;Oberbezirks-Matrix VL Aktivität Öffentliche Einrichtung;Nachfrage;Oberbezirk;;;Activity_VL_O_OBB;2;DATEN;;;;;;;;;;O;;;0;0;0;;;
 708;Activity_R;Gesamtzahl der Wege zu Aktivität Gaststätte/Kneipe;Nachfrage;Bezirk;;;Activity_R;2;DATEN;;;;;;;;;;R;;;0;0;0;;;
-808;VL_Activity_R;Fahrleistung Aktivität Gaststätte/Kneipe;Nachfrage;Bezirk;;;VL_Activity_R;2;FORMEL;Matrix([CODE] = "Activity_R")*Matrix([CODE] = "KM");;;;;;;;;R;;;0;0;0;;;
+808;VL_Activity_R;Fahrleistung Aktivität Gaststätte/Kneipe;Nachfrage;Bezirk;;;VL_Activity_R;2;FORMEL;Matrix([CODE] = "Activity_R") * Matrix([CODE] = "KM");;;;;;;;;R;;;0;0;0;;;
 908;Activity_R_OBB;Oberbezirks-Matrix Aktivität Gaststätte/Kneipe;Nachfrage;Oberbezirk;;;Activity_R_OBB;2;DATEN;;;;;;;;;;R;;;0;0;0;;;
+858;Activity_VL_R_OBB;Oberbezirks-Matrix VL Aktivität Gaststätte/Kneipe;Nachfrage;Oberbezirk;;;Activity_VL_R_OBB;2;DATEN;;;;;;;;;;R;;;0;0;0;;;
 709;Activity_S;Gesamtzahl der Wege zu Aktivität Sportstätte;Nachfrage;Bezirk;;;Activity_S;2;DATEN;;;;;;;;;;S;;;0;0;0;;;
-809;VL_Activity_S;Fahrleistung Aktivität Sportstätte;Nachfrage;Bezirk;;;VL_Activity_S;2;FORMEL;Matrix([CODE] = "Activity_S")*Matrix([CODE] = "KM");;;;;;;;;S;;;0;0;0;;;
+809;VL_Activity_S;Fahrleistung Aktivität Sportstätte;Nachfrage;Bezirk;;;VL_Activity_S;2;FORMEL;Matrix([CODE] = "Activity_S") * Matrix([CODE] = "KM");;;;;;;;;S;;;0;0;0;;;
 909;Activity_S_OBB;Oberbezirks-Matrix Aktivität Sportstätte;Nachfrage;Oberbezirk;;;Activity_S_OBB;2;DATEN;;;;;;;;;;S;;;0;0;0;;;
+859;Activity_VL_S_OBB;Oberbezirks-Matrix VL Aktivität Sportstätte;Nachfrage;Oberbezirk;;;Activity_VL_S_OBB;2;DATEN;;;;;;;;;;S;;;0;0;0;;;
 710;Activity_T;Gesamtzahl der Wege zu Aktivität Kultur, Theater, Kino;Nachfrage;Bezirk;;;Activity_T;2;DATEN;;;;;;;;;;T;;;0;0;0;;;
-810;VL_Activity_T;Fahrleistung Aktivität Kultur, Theater, Kino;Nachfrage;Bezirk;;;VL_Activity_T;2;FORMEL;Matrix([CODE] = "Activity_T")*Matrix([CODE] = "KM");;;;;;;;;T;;;0;0;0;;;
+810;VL_Activity_T;Fahrleistung Aktivität Kultur, Theater, Kino;Nachfrage;Bezirk;;;VL_Activity_T;2;FORMEL;Matrix([CODE] = "Activity_T") * Matrix([CODE] = "KM");;;;;;;;;T;;;0;0;0;;;
 910;Activity_T_OBB;Oberbezirks-Matrix Aktivität Kultur, Theater, Kino;Nachfrage;Oberbezirk;;;Activity_T_OBB;2;DATEN;;;;;;;;;;T;;;0;0;0;;;
+860;Activity_VL_T_OBB;Oberbezirks-Matrix VL Aktivität Kultur, Theater, Kino;Nachfrage;Oberbezirk;;;Activity_VL_T_OBB;2;DATEN;;;;;;;;;;T;;;0;0;0;;;
 711;Activity_U;Gesamtzahl der Wege zu Aktivität andere Bildungseinrichtung;Nachfrage;Bezirk;;;Activity_U;2;DATEN;;;;;;;;;;U;;;0;0;0;;;
-811;VL_Activity_U;Fahrleistung Aktivität andere Bildungseinrichtung;Nachfrage;Bezirk;;;VL_Activity_U;2;FORMEL;Matrix([CODE] = "Activity_U")*Matrix([CODE] = "KM");;;;;;;;;U;;;0;0;0;;;
+811;VL_Activity_U;Fahrleistung Aktivität andere Bildungseinrichtung;Nachfrage;Bezirk;;;VL_Activity_U;2;FORMEL;Matrix([CODE] = "Activity_U") * Matrix([CODE] = "KM");;;;;;;;;U;;;0;0;0;;;
 911;Activity_U_OBB;Oberbezirks-Matrix Aktivität andere Bildungseinrichtung;Nachfrage;Oberbezirk;;;Activity_U_OBB;2;DATEN;;;;;;;;;;U;;;0;0;0;;;
+861;Activity_VL_U_OBB;Oberbezirks-Matrix VL Aktivität andere Bildungseinrichtung;Nachfrage;Oberbezirk;;;Activity_VL_U_OBB;2;DATEN;;;;;;;;;;U;;;0;0;0;;;
 782;Pendler_U_OBB;Oberbezirks-Matrix Pendleraktivität andere Bildungseinrichtung;Nachfrage;Oberbezirk;;;Pendler_U_OBB;2;DATEN;;;;;;;;;;U;;;0;0;0;;;
 712;Activity_V;Gesamtzahl der Wege zu Aktivität Einkauf täglicher Bedarf;Nachfrage;Bezirk;;;Activity_V;2;DATEN;;;;;;;;;;V;;;0;0;0;;;
-812;VL_Activity_V;Fahrleistung Aktivität Einkauf täglicher Bedarf;Nachfrage;Bezirk;;;VL_Activity_V;2;FORMEL;Matrix([CODE] = "Activity_V")*Matrix([CODE] = "KM");;;;;;;;;V;;;0;0;0;;;
+812;VL_Activity_V;Fahrleistung Aktivität Einkauf täglicher Bedarf;Nachfrage;Bezirk;;;VL_Activity_V;2;FORMEL;Matrix([CODE] = "Activity_V") * Matrix([CODE] = "KM");;;;;;;;;V;;;0;0;0;;;
 912;Activity_V_OBB;Oberbezirks-Matrix Aktivität Einkauf täglicher Bedarf;Nachfrage;Oberbezirk;;;Activity_V_OBB;2;DATEN;;;;;;;;;;V;;;0;0;0;;;
+862;Activity_VL_V_OBB;Oberbezirks-Matrix VL Aktivität Einkauf täglicher Bedarf;Nachfrage;Oberbezirk;;;Activity_VL_V_OBB;2;DATEN;;;;;;;;;;V;;;0;0;0;;;
 713;Activity_W;Gesamtzahl der Wege zu Aktivität Eigene Wohnung;Nachfrage;Bezirk;;;Activity_W;2;DATEN;;;;;;;;;;W;;;0;0;0;;;
-813;VL_Activity_W;Fahrleistung Aktivität Eigene Wohnung;Nachfrage;Bezirk;;;VL_Activity_W;2;FORMEL;Matrix([CODE] = "Activity_W")*Matrix([CODE] = "KM");;;;;;;;;W;;;0;0;0;;;
+813;VL_Activity_W;Fahrleistung Aktivität Eigene Wohnung;Nachfrage;Bezirk;;;VL_Activity_W;2;FORMEL;Matrix([CODE] = "Activity_W") * Matrix([CODE] = "KM");;;;;;;;;W;;;0;0;0;;;
 913;Activity_W_OBB;Oberbezirks-Matrix Aktivität Eigene Wohnung;Nachfrage;Oberbezirk;;;Activity_W_OBB;2;DATEN;;;;;;;;;;W;;;0;0;0;;;
+863;Activity_VL_W_OBB;Oberbezirks-Matrix VL Aktivität Eigene Wohnung;Nachfrage;Oberbezirk;;;Activity_VL_W_OBB;2;DATEN;;;;;;;;;;W;;;0;0;0;;;
 714;Activity_Z;Gesamtzahl der Wege zu Aktivität Berufsschule;Nachfrage;Bezirk;;;Activity_Z;2;DATEN;;;;;;;;;;Z;;;0;0;0;;;
-814;VL_Activity_Z;Fahrleistung Aktivität Berufsschule;Nachfrage;Bezirk;;;VL_Activity_Z;2;FORMEL;Matrix([CODE] = "Activity_Z")*Matrix([CODE] = "KM");;;;;;;;;Z;;;0;0;0;;;
+814;VL_Activity_Z;Fahrleistung Aktivität Berufsschule;Nachfrage;Bezirk;;;VL_Activity_Z;2;FORMEL;Matrix([CODE] = "Activity_Z") * Matrix([CODE] = "KM");;;;;;;;;Z;;;0;0;0;;;
 914;Activity_Z_OBB;Oberbezirks-Matrix Aktivität Berufsschule;Nachfrage;Oberbezirk;;;Activity_Z_OBB;2;DATEN;;;;;;;;;;Z;;;0;0;0;;;
+864;Activity_VL_Z_OBB;Oberbezirks-Matrix VL Aktivität Berufsschule;Nachfrage;Oberbezirk;;;Activity_VL_Z_OBB;2;DATEN;;;;;;;;;;Z;;;0;0;0;;;
 783;Pendler_Z_OBB;Oberbezirks-Matrix Pendleraktivität Berufsschule;Nachfrage;Oberbezirk;;;Pendler_Z_OBB;2;DATEN;;;;;;;;;;Z;;;0;0;0;;;
 715;Activity_Y;Gesamtzahl der Wege zu Aktivität Fernpendler;Nachfrage;Bezirk;;;Activity_Y;2;DATEN;;;;;;;;;;Y;;;0;0;0;;;
-815;VL_Activity_Y;Fahrleistung Aktivität Fernpendler;Nachfrage;Bezirk;;;VL_Activity_Y;2;FORMEL;Matrix([CODE] = "Activity_Y")*Matrix([CODE] = "KM");;;;;;;;;Y;;;0;0;0;;;
+815;VL_Activity_Y;Fahrleistung Aktivität Fernpendler;Nachfrage;Bezirk;;;VL_Activity_Y;2;FORMEL;Matrix([CODE] = "Activity_Y") * Matrix([CODE] = "KM");;;;;;;;;Y;;;0;0;0;;;
 915;Activity_Y_OBB;Oberbezirks-Matrix Aktivität Fernpendler;Nachfrage;Oberbezirk;;;Activity_Y_OBB;2;DATEN;;;;;;;;;;Y;;;0;0;0;;;
+865;Activity_VL_Y_OBB;Oberbezirks-Matrix VL Aktivität Fernpendler;Nachfrage;Oberbezirk;;;Activity_VL_Y_OBB;2;DATEN;;;;;;;;;;Y;;;0;0;0;;;
 784;Pendler_Y_OBB;Oberbezirks-Matrix Pendleraktivität Fernpendler;Nachfrage;Oberbezirk;;;Pendler_Y_OBB;2;DATEN;;;;;;;;;;Y;;;0;0;0;;;
 716;Activity_I;Gesamtzahl der Wege zu Aktivität Baumarkt_KfzHandel;Nachfrage;Bezirk;;;Activity_I;2;DATEN;;;;;;;;;;I;;;0;0;0;;;
-816;VL_Activity_I;Fahrleistung Aktivität Baumarkt_KfzHandel;Nachfrage;Bezirk;;;VL_Activity_I;2;FORMEL;Matrix([CODE] = "Activity_I")*Matrix([CODE] = "KM");;;;;;;;;I;;;0;0;0;;;
+816;VL_Activity_I;Fahrleistung Aktivität Baumarkt_KfzHandel;Nachfrage;Bezirk;;;VL_Activity_I;2;FORMEL;Matrix([CODE] = "Activity_I") * Matrix([CODE] = "KM");;;;;;;;;I;;;0;0;0;;;
 916;Activity_I_OBB;Oberbezirks-Matrix Aktivität Baumarkt_KfzHandel;Nachfrage;Oberbezirk;;;Activity_I_OBB;2;DATEN;;;;;;;;;;I;;;0;0;0;;;
+866;Activity_VL_I_OBB;Oberbezirks-Matrix VL Aktivität Baumarkt_KfzHandel;Nachfrage;Oberbezirk;;;Activity_VL_I_OBB;2;DATEN;;;;;;;;;;I;;;0;0;0;;;
 717;Activity_J;Gesamtzahl der Wege zu Aktivität Möbel;Nachfrage;Bezirk;;;Activity_J;2;DATEN;;;;;;;;;;J;;;0;0;0;;;
-817;VL_Activity_J;Fahrleistung Aktivität Möbel;Nachfrage;Bezirk;;;VL_Activity_J;2;FORMEL;Matrix([CODE] = "Activity_J")*Matrix([CODE] = "KM");;;;;;;;;J;;;0;0;0;;;
+817;VL_Activity_J;Fahrleistung Aktivität Möbel;Nachfrage;Bezirk;;;VL_Activity_J;2;FORMEL;Matrix([CODE] = "Activity_J") * Matrix([CODE] = "KM");;;;;;;;;J;;;0;0;0;;;
 917;Activity_J_OBB;Oberbezirks-Matrix Aktivität Möbel;Nachfrage;Oberbezirk;;;Activity_J_OBB;2;DATEN;;;;;;;;;;J;;;0;0;0;;;
+867;Activity_VL_J_OBB;Oberbezirks-Matrix VL Aktivität Möbel;Nachfrage;Oberbezirk;;;Activity_VL_J_OBB;2;DATEN;;;;;;;;;;J;;;0;0;0;;;
+5500;Activity_A_F;Wege mit Verkehrsmittel F der für Aktivität A;Nachfrage;Bezirk;;;Activity_A_F;2;DATEN;;;;;;F;;;;A;;;1;0;0;;;
+5501;Activity_A_R;Wege mit Verkehrsmittel R der für Aktivität A;Nachfrage;Bezirk;;;Activity_A_R;2;DATEN;;;;;;R;;;;A;;;1;0;0;;;
+5502;Activity_A_O;Wege mit Verkehrsmittel O der für Aktivität A;Nachfrage;Bezirk;;;Activity_A_O;2;DATEN;;;;;;O;;;;A;;;1;0;0;;;
+5503;Activity_A_M;Wege mit Verkehrsmittel M der für Aktivität A;Nachfrage;Bezirk;;;Activity_A_M;2;DATEN;;;;;;M;;;;A;;;1;0;0;;;
+5504;Activity_A_P;Wege mit Verkehrsmittel P der für Aktivität A;Nachfrage;Bezirk;;;Activity_A_P;2;DATEN;;;;;;P;;;;A;;;1;0;0;;;
+5505;Activity_B_F;Wege mit Verkehrsmittel F der für Aktivität B;Nachfrage;Bezirk;;;Activity_B_F;2;DATEN;;;;;;F;;;;B;;;1;0;0;;;
+5506;Activity_B_R;Wege mit Verkehrsmittel R der für Aktivität B;Nachfrage;Bezirk;;;Activity_B_R;2;DATEN;;;;;;R;;;;B;;;1;0;0;;;
+5507;Activity_B_O;Wege mit Verkehrsmittel O der für Aktivität B;Nachfrage;Bezirk;;;Activity_B_O;2;DATEN;;;;;;O;;;;B;;;1;0;0;;;
+5508;Activity_B_M;Wege mit Verkehrsmittel M der für Aktivität B;Nachfrage;Bezirk;;;Activity_B_M;2;DATEN;;;;;;M;;;;B;;;1;0;0;;;
+5509;Activity_B_P;Wege mit Verkehrsmittel P der für Aktivität B;Nachfrage;Bezirk;;;Activity_B_P;2;DATEN;;;;;;P;;;;B;;;1;0;0;;;
+5510;Activity_E_F;Wege mit Verkehrsmittel F der für Aktivität E;Nachfrage;Bezirk;;;Activity_E_F;2;DATEN;;;;;;F;;;;E;;;1;0;0;;;
+5511;Activity_E_R;Wege mit Verkehrsmittel R der für Aktivität E;Nachfrage;Bezirk;;;Activity_E_R;2;DATEN;;;;;;R;;;;E;;;1;0;0;;;
+5512;Activity_E_O;Wege mit Verkehrsmittel O der für Aktivität E;Nachfrage;Bezirk;;;Activity_E_O;2;DATEN;;;;;;O;;;;E;;;1;0;0;;;
+5513;Activity_E_M;Wege mit Verkehrsmittel M der für Aktivität E;Nachfrage;Bezirk;;;Activity_E_M;2;DATEN;;;;;;M;;;;E;;;1;0;0;;;
+5514;Activity_E_P;Wege mit Verkehrsmittel P der für Aktivität E;Nachfrage;Bezirk;;;Activity_E_P;2;DATEN;;;;;;P;;;;E;;;1;0;0;;;
+5515;Activity_F_F;Wege mit Verkehrsmittel F der für Aktivität F;Nachfrage;Bezirk;;;Activity_F_F;2;DATEN;;;;;;F;;;;F;;;1;0;0;;;
+5516;Activity_F_R;Wege mit Verkehrsmittel R der für Aktivität F;Nachfrage;Bezirk;;;Activity_F_R;2;DATEN;;;;;;R;;;;F;;;1;0;0;;;
+5517;Activity_F_O;Wege mit Verkehrsmittel O der für Aktivität F;Nachfrage;Bezirk;;;Activity_F_O;2;DATEN;;;;;;O;;;;F;;;1;0;0;;;
+5518;Activity_F_M;Wege mit Verkehrsmittel M der für Aktivität F;Nachfrage;Bezirk;;;Activity_F_M;2;DATEN;;;;;;M;;;;F;;;1;0;0;;;
+5519;Activity_F_P;Wege mit Verkehrsmittel P der für Aktivität F;Nachfrage;Bezirk;;;Activity_F_P;2;DATEN;;;;;;P;;;;F;;;1;0;0;;;
+5520;Activity_G_F;Wege mit Verkehrsmittel F der für Aktivität G;Nachfrage;Bezirk;;;Activity_G_F;2;DATEN;;;;;;F;;;;G;;;1;0;0;;;
+5521;Activity_G_R;Wege mit Verkehrsmittel R der für Aktivität G;Nachfrage;Bezirk;;;Activity_G_R;2;DATEN;;;;;;R;;;;G;;;1;0;0;;;
+5522;Activity_G_O;Wege mit Verkehrsmittel O der für Aktivität G;Nachfrage;Bezirk;;;Activity_G_O;2;DATEN;;;;;;O;;;;G;;;1;0;0;;;
+5523;Activity_G_M;Wege mit Verkehrsmittel M der für Aktivität G;Nachfrage;Bezirk;;;Activity_G_M;2;DATEN;;;;;;M;;;;G;;;1;0;0;;;
+5524;Activity_G_P;Wege mit Verkehrsmittel P der für Aktivität G;Nachfrage;Bezirk;;;Activity_G_P;2;DATEN;;;;;;P;;;;G;;;1;0;0;;;
+5525;Activity_K_F;Wege mit Verkehrsmittel F der für Aktivität K;Nachfrage;Bezirk;;;Activity_K_F;2;DATEN;;;;;;F;;;;K;;;1;0;0;;;
+5526;Activity_K_R;Wege mit Verkehrsmittel R der für Aktivität K;Nachfrage;Bezirk;;;Activity_K_R;2;DATEN;;;;;;R;;;;K;;;1;0;0;;;
+5527;Activity_K_O;Wege mit Verkehrsmittel O der für Aktivität K;Nachfrage;Bezirk;;;Activity_K_O;2;DATEN;;;;;;O;;;;K;;;1;0;0;;;
+5528;Activity_K_M;Wege mit Verkehrsmittel M der für Aktivität K;Nachfrage;Bezirk;;;Activity_K_M;2;DATEN;;;;;;M;;;;K;;;1;0;0;;;
+5529;Activity_K_P;Wege mit Verkehrsmittel P der für Aktivität K;Nachfrage;Bezirk;;;Activity_K_P;2;DATEN;;;;;;P;;;;K;;;1;0;0;;;
+5530;Activity_M_F;Wege mit Verkehrsmittel F der für Aktivität M;Nachfrage;Bezirk;;;Activity_M_F;2;DATEN;;;;;;F;;;;M;;;1;0;0;;;
+5531;Activity_M_R;Wege mit Verkehrsmittel R der für Aktivität M;Nachfrage;Bezirk;;;Activity_M_R;2;DATEN;;;;;;R;;;;M;;;1;0;0;;;
+5532;Activity_M_O;Wege mit Verkehrsmittel O der für Aktivität M;Nachfrage;Bezirk;;;Activity_M_O;2;DATEN;;;;;;O;;;;M;;;1;0;0;;;
+5533;Activity_M_M;Wege mit Verkehrsmittel M der für Aktivität M;Nachfrage;Bezirk;;;Activity_M_M;2;DATEN;;;;;;M;;;;M;;;1;0;0;;;
+5534;Activity_M_P;Wege mit Verkehrsmittel P der für Aktivität M;Nachfrage;Bezirk;;;Activity_M_P;2;DATEN;;;;;;P;;;;M;;;1;0;0;;;
+5535;Activity_O_F;Wege mit Verkehrsmittel F der für Aktivität O;Nachfrage;Bezirk;;;Activity_O_F;2;DATEN;;;;;;F;;;;O;;;1;0;0;;;
+5536;Activity_O_R;Wege mit Verkehrsmittel R der für Aktivität O;Nachfrage;Bezirk;;;Activity_O_R;2;DATEN;;;;;;R;;;;O;;;1;0;0;;;
+5537;Activity_O_O;Wege mit Verkehrsmittel O der für Aktivität O;Nachfrage;Bezirk;;;Activity_O_O;2;DATEN;;;;;;O;;;;O;;;1;0;0;;;
+5538;Activity_O_M;Wege mit Verkehrsmittel M der für Aktivität O;Nachfrage;Bezirk;;;Activity_O_M;2;DATEN;;;;;;M;;;;O;;;1;0;0;;;
+5539;Activity_O_P;Wege mit Verkehrsmittel P der für Aktivität O;Nachfrage;Bezirk;;;Activity_O_P;2;DATEN;;;;;;P;;;;O;;;1;0;0;;;
+5540;Activity_R_F;Wege mit Verkehrsmittel F der für Aktivität R;Nachfrage;Bezirk;;;Activity_R_F;2;DATEN;;;;;;F;;;;R;;;1;0;0;;;
+5541;Activity_R_R;Wege mit Verkehrsmittel R der für Aktivität R;Nachfrage;Bezirk;;;Activity_R_R;2;DATEN;;;;;;R;;;;R;;;1;0;0;;;
+5542;Activity_R_O;Wege mit Verkehrsmittel O der für Aktivität R;Nachfrage;Bezirk;;;Activity_R_O;2;DATEN;;;;;;O;;;;R;;;1;0;0;;;
+5543;Activity_R_M;Wege mit Verkehrsmittel M der für Aktivität R;Nachfrage;Bezirk;;;Activity_R_M;2;DATEN;;;;;;M;;;;R;;;1;0;0;;;
+5544;Activity_R_P;Wege mit Verkehrsmittel P der für Aktivität R;Nachfrage;Bezirk;;;Activity_R_P;2;DATEN;;;;;;P;;;;R;;;1;0;0;;;
+5545;Activity_S_F;Wege mit Verkehrsmittel F der für Aktivität S;Nachfrage;Bezirk;;;Activity_S_F;2;DATEN;;;;;;F;;;;S;;;1;0;0;;;
+5546;Activity_S_R;Wege mit Verkehrsmittel R der für Aktivität S;Nachfrage;Bezirk;;;Activity_S_R;2;DATEN;;;;;;R;;;;S;;;1;0;0;;;
+5547;Activity_S_O;Wege mit Verkehrsmittel O der für Aktivität S;Nachfrage;Bezirk;;;Activity_S_O;2;DATEN;;;;;;O;;;;S;;;1;0;0;;;
+5548;Activity_S_M;Wege mit Verkehrsmittel M der für Aktivität S;Nachfrage;Bezirk;;;Activity_S_M;2;DATEN;;;;;;M;;;;S;;;1;0;0;;;
+5549;Activity_S_P;Wege mit Verkehrsmittel P der für Aktivität S;Nachfrage;Bezirk;;;Activity_S_P;2;DATEN;;;;;;P;;;;S;;;1;0;0;;;
+5550;Activity_T_F;Wege mit Verkehrsmittel F der für Aktivität T;Nachfrage;Bezirk;;;Activity_T_F;2;DATEN;;;;;;F;;;;T;;;1;0;0;;;
+5551;Activity_T_R;Wege mit Verkehrsmittel R der für Aktivität T;Nachfrage;Bezirk;;;Activity_T_R;2;DATEN;;;;;;R;;;;T;;;1;0;0;;;
+5552;Activity_T_O;Wege mit Verkehrsmittel O der für Aktivität T;Nachfrage;Bezirk;;;Activity_T_O;2;DATEN;;;;;;O;;;;T;;;1;0;0;;;
+5553;Activity_T_M;Wege mit Verkehrsmittel M der für Aktivität T;Nachfrage;Bezirk;;;Activity_T_M;2;DATEN;;;;;;M;;;;T;;;1;0;0;;;
+5554;Activity_T_P;Wege mit Verkehrsmittel P der für Aktivität T;Nachfrage;Bezirk;;;Activity_T_P;2;DATEN;;;;;;P;;;;T;;;1;0;0;;;
+5555;Activity_U_F;Wege mit Verkehrsmittel F der für Aktivität U;Nachfrage;Bezirk;;;Activity_U_F;2;DATEN;;;;;;F;;;;U;;;1;0;0;;;
+5556;Activity_U_R;Wege mit Verkehrsmittel R der für Aktivität U;Nachfrage;Bezirk;;;Activity_U_R;2;DATEN;;;;;;R;;;;U;;;1;0;0;;;
+5557;Activity_U_O;Wege mit Verkehrsmittel O der für Aktivität U;Nachfrage;Bezirk;;;Activity_U_O;2;DATEN;;;;;;O;;;;U;;;1;0;0;;;
+5558;Activity_U_M;Wege mit Verkehrsmittel M der für Aktivität U;Nachfrage;Bezirk;;;Activity_U_M;2;DATEN;;;;;;M;;;;U;;;1;0;0;;;
+5559;Activity_U_P;Wege mit Verkehrsmittel P der für Aktivität U;Nachfrage;Bezirk;;;Activity_U_P;2;DATEN;;;;;;P;;;;U;;;1;0;0;;;
+5560;Activity_V_F;Wege mit Verkehrsmittel F der für Aktivität V;Nachfrage;Bezirk;;;Activity_V_F;2;DATEN;;;;;;F;;;;V;;;1;0;0;;;
+5561;Activity_V_R;Wege mit Verkehrsmittel R der für Aktivität V;Nachfrage;Bezirk;;;Activity_V_R;2;DATEN;;;;;;R;;;;V;;;1;0;0;;;
+5562;Activity_V_O;Wege mit Verkehrsmittel O der für Aktivität V;Nachfrage;Bezirk;;;Activity_V_O;2;DATEN;;;;;;O;;;;V;;;1;0;0;;;
+5563;Activity_V_M;Wege mit Verkehrsmittel M der für Aktivität V;Nachfrage;Bezirk;;;Activity_V_M;2;DATEN;;;;;;M;;;;V;;;1;0;0;;;
+5564;Activity_V_P;Wege mit Verkehrsmittel P der für Aktivität V;Nachfrage;Bezirk;;;Activity_V_P;2;DATEN;;;;;;P;;;;V;;;1;0;0;;;
+5565;Activity_W_F;Wege mit Verkehrsmittel F der für Aktivität W;Nachfrage;Bezirk;;;Activity_W_F;2;DATEN;;;;;;F;;;;W;;;0;0;0;;;
+5566;OBB_Activity_W_F;OBB-Wege mit Verkehrsmittel F der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_Activity_W_F;2;DATEN;;;;;;F;;;;W;;;0;0;0;;;
+818;VL_Activity_W_F;OBB-Wege mit Verkehrsmittel F der für Aktivität W;Nachfrage;Bezirk;;;VL_Activity_W_F;2;FORMEL;Matrix([CODE]="Activity_W_F") * Matrix([CODE] = "KM");;;;;F;;;;W;;;0;0;0;;;
+868;OBB_VL_Activity_W_F;OBB-Wege mit Verkehrsmittel F der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_VL_Activity_W_F;2;DATEN;;;;;;F;;;;W;;;0;0;0;;;
+5567;Activity_W_R;Wege mit Verkehrsmittel R der für Aktivität W;Nachfrage;Bezirk;;;Activity_W_R;2;DATEN;;;;;;R;;;;W;;;0;0;0;;;
+5568;OBB_Activity_W_R;OBB-Wege mit Verkehrsmittel R der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_Activity_W_R;2;DATEN;;;;;;R;;;;W;;;0;0;0;;;
+819;VL_Activity_W_R;OBB-Wege mit Verkehrsmittel R der für Aktivität W;Nachfrage;Bezirk;;;VL_Activity_W_R;2;FORMEL;Matrix([CODE]="Activity_W_R") * Matrix([CODE] = "KM");;;;;R;;;;W;;;0;0;0;;;
+869;OBB_VL_Activity_W_R;OBB-Wege mit Verkehrsmittel R der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_VL_Activity_W_R;2;DATEN;;;;;;R;;;;W;;;0;0;0;;;
+5569;Activity_W_O;Wege mit Verkehrsmittel O der für Aktivität W;Nachfrage;Bezirk;;;Activity_W_O;2;DATEN;;;;;;O;;;;W;;;0;0;0;;;
+5570;OBB_Activity_W_O;OBB-Wege mit Verkehrsmittel O der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_Activity_W_O;2;DATEN;;;;;;O;;;;W;;;0;0;0;;;
+820;VL_Activity_W_O;OBB-Wege mit Verkehrsmittel O der für Aktivität W;Nachfrage;Bezirk;;;VL_Activity_W_O;2;FORMEL;Matrix([CODE]="Activity_W_O") * Matrix([CODE] = "KM");;;;;O;;;;W;;;0;0;0;;;
+870;OBB_VL_Activity_W_O;OBB-Wege mit Verkehrsmittel O der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_VL_Activity_W_O;2;DATEN;;;;;;O;;;;W;;;0;0;0;;;
+5571;Activity_W_M;Wege mit Verkehrsmittel M der für Aktivität W;Nachfrage;Bezirk;;;Activity_W_M;2;DATEN;;;;;;M;;;;W;;;0;0;0;;;
+5572;OBB_Activity_W_M;OBB-Wege mit Verkehrsmittel M der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_Activity_W_M;2;DATEN;;;;;;M;;;;W;;;0;0;0;;;
+821;VL_Activity_W_M;OBB-Wege mit Verkehrsmittel M der für Aktivität W;Nachfrage;Bezirk;;;VL_Activity_W_M;2;FORMEL;Matrix([CODE]="Activity_W_M") * Matrix([CODE] = "KM");;;;;M;;;;W;;;0;0;0;;;
+871;OBB_VL_Activity_W_M;OBB-Wege mit Verkehrsmittel M der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_VL_Activity_W_M;2;DATEN;;;;;;M;;;;W;;;0;0;0;;;
+5573;Activity_W_P;Wege mit Verkehrsmittel P der für Aktivität W;Nachfrage;Bezirk;;;Activity_W_P;2;DATEN;;;;;;P;;;;W;;;0;0;0;;;
+5574;OBB_Activity_W_P;OBB-Wege mit Verkehrsmittel P der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_Activity_W_P;2;DATEN;;;;;;P;;;;W;;;0;0;0;;;
+822;VL_Activity_W_P;OBB-Wege mit Verkehrsmittel P der für Aktivität W;Nachfrage;Bezirk;;;VL_Activity_W_P;2;FORMEL;Matrix([CODE]="Activity_W_P") * Matrix([CODE] = "KM");;;;;P;;;;W;;;0;0;0;;;
+872;OBB_VL_Activity_W_P;OBB-Wege mit Verkehrsmittel P der für Aktivität W;Nachfrage;Oberbezirk;;;OBB_VL_Activity_W_P;2;DATEN;;;;;;P;;;;W;;;0;0;0;;;
+5575;Activity_Z_F;Wege mit Verkehrsmittel F der für Aktivität Z;Nachfrage;Bezirk;;;Activity_Z_F;2;DATEN;;;;;;F;;;;Z;;;1;0;0;;;
+5576;Activity_Z_R;Wege mit Verkehrsmittel R der für Aktivität Z;Nachfrage;Bezirk;;;Activity_Z_R;2;DATEN;;;;;;R;;;;Z;;;1;0;0;;;
+5577;Activity_Z_O;Wege mit Verkehrsmittel O der für Aktivität Z;Nachfrage;Bezirk;;;Activity_Z_O;2;DATEN;;;;;;O;;;;Z;;;1;0;0;;;
+5578;Activity_Z_M;Wege mit Verkehrsmittel M der für Aktivität Z;Nachfrage;Bezirk;;;Activity_Z_M;2;DATEN;;;;;;M;;;;Z;;;1;0;0;;;
+5579;Activity_Z_P;Wege mit Verkehrsmittel P der für Aktivität Z;Nachfrage;Bezirk;;;Activity_Z_P;2;DATEN;;;;;;P;;;;Z;;;1;0;0;;;
+5580;Activity_Y_F;Wege mit Verkehrsmittel F der für Aktivität Y;Nachfrage;Bezirk;;;Activity_Y_F;2;DATEN;;;;;;F;;;;Y;;;1;0;0;;;
+5581;Activity_Y_R;Wege mit Verkehrsmittel R der für Aktivität Y;Nachfrage;Bezirk;;;Activity_Y_R;2;DATEN;;;;;;R;;;;Y;;;1;0;0;;;
+5582;Activity_Y_O;Wege mit Verkehrsmittel O der für Aktivität Y;Nachfrage;Bezirk;;;Activity_Y_O;2;DATEN;;;;;;O;;;;Y;;;1;0;0;;;
+5583;Activity_Y_M;Wege mit Verkehrsmittel M der für Aktivität Y;Nachfrage;Bezirk;;;Activity_Y_M;2;DATEN;;;;;;M;;;;Y;;;1;0;0;;;
+5584;Activity_Y_P;Wege mit Verkehrsmittel P der für Aktivität Y;Nachfrage;Bezirk;;;Activity_Y_P;2;DATEN;;;;;;P;;;;Y;;;1;0;0;;;
+5585;Activity_I_F;Wege mit Verkehrsmittel F der für Aktivität I;Nachfrage;Bezirk;;;Activity_I_F;2;DATEN;;;;;;F;;;;I;;;1;0;0;;;
+5586;Activity_I_R;Wege mit Verkehrsmittel R der für Aktivität I;Nachfrage;Bezirk;;;Activity_I_R;2;DATEN;;;;;;R;;;;I;;;1;0;0;;;
+5587;Activity_I_O;Wege mit Verkehrsmittel O der für Aktivität I;Nachfrage;Bezirk;;;Activity_I_O;2;DATEN;;;;;;O;;;;I;;;1;0;0;;;
+5588;Activity_I_M;Wege mit Verkehrsmittel M der für Aktivität I;Nachfrage;Bezirk;;;Activity_I_M;2;DATEN;;;;;;M;;;;I;;;1;0;0;;;
+5589;Activity_I_P;Wege mit Verkehrsmittel P der für Aktivität I;Nachfrage;Bezirk;;;Activity_I_P;2;DATEN;;;;;;P;;;;I;;;1;0;0;;;
+5590;Activity_J_F;Wege mit Verkehrsmittel F der für Aktivität J;Nachfrage;Bezirk;;;Activity_J_F;2;DATEN;;;;;;F;;;;J;;;1;0;0;;;
+5591;Activity_J_R;Wege mit Verkehrsmittel R der für Aktivität J;Nachfrage;Bezirk;;;Activity_J_R;2;DATEN;;;;;;R;;;;J;;;1;0;0;;;
+5592;Activity_J_O;Wege mit Verkehrsmittel O der für Aktivität J;Nachfrage;Bezirk;;;Activity_J_O;2;DATEN;;;;;;O;;;;J;;;1;0;0;;;
+5593;Activity_J_M;Wege mit Verkehrsmittel M der für Aktivität J;Nachfrage;Bezirk;;;Activity_J_M;2;DATEN;;;;;;M;;;;J;;;1;0;0;;;
+5594;Activity_J_P;Wege mit Verkehrsmittel P der für Aktivität J;Nachfrage;Bezirk;;;Activity_J_P;2;DATEN;;;;;;P;;;;J;;;1;0;0;;;
 718;AllActivity_A;Gesamtzahl der Gesamtwege zu Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;AllActivity_A;2;DATEN;;;;;;;;;;A;;;0;1;0;;;
 785;Pendler_A;Gesamtzahl der PendlerGesamtwege zu Aktivität eigener Arbeitsplatz;Nachfrage;Bezirk;;;Pendler_A;2;DATEN;;;;;;;;;;A;;;0;1;0;;;
 719;AllActivity_B;Gesamtzahl der Gesamtwege zu Aktivität Privater Besuch (fremde Wohnun;Nachfrage;Bezirk;;;AllActivity_B;2;DATEN;;;;;;;;;;B;;;0;1;0;;;
@@ -2012,7 +2139,8 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 200;SINGLETICKET;Fahrpreis Einzelticket;Kenngröße;Bezirk;Xg;;Singelticket;2;DATEN;;;;;;O;;;;;;;0;0;1;;;
 201;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;;
 202;OVDIS;OV Reiseweite;Kenngröße;Bezirk;Xg;;OVDIS;2;DATEN;;;;;;O;;;;;;;0;0;1;;;
-1003;PJT_All;Empfundene Reisezeit alle Aktivitäten;Kenngröße;Bezirk;Xg;;PJT_All;2;FORMEL;((Matrix([CODE] = "PJT" & [FROMTIME]=21600 & [TOTIME]=32400) + 0.8 * POW((Matrix([CODE] = "XADT" & [FROMTIME]=21600 & [TOTIME]=32400) * 4 + 1) , 0.8)) + TRANSPOSE(Matrix([CODE] = "PJT" & [FROMTIME]=21600 & [TOTIME]=32400) + 0.8 * POW((Matrix([CODE] = "XADT" & [FROMTIME]=21600 & [TOTIME]=32400) * 4 + 1) , 0.8))) * 0.5;;;;;;;;;;;;0;0;0;;;
+203;DistanzKorrektur_OV;DistanzKorrektur_OV;Kenngröße;Bezirk;;;DistanzKorrektur_OV;2;FORMEL;(Matrix([CODE] = "KM") < [DistanceKorrBisKm_OV]) * [DistanceKorrFaktor_OV] * ([DistanceKorrBisKm_OV] - Matrix([CODE] = "KM"));;;;;O;;;;;;;0;0;0;;;
+1003;PJT_All;Empfundene Reisezeit alle Aktivitäten;Kenngröße;Bezirk;Xg;;PJT_All;2;FORMEL;((Matrix([CODE] = "PJT" & [FROMTIME]=21600 & [TOTIME]=32400) + 0.8 * POW((Matrix([CODE] = "XADT" & [FROMTIME]=21600 & [TOTIME]=32400) * 4 + 1), 0.8)) + TRANSPOSE(Matrix([CODE] = "PJT" & [FROMTIME]=21600 & [TOTIME]=32400) + 0.8 * POW((Matrix([CODE] = "XADT" & [FROMTIME]=21600 & [TOTIME]=32400) * 4 + 1), 0.8))) * 0.5;;;;;;;;;;;;0;0;0;;;
 110;DIS;Fahrweite Pkw;Kenngröße;Bezirk;Pkw;;DIS;2;DATEN;;;;;;;;;;;;;0;0;1;;;
 111;TFUSS;tFuss;Kenngröße;Bezirk;F;;TFUSS;2;DATEN;;;;;;F;;;;;;;0;0;1;;;
 112;TRAD;tRad;Kenngröße;Bezirk;R;;TRAD;2;DATEN;;;;;;R;;;;;;;0;0;1;;;
@@ -2022,6 +2150,7 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 116;PkwKosten;Pkw Fahrtkosten;Kenngröße;Bezirk;Pkw;;PkwKosten;2;FORMEL;Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw") * [COST_PER_KM_PKW];;;;;;;;;;;;0;0;0;;;
 117;SFUSS;sFuss;Kenngröße;Bezirk;F;;SFUSS;2;FORMEL;Matrix([CODE] = "TFUSS") * 4.5 / 60;;;;;F;;;;;;;0;0;0;;;
 118;KM;Reiseweite;Kenngröße;Bezirk;;;KM;2;FORMEL;If (Matrix([CODE] = "TFUSS") > 100.0 ,If(Matrix([CODE] = "TRAD") < 999.0 ,Matrix([CODE] = "TRAD") * 16 / 60.0,Matrix([CODE] = "DIS")),Matrix([CODE] = "SFUSS"));;;;;;;;;;;;0;0;0;;;
+119;DistanzKorrektur_Pkw;DistanzKorrektur_Pkw;Kenngröße;Bezirk;;;DistanzKorrektur_Pkw;2;FORMEL;(Matrix([CODE] = "KM") < [DistanceKorrBisKm_Pkw]) * [DistanceKorrFaktor_Pkw] * ([DistanceKorrBisKm_Pkw] - Matrix([CODE] = "KM"));;;;;P;;;;;;;0;0;0;;;
 1;Visem_P;Pkw regional;Nachfrage;Bezirk;Pkw;;Visem_P;2;DATEN;;;;;;P;;;;;;;0;0;1;;;
 30;Pkw_Wirtschaftsverkehr;Pkw-Wirtschaftsverkehr;Nachfrage;Bezirk;B_P;;Pkw_Wirtschaftsverkehr;2;DATEN;;;;;;P;;;;;;;0;0;1;;;
 31;Lieferfahrzeuge;Lieferfahrzeuge;Nachfrage;Bezirk;B_Li;;Lieferfahrzeuge;2;DATEN;;;;;;P;;;;;;;0;0;1;;;
@@ -2076,6 +2205,220 @@ AKTIVITAET;TotalTrips;TotalTrips;TotalTrips;Double;MIN;MAX;;;;255;3;FORMEL;Table
 AKTIVITAET;TripDistance;TripDistance;TripDistance;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_Activity_"+[CODE]: Mat[SUMME]) / [TotalTripsRegion];SUM
 MODUS;TripDistance;TripDistance;TripDistance;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_"+[CODE]: Mat[SUMME]) / [Trips_RegionMitEinpendler];SUM
 MODUS;TripDistanceRegion;TripDistanceRegion;TripDistanceRegion;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_Region_"+[CODE]: Mat[SUMME]) / [Trips_Region];SUM
+NETZ;Factor_Ticket_A;Factor_Ticket_A;Factor_Ticket_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="A": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_A;Factor_Cost_Mitfahrer_A;Factor_Cost_Mitfahrer_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="A": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_B;Factor_Ticket_B;Factor_Ticket_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="B": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_B;Factor_Cost_Mitfahrer_B;Factor_Cost_Mitfahrer_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="B": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_E;Factor_Ticket_E;Factor_Ticket_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="E": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_E;Factor_Cost_Mitfahrer_E;Factor_Cost_Mitfahrer_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="E": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_F;Factor_Ticket_F;Factor_Ticket_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="F": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_F;Factor_Cost_Mitfahrer_F;Factor_Cost_Mitfahrer_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="F": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_G;Factor_Ticket_G;Factor_Ticket_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="G": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_G;Factor_Cost_Mitfahrer_G;Factor_Cost_Mitfahrer_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="G": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_K;Factor_Ticket_K;Factor_Ticket_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="K": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_K;Factor_Cost_Mitfahrer_K;Factor_Cost_Mitfahrer_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="K": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_M;Factor_Ticket_M;Factor_Ticket_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="M": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_M;Factor_Cost_Mitfahrer_M;Factor_Cost_Mitfahrer_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="M": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_O;Factor_Ticket_O;Factor_Ticket_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="O": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_O;Factor_Cost_Mitfahrer_O;Factor_Cost_Mitfahrer_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="O": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_R;Factor_Ticket_R;Factor_Ticket_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="R": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_R;Factor_Cost_Mitfahrer_R;Factor_Cost_Mitfahrer_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="R": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_S;Factor_Ticket_S;Factor_Ticket_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="S": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_S;Factor_Cost_Mitfahrer_S;Factor_Cost_Mitfahrer_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="S": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_T;Factor_Ticket_T;Factor_Ticket_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="T": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_T;Factor_Cost_Mitfahrer_T;Factor_Cost_Mitfahrer_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="T": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_U;Factor_Ticket_U;Factor_Ticket_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="U": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_U;Factor_Cost_Mitfahrer_U;Factor_Cost_Mitfahrer_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="U": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_V;Factor_Ticket_V;Factor_Ticket_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="V": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_V;Factor_Cost_Mitfahrer_V;Factor_Cost_Mitfahrer_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="V": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_Z;Factor_Ticket_Z;Factor_Ticket_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="Z": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_Z;Factor_Cost_Mitfahrer_Z;Factor_Cost_Mitfahrer_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="Z": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_I;Factor_Ticket_I;Factor_Ticket_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="I": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_I;Factor_Cost_Mitfahrer_I;Factor_Cost_Mitfahrer_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="I": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Ticket_J;Factor_Ticket_J;Factor_Ticket_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="J": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Cost_Mitfahrer_J;Factor_Cost_Mitfahrer_J;Factor_Cost_Mitfahrer_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="J": Act[HRF_COST_MITFAHRER]);SUM
+BEZIRK;Distance_WohnOrt_A;Distance_WohnOrt_A;Distance_WohnOrt_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(800)] / [MATZEILENSUMME(700)];SUM
+BEZIRK;Distance_AktOrt_A;Distance_AktOrt_A;Distance_AktOrt_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(800)] / [MATSPALTENSUMME(700)];SUM
+OBERBEZIRK;Distance_WohnOrt_A;Distance_WohnOrt_A;Distance_WohnOrt_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(850)] / [MATZEILENSUMME(900)];SUM
+OBERBEZIRK;Distance_AktOrt_A;Distance_AktOrt_A;Distance_AktOrt_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(850)] / [MATSPALTENSUMME(900)];SUM
+BEZIRK;Distance_WohnOrt_B;Distance_WohnOrt_B;Distance_WohnOrt_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(801)] / [MATZEILENSUMME(701)];SUM
+BEZIRK;Distance_AktOrt_B;Distance_AktOrt_B;Distance_AktOrt_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(801)] / [MATSPALTENSUMME(701)];SUM
+OBERBEZIRK;Distance_WohnOrt_B;Distance_WohnOrt_B;Distance_WohnOrt_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(851)] / [MATZEILENSUMME(901)];SUM
+OBERBEZIRK;Distance_AktOrt_B;Distance_AktOrt_B;Distance_AktOrt_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(851)] / [MATSPALTENSUMME(901)];SUM
+BEZIRK;Distance_WohnOrt_E;Distance_WohnOrt_E;Distance_WohnOrt_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(802)] / [MATZEILENSUMME(702)];SUM
+BEZIRK;Distance_AktOrt_E;Distance_AktOrt_E;Distance_AktOrt_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(802)] / [MATSPALTENSUMME(702)];SUM
+OBERBEZIRK;Distance_WohnOrt_E;Distance_WohnOrt_E;Distance_WohnOrt_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(852)] / [MATZEILENSUMME(902)];SUM
+OBERBEZIRK;Distance_AktOrt_E;Distance_AktOrt_E;Distance_AktOrt_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(852)] / [MATSPALTENSUMME(902)];SUM
+BEZIRK;Distance_WohnOrt_F;Distance_WohnOrt_F;Distance_WohnOrt_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(803)] / [MATZEILENSUMME(703)];SUM
+BEZIRK;Distance_AktOrt_F;Distance_AktOrt_F;Distance_AktOrt_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(803)] / [MATSPALTENSUMME(703)];SUM
+OBERBEZIRK;Distance_WohnOrt_F;Distance_WohnOrt_F;Distance_WohnOrt_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(853)] / [MATZEILENSUMME(903)];SUM
+OBERBEZIRK;Distance_AktOrt_F;Distance_AktOrt_F;Distance_AktOrt_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(853)] / [MATSPALTENSUMME(903)];SUM
+BEZIRK;Distance_WohnOrt_G;Distance_WohnOrt_G;Distance_WohnOrt_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(804)] / [MATZEILENSUMME(704)];SUM
+BEZIRK;Distance_AktOrt_G;Distance_AktOrt_G;Distance_AktOrt_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(804)] / [MATSPALTENSUMME(704)];SUM
+OBERBEZIRK;Distance_WohnOrt_G;Distance_WohnOrt_G;Distance_WohnOrt_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(854)] / [MATZEILENSUMME(904)];SUM
+OBERBEZIRK;Distance_AktOrt_G;Distance_AktOrt_G;Distance_AktOrt_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(854)] / [MATSPALTENSUMME(904)];SUM
+BEZIRK;Distance_WohnOrt_K;Distance_WohnOrt_K;Distance_WohnOrt_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(805)] / [MATZEILENSUMME(705)];SUM
+BEZIRK;Distance_AktOrt_K;Distance_AktOrt_K;Distance_AktOrt_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(805)] / [MATSPALTENSUMME(705)];SUM
+OBERBEZIRK;Distance_WohnOrt_K;Distance_WohnOrt_K;Distance_WohnOrt_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(855)] / [MATZEILENSUMME(905)];SUM
+OBERBEZIRK;Distance_AktOrt_K;Distance_AktOrt_K;Distance_AktOrt_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(855)] / [MATSPALTENSUMME(905)];SUM
+BEZIRK;Distance_WohnOrt_M;Distance_WohnOrt_M;Distance_WohnOrt_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(806)] / [MATZEILENSUMME(706)];SUM
+BEZIRK;Distance_AktOrt_M;Distance_AktOrt_M;Distance_AktOrt_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(806)] / [MATSPALTENSUMME(706)];SUM
+OBERBEZIRK;Distance_WohnOrt_M;Distance_WohnOrt_M;Distance_WohnOrt_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(856)] / [MATZEILENSUMME(906)];SUM
+OBERBEZIRK;Distance_AktOrt_M;Distance_AktOrt_M;Distance_AktOrt_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(856)] / [MATSPALTENSUMME(906)];SUM
+BEZIRK;Distance_WohnOrt_O;Distance_WohnOrt_O;Distance_WohnOrt_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(807)] / [MATZEILENSUMME(707)];SUM
+BEZIRK;Distance_AktOrt_O;Distance_AktOrt_O;Distance_AktOrt_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(807)] / [MATSPALTENSUMME(707)];SUM
+OBERBEZIRK;Distance_WohnOrt_O;Distance_WohnOrt_O;Distance_WohnOrt_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(857)] / [MATZEILENSUMME(907)];SUM
+OBERBEZIRK;Distance_AktOrt_O;Distance_AktOrt_O;Distance_AktOrt_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(857)] / [MATSPALTENSUMME(907)];SUM
+BEZIRK;Distance_WohnOrt_R;Distance_WohnOrt_R;Distance_WohnOrt_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(808)] / [MATZEILENSUMME(708)];SUM
+BEZIRK;Distance_AktOrt_R;Distance_AktOrt_R;Distance_AktOrt_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(808)] / [MATSPALTENSUMME(708)];SUM
+OBERBEZIRK;Distance_WohnOrt_R;Distance_WohnOrt_R;Distance_WohnOrt_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(858)] / [MATZEILENSUMME(908)];SUM
+OBERBEZIRK;Distance_AktOrt_R;Distance_AktOrt_R;Distance_AktOrt_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(858)] / [MATSPALTENSUMME(908)];SUM
+BEZIRK;Distance_WohnOrt_S;Distance_WohnOrt_S;Distance_WohnOrt_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(809)] / [MATZEILENSUMME(709)];SUM
+BEZIRK;Distance_AktOrt_S;Distance_AktOrt_S;Distance_AktOrt_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(809)] / [MATSPALTENSUMME(709)];SUM
+OBERBEZIRK;Distance_WohnOrt_S;Distance_WohnOrt_S;Distance_WohnOrt_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(859)] / [MATZEILENSUMME(909)];SUM
+OBERBEZIRK;Distance_AktOrt_S;Distance_AktOrt_S;Distance_AktOrt_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(859)] / [MATSPALTENSUMME(909)];SUM
+BEZIRK;Distance_WohnOrt_T;Distance_WohnOrt_T;Distance_WohnOrt_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(810)] / [MATZEILENSUMME(710)];SUM
+BEZIRK;Distance_AktOrt_T;Distance_AktOrt_T;Distance_AktOrt_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(810)] / [MATSPALTENSUMME(710)];SUM
+OBERBEZIRK;Distance_WohnOrt_T;Distance_WohnOrt_T;Distance_WohnOrt_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(860)] / [MATZEILENSUMME(910)];SUM
+OBERBEZIRK;Distance_AktOrt_T;Distance_AktOrt_T;Distance_AktOrt_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(860)] / [MATSPALTENSUMME(910)];SUM
+BEZIRK;Distance_WohnOrt_U;Distance_WohnOrt_U;Distance_WohnOrt_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(811)] / [MATZEILENSUMME(711)];SUM
+BEZIRK;Distance_AktOrt_U;Distance_AktOrt_U;Distance_AktOrt_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(811)] / [MATSPALTENSUMME(711)];SUM
+OBERBEZIRK;Distance_WohnOrt_U;Distance_WohnOrt_U;Distance_WohnOrt_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(861)] / [MATZEILENSUMME(911)];SUM
+OBERBEZIRK;Distance_AktOrt_U;Distance_AktOrt_U;Distance_AktOrt_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(861)] / [MATSPALTENSUMME(911)];SUM
+BEZIRK;Distance_WohnOrt_V;Distance_WohnOrt_V;Distance_WohnOrt_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(812)] / [MATZEILENSUMME(712)];SUM
+BEZIRK;Distance_AktOrt_V;Distance_AktOrt_V;Distance_AktOrt_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(812)] / [MATSPALTENSUMME(712)];SUM
+OBERBEZIRK;Distance_WohnOrt_V;Distance_WohnOrt_V;Distance_WohnOrt_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(862)] / [MATZEILENSUMME(912)];SUM
+OBERBEZIRK;Distance_AktOrt_V;Distance_AktOrt_V;Distance_AktOrt_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(862)] / [MATSPALTENSUMME(912)];SUM
+BEZIRK;Distance_WohnOrt_W;Distance_WohnOrt_W;Distance_WohnOrt_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(813)] / [MATZEILENSUMME(713)];SUM
+BEZIRK;Distance_AktOrt_W;Distance_AktOrt_W;Distance_AktOrt_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(813)] / [MATSPALTENSUMME(713)];SUM
+OBERBEZIRK;Distance_WohnOrt_W;Distance_WohnOrt_W;Distance_WohnOrt_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(863)] / [MATZEILENSUMME(913)];SUM
+OBERBEZIRK;Distance_AktOrt_W;Distance_AktOrt_W;Distance_AktOrt_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(863)] / [MATSPALTENSUMME(913)];SUM
+BEZIRK;Distance_WohnOrt_Z;Distance_WohnOrt_Z;Distance_WohnOrt_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(814)] / [MATZEILENSUMME(714)];SUM
+BEZIRK;Distance_AktOrt_Z;Distance_AktOrt_Z;Distance_AktOrt_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(814)] / [MATSPALTENSUMME(714)];SUM
+OBERBEZIRK;Distance_WohnOrt_Z;Distance_WohnOrt_Z;Distance_WohnOrt_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(864)] / [MATZEILENSUMME(914)];SUM
+OBERBEZIRK;Distance_AktOrt_Z;Distance_AktOrt_Z;Distance_AktOrt_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(864)] / [MATSPALTENSUMME(914)];SUM
+BEZIRK;Distance_WohnOrt_Y;Distance_WohnOrt_Y;Distance_WohnOrt_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(815)] / [MATZEILENSUMME(715)];SUM
+BEZIRK;Distance_AktOrt_Y;Distance_AktOrt_Y;Distance_AktOrt_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(815)] / [MATSPALTENSUMME(715)];SUM
+OBERBEZIRK;Distance_WohnOrt_Y;Distance_WohnOrt_Y;Distance_WohnOrt_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(865)] / [MATZEILENSUMME(915)];SUM
+OBERBEZIRK;Distance_AktOrt_Y;Distance_AktOrt_Y;Distance_AktOrt_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(865)] / [MATSPALTENSUMME(915)];SUM
+BEZIRK;Distance_WohnOrt_I;Distance_WohnOrt_I;Distance_WohnOrt_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(816)] / [MATZEILENSUMME(716)];SUM
+BEZIRK;Distance_AktOrt_I;Distance_AktOrt_I;Distance_AktOrt_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(816)] / [MATSPALTENSUMME(716)];SUM
+OBERBEZIRK;Distance_WohnOrt_I;Distance_WohnOrt_I;Distance_WohnOrt_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(866)] / [MATZEILENSUMME(916)];SUM
+OBERBEZIRK;Distance_AktOrt_I;Distance_AktOrt_I;Distance_AktOrt_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(866)] / [MATSPALTENSUMME(916)];SUM
+BEZIRK;Distance_WohnOrt_J;Distance_WohnOrt_J;Distance_WohnOrt_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(817)] / [MATZEILENSUMME(717)];SUM
+BEZIRK;Distance_AktOrt_J;Distance_AktOrt_J;Distance_AktOrt_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(817)] / [MATSPALTENSUMME(717)];SUM
+OBERBEZIRK;Distance_WohnOrt_J;Distance_WohnOrt_J;Distance_WohnOrt_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(867)] / [MATZEILENSUMME(917)];SUM
+OBERBEZIRK;Distance_AktOrt_J;Distance_AktOrt_J;Distance_AktOrt_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(867)] / [MATSPALTENSUMME(917)];SUM
+MODUS;Target_MS_activity_A;Target_MS_activity_A;Target_MS_activity_A;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_A;const_activity_A;const_activity_A;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_A;Trips_activity_A;Trips_activity_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_A_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_A;TRIPS_ACTIVITY_A;TRIPS_ACTIVITY_A;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_A];SUM
+MODUS;MS_activity_A;MS_activity_A;MS_activity_A;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_A] / [NETZ\TRIPS_ACTIVITY_A];SUM
+MODUS;Target_MS_activity_B;Target_MS_activity_B;Target_MS_activity_B;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_B;const_activity_B;const_activity_B;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_B;Trips_activity_B;Trips_activity_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_B_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_B;TRIPS_ACTIVITY_B;TRIPS_ACTIVITY_B;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_B];SUM
+MODUS;MS_activity_B;MS_activity_B;MS_activity_B;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_B] / [NETZ\TRIPS_ACTIVITY_B];SUM
+MODUS;Target_MS_activity_E;Target_MS_activity_E;Target_MS_activity_E;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_E;const_activity_E;const_activity_E;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_E;Trips_activity_E;Trips_activity_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_E_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_E;TRIPS_ACTIVITY_E;TRIPS_ACTIVITY_E;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_E];SUM
+MODUS;MS_activity_E;MS_activity_E;MS_activity_E;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_E] / [NETZ\TRIPS_ACTIVITY_E];SUM
+MODUS;Target_MS_activity_F;Target_MS_activity_F;Target_MS_activity_F;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_F;const_activity_F;const_activity_F;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_F;Trips_activity_F;Trips_activity_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_F_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_F;TRIPS_ACTIVITY_F;TRIPS_ACTIVITY_F;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_F];SUM
+MODUS;MS_activity_F;MS_activity_F;MS_activity_F;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_F] / [NETZ\TRIPS_ACTIVITY_F];SUM
+MODUS;Target_MS_activity_G;Target_MS_activity_G;Target_MS_activity_G;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_G;const_activity_G;const_activity_G;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_G;Trips_activity_G;Trips_activity_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_G_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_G;TRIPS_ACTIVITY_G;TRIPS_ACTIVITY_G;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_G];SUM
+MODUS;MS_activity_G;MS_activity_G;MS_activity_G;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_G] / [NETZ\TRIPS_ACTIVITY_G];SUM
+MODUS;Target_MS_activity_K;Target_MS_activity_K;Target_MS_activity_K;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_K;const_activity_K;const_activity_K;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_K;Trips_activity_K;Trips_activity_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_K_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_K;TRIPS_ACTIVITY_K;TRIPS_ACTIVITY_K;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_K];SUM
+MODUS;MS_activity_K;MS_activity_K;MS_activity_K;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_K] / [NETZ\TRIPS_ACTIVITY_K];SUM
+MODUS;Target_MS_activity_M;Target_MS_activity_M;Target_MS_activity_M;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_M;const_activity_M;const_activity_M;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_M;Trips_activity_M;Trips_activity_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_M_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_M;TRIPS_ACTIVITY_M;TRIPS_ACTIVITY_M;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_M];SUM
+MODUS;MS_activity_M;MS_activity_M;MS_activity_M;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_M] / [NETZ\TRIPS_ACTIVITY_M];SUM
+MODUS;Target_MS_activity_O;Target_MS_activity_O;Target_MS_activity_O;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_O;const_activity_O;const_activity_O;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_O;Trips_activity_O;Trips_activity_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_O_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_O;TRIPS_ACTIVITY_O;TRIPS_ACTIVITY_O;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_O];SUM
+MODUS;MS_activity_O;MS_activity_O;MS_activity_O;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_O] / [NETZ\TRIPS_ACTIVITY_O];SUM
+MODUS;Target_MS_activity_R;Target_MS_activity_R;Target_MS_activity_R;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_R;const_activity_R;const_activity_R;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_R;Trips_activity_R;Trips_activity_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_R_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_R;TRIPS_ACTIVITY_R;TRIPS_ACTIVITY_R;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_R];SUM
+MODUS;MS_activity_R;MS_activity_R;MS_activity_R;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_R] / [NETZ\TRIPS_ACTIVITY_R];SUM
+MODUS;Target_MS_activity_S;Target_MS_activity_S;Target_MS_activity_S;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_S;const_activity_S;const_activity_S;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_S;Trips_activity_S;Trips_activity_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_S_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_S;TRIPS_ACTIVITY_S;TRIPS_ACTIVITY_S;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_S];SUM
+MODUS;MS_activity_S;MS_activity_S;MS_activity_S;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_S] / [NETZ\TRIPS_ACTIVITY_S];SUM
+MODUS;Target_MS_activity_T;Target_MS_activity_T;Target_MS_activity_T;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_T;const_activity_T;const_activity_T;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_T;Trips_activity_T;Trips_activity_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_T_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_T;TRIPS_ACTIVITY_T;TRIPS_ACTIVITY_T;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_T];SUM
+MODUS;MS_activity_T;MS_activity_T;MS_activity_T;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_T] / [NETZ\TRIPS_ACTIVITY_T];SUM
+MODUS;Target_MS_activity_U;Target_MS_activity_U;Target_MS_activity_U;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_U;const_activity_U;const_activity_U;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_U;Trips_activity_U;Trips_activity_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_U_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_U;TRIPS_ACTIVITY_U;TRIPS_ACTIVITY_U;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_U];SUM
+MODUS;MS_activity_U;MS_activity_U;MS_activity_U;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_U] / [NETZ\TRIPS_ACTIVITY_U];SUM
+MODUS;Target_MS_activity_V;Target_MS_activity_V;Target_MS_activity_V;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_V;const_activity_V;const_activity_V;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_V;Trips_activity_V;Trips_activity_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_V_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_V;TRIPS_ACTIVITY_V;TRIPS_ACTIVITY_V;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_V];SUM
+MODUS;MS_activity_V;MS_activity_V;MS_activity_V;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_V] / [NETZ\TRIPS_ACTIVITY_V];SUM
+OBERBEZIRK;MS_Home_Mode_F;MS_Home_Mode_F;MS_Home_Mode_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5566)] / [MATSPALTENSUMME(913)];SUM
+BEZIRK;MS_Home_Mode_F;MS_Home_Mode_F;MS_Home_Mode_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5565)] / [MATSPALTENSUMME(713)];SUM
+OBERBEZIRK;Distance_Home_F;Distance_Home_F;Distance_Home_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(868)] / [MATSZEILENSUMME(5566)];SUM
+BEZIRK;Distance_Home_F;Distance_Home_F;Distance_Home_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(818)] / [MATSZEILENSUMME(5565)];SUM
+OBERBEZIRK;MS_Home_Mode_R;MS_Home_Mode_R;MS_Home_Mode_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5568)] / [MATSPALTENSUMME(913)];SUM
+BEZIRK;MS_Home_Mode_R;MS_Home_Mode_R;MS_Home_Mode_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5567)] / [MATSPALTENSUMME(713)];SUM
+OBERBEZIRK;Distance_Home_R;Distance_Home_R;Distance_Home_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(869)] / [MATSZEILENSUMME(5568)];SUM
+BEZIRK;Distance_Home_R;Distance_Home_R;Distance_Home_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(819)] / [MATSZEILENSUMME(5567)];SUM
+OBERBEZIRK;MS_Home_Mode_O;MS_Home_Mode_O;MS_Home_Mode_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5570)] / [MATSPALTENSUMME(913)];SUM
+BEZIRK;MS_Home_Mode_O;MS_Home_Mode_O;MS_Home_Mode_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5569)] / [MATSPALTENSUMME(713)];SUM
+OBERBEZIRK;Distance_Home_O;Distance_Home_O;Distance_Home_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(870)] / [MATSZEILENSUMME(5570)];SUM
+BEZIRK;Distance_Home_O;Distance_Home_O;Distance_Home_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(820)] / [MATSZEILENSUMME(5569)];SUM
+OBERBEZIRK;MS_Home_Mode_M;MS_Home_Mode_M;MS_Home_Mode_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5572)] / [MATSPALTENSUMME(913)];SUM
+BEZIRK;MS_Home_Mode_M;MS_Home_Mode_M;MS_Home_Mode_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5571)] / [MATSPALTENSUMME(713)];SUM
+OBERBEZIRK;Distance_Home_M;Distance_Home_M;Distance_Home_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(871)] / [MATSZEILENSUMME(5572)];SUM
+BEZIRK;Distance_Home_M;Distance_Home_M;Distance_Home_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(821)] / [MATSZEILENSUMME(5571)];SUM
+OBERBEZIRK;MS_Home_Mode_P;MS_Home_Mode_P;MS_Home_Mode_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5574)] / [MATSPALTENSUMME(913)];SUM
+BEZIRK;MS_Home_Mode_P;MS_Home_Mode_P;MS_Home_Mode_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5573)] / [MATSPALTENSUMME(713)];SUM
+OBERBEZIRK;Distance_Home_P;Distance_Home_P;Distance_Home_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(872)] / [MATSZEILENSUMME(5574)];SUM
+BEZIRK;Distance_Home_P;Distance_Home_P;Distance_Home_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(822)] / [MATSZEILENSUMME(5573)];SUM
+MODUS;Target_MS_activity_W;Target_MS_activity_W;Target_MS_activity_W;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_W;const_activity_W;const_activity_W;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_W;Trips_activity_W;Trips_activity_W;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_W_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_W;TRIPS_ACTIVITY_W;TRIPS_ACTIVITY_W;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_W];SUM
+MODUS;MS_activity_W;MS_activity_W;MS_activity_W;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_W] / [NETZ\TRIPS_ACTIVITY_W];SUM
+MODUS;Target_MS_activity_Z;Target_MS_activity_Z;Target_MS_activity_Z;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_Z;const_activity_Z;const_activity_Z;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_Z;Trips_activity_Z;Trips_activity_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_Z_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_Z;TRIPS_ACTIVITY_Z;TRIPS_ACTIVITY_Z;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_Z];SUM
+MODUS;MS_activity_Z;MS_activity_Z;MS_activity_Z;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_Z] / [NETZ\TRIPS_ACTIVITY_Z];SUM
+MODUS;Target_MS_activity_Y;Target_MS_activity_Y;Target_MS_activity_Y;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_Y;const_activity_Y;const_activity_Y;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_Y;Trips_activity_Y;Trips_activity_Y;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_Y_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_Y;TRIPS_ACTIVITY_Y;TRIPS_ACTIVITY_Y;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_Y];SUM
+MODUS;MS_activity_Y;MS_activity_Y;MS_activity_Y;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_Y] / [NETZ\TRIPS_ACTIVITY_Y];SUM
+MODUS;Target_MS_activity_I;Target_MS_activity_I;Target_MS_activity_I;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_I;const_activity_I;const_activity_I;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_I;Trips_activity_I;Trips_activity_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_I_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_I;TRIPS_ACTIVITY_I;TRIPS_ACTIVITY_I;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_I];SUM
+MODUS;MS_activity_I;MS_activity_I;MS_activity_I;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_I] / [NETZ\TRIPS_ACTIVITY_I];SUM
+MODUS;Target_MS_activity_J;Target_MS_activity_J;Target_MS_activity_J;Double;MIN;MAX;;;;255;3;DATEN;;SUM
+MODUS;const_activity_J;const_activity_J;const_activity_J;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
+MODUS;Trips_activity_J;Trips_activity_J;Trips_activity_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_J_"+[CODE], Mat[SUM]);SUM
+Netz;TRIPS_ACTIVITY_J;TRIPS_ACTIVITY_J;TRIPS_ACTIVITY_J;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_J];SUM
+MODUS;MS_activity_J;MS_activity_J;MS_activity_J;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_J] / [NETZ\TRIPS_ACTIVITY_J];SUM
 BEZIRK;ZONE_ACTUAL_TRIPS_A;Trips_actual_to A;Actual Trips to Zone for Activity A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(785)];SUM
 BEZIRK;ZP0_A;ZP0_A;ZP0_A;Double;MIN;MAX;;;Basis-Zielpotenzial für Aktivität A;255;3;DATEN;;SUM
 BEZIRK;BF_A;BF_A;BF_A;Double;MIN;MAX;1;;Bilanzfaktor für Aktivität A;255;3;DATEN;;SUM
@@ -2108,6 +2451,40 @@ BEZIRK;ZONE_KF_Y;Zonal Korrekturfaktor Y;Zonal Korrekturfaktor for Activity Y;Do
 NETZ;NOT_CONVERGED_Y;NOT_CONVERGED_Y;Randsummenabgleich nicht konvergiert für Aktivität Y;Bool;MIN;MAX;;;;255;3;FORMEL;[MIN:BEZIRKE\ZONE_KF_Y] < 0.95 | [MAX:BEZIRKE\ZONE_KF_Y] > 1.05;SUM
 NETZ;NOT_CONVERGED_ANY_ACTIVITY;NOT_CONVERGED_ANY_ACTIVITY;Randsummenabgleich nicht konvergiert für mindestens eine Aktivität;Bool;MIN;MAX;;;;255;3;FORMEL;[NOT_CONVERGED_A] | [NOT_CONVERGED_M] | [NOT_CONVERGED_U] | [NOT_CONVERGED_Z] | [NOT_CONVERGED_Y];SUM
 NETZ;NOT_CONVERGED_MS_TRIPLENGTH;NOT_CONVERGED_MS_TRIPLENGTH;NOT_CONVERGED_MS_TRIPLENGTH;Bool;MIN;MAX;1;;Modal Split und Wegelängen sind noch nicht konvergiert;255;3;DATEN;;SUM
+Oberbezirk;kf_logsum_A;kf_logsum_A;kf_logsum_A;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_A;kf_logsum_A;kf_logsum_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_A]);SUM
+Oberbezirk;kf_logsum_B;kf_logsum_B;kf_logsum_B;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_B;kf_logsum_B;kf_logsum_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_B]);SUM
+Oberbezirk;kf_logsum_E;kf_logsum_E;kf_logsum_E;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_E;kf_logsum_E;kf_logsum_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_E]);SUM
+Oberbezirk;kf_logsum_F;kf_logsum_F;kf_logsum_F;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_F;kf_logsum_F;kf_logsum_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_F]);SUM
+Oberbezirk;kf_logsum_G;kf_logsum_G;kf_logsum_G;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_G;kf_logsum_G;kf_logsum_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_G]);SUM
+Oberbezirk;kf_logsum_K;kf_logsum_K;kf_logsum_K;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_K;kf_logsum_K;kf_logsum_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_K]);SUM
+Oberbezirk;kf_logsum_M;kf_logsum_M;kf_logsum_M;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_M;kf_logsum_M;kf_logsum_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_M]);SUM
+Oberbezirk;kf_logsum_O;kf_logsum_O;kf_logsum_O;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_O;kf_logsum_O;kf_logsum_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_O]);SUM
+Oberbezirk;kf_logsum_R;kf_logsum_R;kf_logsum_R;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_R;kf_logsum_R;kf_logsum_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_R]);SUM
+Oberbezirk;kf_logsum_S;kf_logsum_S;kf_logsum_S;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_S;kf_logsum_S;kf_logsum_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_S]);SUM
+Oberbezirk;kf_logsum_T;kf_logsum_T;kf_logsum_T;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_T;kf_logsum_T;kf_logsum_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_T]);SUM
+Oberbezirk;kf_logsum_U;kf_logsum_U;kf_logsum_U;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_U;kf_logsum_U;kf_logsum_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_U]);SUM
+Oberbezirk;kf_logsum_V;kf_logsum_V;kf_logsum_V;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_V;kf_logsum_V;kf_logsum_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_V]);SUM
+Oberbezirk;kf_logsum_Z;kf_logsum_Z;kf_logsum_Z;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_Z;kf_logsum_Z;kf_logsum_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_Z]);SUM
+Oberbezirk;kf_logsum_Y;kf_logsum_Y;kf_logsum_Y;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_Y;kf_logsum_Y;kf_logsum_Y;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_Y]);SUM
+Oberbezirk;kf_logsum_I;kf_logsum_I;kf_logsum_I;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_I;kf_logsum_I;kf_logsum_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_I]);SUM
+Oberbezirk;kf_logsum_J;kf_logsum_J;kf_logsum_J;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+Bezirk;kf_logsum_J;kf_logsum_J;kf_logsum_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MAINZONE OBB, OBB[NO]=[OBERBEZIRK_SRV], OBB[KF_LOGSUM_J]);SUM
 MODUS;Const_occupation_AZ;Const_occupation_AZ;Const_occupation_AZ;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;Trips_occupation_AZ;Trips_occupation_AZ;Trips_occupation_AZ;Double;MIN;MAX;;;Gesamtzahl der Wege der Gruppe occupation_AZ;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="occupation_AZ_"+[CODE]: Mat[SUMME]);SUM
 NETZ;Trips_occupation_AZ;Trips_occupation_AZ;Trips_occupation_AZ;Double;MIN;MAX;;;Gesamtzahl der Wege der Gruppe occupation_AZ;255;3;FORMEL;[SUM:MODI\Trips_occupation_AZ];SUM

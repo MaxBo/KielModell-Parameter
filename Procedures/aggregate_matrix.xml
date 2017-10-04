@@ -1,0 +1,393 @@
+<?xml  version = "1.0"  encoding = "UTF-8"?>
+<PROCEDURES  VERSION = "20">
+  <OPERATIONS>
+    <OPERATION
+      NO = "1"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege A"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "800"        TARGETMATRIXNO = "850"      />      
+    </OPERATION>
+
+    <OPERATION
+      NO = "2"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege B"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "801"        TARGETMATRIXNO = "851"      />      
+    </OPERATION>
+    
+    <OPERATION
+      NO = "3"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege E"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "802"        TARGETMATRIXNO = "852"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "4"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege F"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "803"        TARGETMATRIXNO = "853"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "5"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege G"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "804"        TARGETMATRIXNO = "854"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "6"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege K"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "805"        TARGETMATRIXNO = "855"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "7"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege M"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "806"        TARGETMATRIXNO = "856"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "8"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege O"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "807"        TARGETMATRIXNO = "857"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "9"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege R"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "808"        TARGETMATRIXNO = "858"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "10"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege S"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "809"        TARGETMATRIXNO = "859"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "11"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege T"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "810"        TARGETMATRIXNO = "860"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "12"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege U"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "811"        TARGETMATRIXNO = "861"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "13"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege V"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "812"        TARGETMATRIXNO = "862"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "14"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege W"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "813"        TARGETMATRIXNO = "863"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "15"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege Z"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "814"        TARGETMATRIXNO = "864"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "16"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege Y"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "815"        TARGETMATRIXNO = "865"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "17"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege I"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "816"        TARGETMATRIXNO = "866"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "18"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Wege J"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "817"        TARGETMATRIXNO = "867"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "19"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Heimwege F"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "818"        TARGETMATRIXNO = "868"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "20"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Heimwege R"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "819"        TARGETMATRIXNO = "869"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "21"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Heimwege O"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "820"        TARGETMATRIXNO = "870"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "22"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Heimwege M"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "821"        TARGETMATRIXNO = "871"      />      
+    </OPERATION>
+      
+    <OPERATION
+      NO = "23"
+      CODE = ""
+      OPERATIONTYPE = "MatrixAggregation"
+      ACTIVE = "1"
+      COMMENT = "Aggregiere Heimwege P"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <MATRIXAGGREGATEPARA        MATRIXNO = "822"        TARGETMATRIXNO = "872"      />      
+    </OPERATION>
+      
+  </OPERATIONS>
+  </PROCEDURES>
