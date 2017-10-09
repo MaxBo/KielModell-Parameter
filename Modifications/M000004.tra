@@ -1,6 +1,6 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-10-04
+* 2017-10-09
 *
 * Tabelle: Versionsblock
 *
@@ -2205,38 +2205,72 @@ AKTIVITAET;TotalTrips;TotalTrips;TotalTrips;Double;MIN;MAX;;;;255;3;FORMEL;Table
 AKTIVITAET;TripDistance;TripDistance;TripDistance;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_Activity_"+[CODE]: Mat[SUMME]) / [TotalTripsRegion];SUM
 MODUS;TripDistance;TripDistance;TripDistance;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_"+[CODE]: Mat[SUMME]) / [Trips_RegionMitEinpendler];SUM
 MODUS;TripDistanceRegion;TripDistanceRegion;TripDistanceRegion;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat: Mat[CODE]="VL_Region_"+[CODE]: Mat[SUMME]) / [Trips_Region];SUM
+AKTIVITAET;TTFACTOR_O;TTFACTOR_O;TTFACTOR_O;Double;MIN;MAX;1;;Anpassung Reisezeitkoeffizient ÖV für Aktivität;255;3;DATEN;;SUM
+AKTIVITAET;TTFACTOR_M;TTFACTOR_M;TTFACTOR_M;Double;MIN;MAX;1;;Anpassung Reisezeitkoeffizient Mitfahrer für Aktivität;255;3;DATEN;;SUM
 NETZ;Factor_Ticket_A;Factor_Ticket_A;Factor_Ticket_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="A": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_A;Factor_Time_OV_A;Factor_Time_OV_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="A": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_A;Factor_Cost_Mitfahrer_A;Factor_Cost_Mitfahrer_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="A": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_A;Factor_Time_Mitfahrer_A;Factor_Time_Mitfahrer_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="A": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_B;Factor_Ticket_B;Factor_Ticket_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="B": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_B;Factor_Time_OV_B;Factor_Time_OV_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="B": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_B;Factor_Cost_Mitfahrer_B;Factor_Cost_Mitfahrer_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="B": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_B;Factor_Time_Mitfahrer_B;Factor_Time_Mitfahrer_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="B": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_E;Factor_Ticket_E;Factor_Ticket_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="E": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_E;Factor_Time_OV_E;Factor_Time_OV_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="E": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_E;Factor_Cost_Mitfahrer_E;Factor_Cost_Mitfahrer_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="E": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_E;Factor_Time_Mitfahrer_E;Factor_Time_Mitfahrer_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="E": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_F;Factor_Ticket_F;Factor_Ticket_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="F": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_F;Factor_Time_OV_F;Factor_Time_OV_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="F": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_F;Factor_Cost_Mitfahrer_F;Factor_Cost_Mitfahrer_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="F": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_F;Factor_Time_Mitfahrer_F;Factor_Time_Mitfahrer_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="F": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_G;Factor_Ticket_G;Factor_Ticket_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="G": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_G;Factor_Time_OV_G;Factor_Time_OV_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="G": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_G;Factor_Cost_Mitfahrer_G;Factor_Cost_Mitfahrer_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="G": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_G;Factor_Time_Mitfahrer_G;Factor_Time_Mitfahrer_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="G": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_K;Factor_Ticket_K;Factor_Ticket_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="K": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_K;Factor_Time_OV_K;Factor_Time_OV_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="K": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_K;Factor_Cost_Mitfahrer_K;Factor_Cost_Mitfahrer_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="K": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_K;Factor_Time_Mitfahrer_K;Factor_Time_Mitfahrer_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="K": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_M;Factor_Ticket_M;Factor_Ticket_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="M": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_M;Factor_Time_OV_M;Factor_Time_OV_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="M": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_M;Factor_Cost_Mitfahrer_M;Factor_Cost_Mitfahrer_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="M": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_M;Factor_Time_Mitfahrer_M;Factor_Time_Mitfahrer_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="M": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_O;Factor_Ticket_O;Factor_Ticket_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="O": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_O;Factor_Time_OV_O;Factor_Time_OV_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="O": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_O;Factor_Cost_Mitfahrer_O;Factor_Cost_Mitfahrer_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="O": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_O;Factor_Time_Mitfahrer_O;Factor_Time_Mitfahrer_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="O": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_R;Factor_Ticket_R;Factor_Ticket_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="R": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_R;Factor_Time_OV_R;Factor_Time_OV_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="R": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_R;Factor_Cost_Mitfahrer_R;Factor_Cost_Mitfahrer_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="R": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_R;Factor_Time_Mitfahrer_R;Factor_Time_Mitfahrer_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="R": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_S;Factor_Ticket_S;Factor_Ticket_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="S": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_S;Factor_Time_OV_S;Factor_Time_OV_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="S": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_S;Factor_Cost_Mitfahrer_S;Factor_Cost_Mitfahrer_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="S": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_S;Factor_Time_Mitfahrer_S;Factor_Time_Mitfahrer_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="S": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_T;Factor_Ticket_T;Factor_Ticket_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="T": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_T;Factor_Time_OV_T;Factor_Time_OV_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="T": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_T;Factor_Cost_Mitfahrer_T;Factor_Cost_Mitfahrer_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="T": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_T;Factor_Time_Mitfahrer_T;Factor_Time_Mitfahrer_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="T": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_U;Factor_Ticket_U;Factor_Ticket_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="U": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_U;Factor_Time_OV_U;Factor_Time_OV_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="U": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_U;Factor_Cost_Mitfahrer_U;Factor_Cost_Mitfahrer_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="U": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_U;Factor_Time_Mitfahrer_U;Factor_Time_Mitfahrer_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="U": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_V;Factor_Ticket_V;Factor_Ticket_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="V": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_V;Factor_Time_OV_V;Factor_Time_OV_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="V": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_V;Factor_Cost_Mitfahrer_V;Factor_Cost_Mitfahrer_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="V": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_V;Factor_Time_Mitfahrer_V;Factor_Time_Mitfahrer_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="V": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_Z;Factor_Ticket_Z;Factor_Ticket_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="Z": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_Z;Factor_Time_OV_Z;Factor_Time_OV_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="Z": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_Z;Factor_Cost_Mitfahrer_Z;Factor_Cost_Mitfahrer_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="Z": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_Z;Factor_Time_Mitfahrer_Z;Factor_Time_Mitfahrer_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="Z": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_I;Factor_Ticket_I;Factor_Ticket_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="I": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_I;Factor_Time_OV_I;Factor_Time_OV_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="I": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_I;Factor_Cost_Mitfahrer_I;Factor_Cost_Mitfahrer_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="I": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_I;Factor_Time_Mitfahrer_I;Factor_Time_Mitfahrer_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="I": Act[TTFACTOR_M]);SUM
 NETZ;Factor_Ticket_J;Factor_Ticket_J;Factor_Ticket_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="J": Act[HRF_EINZEL2ZEITKARTE]);SUM
+NETZ;Factor_Time_OV_J;Factor_Time_OV_J;Factor_Time_OV_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="J": Act[TTFACTOR_O]);SUM
 NETZ;Factor_Cost_Mitfahrer_J;Factor_Cost_Mitfahrer_J;Factor_Cost_Mitfahrer_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="J": Act[HRF_COST_MITFAHRER]);SUM
+NETZ;Factor_Time_Mitfahrer_J;Factor_Time_Mitfahrer_J;Factor_Time_Mitfahrer_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(ACTIVITY Act: Act[CODE]="J": Act[TTFACTOR_M]);SUM
 BEZIRK;Distance_WohnOrt_A;Distance_WohnOrt_A;Distance_WohnOrt_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(800)] / [MATZEILENSUMME(700)];SUM
 BEZIRK;Distance_AktOrt_A;Distance_AktOrt_A;Distance_AktOrt_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(800)] / [MATSPALTENSUMME(700)];SUM
 OBERBEZIRK;Distance_WohnOrt_A;Distance_WohnOrt_A;Distance_WohnOrt_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(850)] / [MATZEILENSUMME(900)];SUM
@@ -2309,111 +2343,201 @@ BEZIRK;Distance_WohnOrt_J;Distance_WohnOrt_J;Distance_WohnOrt_J;Double;MIN;MAX;;
 BEZIRK;Distance_AktOrt_J;Distance_AktOrt_J;Distance_AktOrt_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(817)] / [MATSPALTENSUMME(717)];SUM
 OBERBEZIRK;Distance_WohnOrt_J;Distance_WohnOrt_J;Distance_WohnOrt_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(867)] / [MATZEILENSUMME(917)];SUM
 OBERBEZIRK;Distance_AktOrt_J;Distance_AktOrt_J;Distance_AktOrt_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(867)] / [MATSPALTENSUMME(917)];SUM
+BEZIRK;MS_F_Act_A;MS_F_Act_A;MS_F_Act_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5500)] / [MATSPALTENSUMME(700)];SUM
+BEZIRK;MS_R_Act_A;MS_R_Act_A;MS_R_Act_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5501)] / [MATSPALTENSUMME(700)];SUM
+BEZIRK;MS_O_Act_A;MS_O_Act_A;MS_O_Act_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5502)] / [MATSPALTENSUMME(700)];SUM
+BEZIRK;MS_M_Act_A;MS_M_Act_A;MS_M_Act_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5503)] / [MATSPALTENSUMME(700)];SUM
+BEZIRK;MS_P_Act_A;MS_P_Act_A;MS_P_Act_A;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5504)] / [MATSPALTENSUMME(700)];SUM
 MODUS;Target_MS_activity_A;Target_MS_activity_A;Target_MS_activity_A;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_A;const_activity_A;const_activity_A;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_A;Trips_activity_A;Trips_activity_A;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_A_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_A;TRIPS_ACTIVITY_A;TRIPS_ACTIVITY_A;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_A];SUM
 MODUS;MS_activity_A;MS_activity_A;MS_activity_A;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_A] / [NETZ\TRIPS_ACTIVITY_A];SUM
+BEZIRK;MS_F_Act_B;MS_F_Act_B;MS_F_Act_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5505)] / [MATSPALTENSUMME(701)];SUM
+BEZIRK;MS_R_Act_B;MS_R_Act_B;MS_R_Act_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5506)] / [MATSPALTENSUMME(701)];SUM
+BEZIRK;MS_O_Act_B;MS_O_Act_B;MS_O_Act_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5507)] / [MATSPALTENSUMME(701)];SUM
+BEZIRK;MS_M_Act_B;MS_M_Act_B;MS_M_Act_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5508)] / [MATSPALTENSUMME(701)];SUM
+BEZIRK;MS_P_Act_B;MS_P_Act_B;MS_P_Act_B;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5509)] / [MATSPALTENSUMME(701)];SUM
 MODUS;Target_MS_activity_B;Target_MS_activity_B;Target_MS_activity_B;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_B;const_activity_B;const_activity_B;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_B;Trips_activity_B;Trips_activity_B;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_B_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_B;TRIPS_ACTIVITY_B;TRIPS_ACTIVITY_B;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_B];SUM
 MODUS;MS_activity_B;MS_activity_B;MS_activity_B;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_B] / [NETZ\TRIPS_ACTIVITY_B];SUM
+BEZIRK;MS_F_Act_E;MS_F_Act_E;MS_F_Act_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5510)] / [MATSPALTENSUMME(702)];SUM
+BEZIRK;MS_R_Act_E;MS_R_Act_E;MS_R_Act_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5511)] / [MATSPALTENSUMME(702)];SUM
+BEZIRK;MS_O_Act_E;MS_O_Act_E;MS_O_Act_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5512)] / [MATSPALTENSUMME(702)];SUM
+BEZIRK;MS_M_Act_E;MS_M_Act_E;MS_M_Act_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5513)] / [MATSPALTENSUMME(702)];SUM
+BEZIRK;MS_P_Act_E;MS_P_Act_E;MS_P_Act_E;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5514)] / [MATSPALTENSUMME(702)];SUM
 MODUS;Target_MS_activity_E;Target_MS_activity_E;Target_MS_activity_E;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_E;const_activity_E;const_activity_E;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_E;Trips_activity_E;Trips_activity_E;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_E_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_E;TRIPS_ACTIVITY_E;TRIPS_ACTIVITY_E;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_E];SUM
 MODUS;MS_activity_E;MS_activity_E;MS_activity_E;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_E] / [NETZ\TRIPS_ACTIVITY_E];SUM
+BEZIRK;MS_F_Act_F;MS_F_Act_F;MS_F_Act_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5515)] / [MATSPALTENSUMME(703)];SUM
+BEZIRK;MS_R_Act_F;MS_R_Act_F;MS_R_Act_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5516)] / [MATSPALTENSUMME(703)];SUM
+BEZIRK;MS_O_Act_F;MS_O_Act_F;MS_O_Act_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5517)] / [MATSPALTENSUMME(703)];SUM
+BEZIRK;MS_M_Act_F;MS_M_Act_F;MS_M_Act_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5518)] / [MATSPALTENSUMME(703)];SUM
+BEZIRK;MS_P_Act_F;MS_P_Act_F;MS_P_Act_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5519)] / [MATSPALTENSUMME(703)];SUM
 MODUS;Target_MS_activity_F;Target_MS_activity_F;Target_MS_activity_F;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_F;const_activity_F;const_activity_F;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_F;Trips_activity_F;Trips_activity_F;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_F_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_F;TRIPS_ACTIVITY_F;TRIPS_ACTIVITY_F;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_F];SUM
 MODUS;MS_activity_F;MS_activity_F;MS_activity_F;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_F] / [NETZ\TRIPS_ACTIVITY_F];SUM
+BEZIRK;MS_F_Act_G;MS_F_Act_G;MS_F_Act_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5520)] / [MATSPALTENSUMME(704)];SUM
+BEZIRK;MS_R_Act_G;MS_R_Act_G;MS_R_Act_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5521)] / [MATSPALTENSUMME(704)];SUM
+BEZIRK;MS_O_Act_G;MS_O_Act_G;MS_O_Act_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5522)] / [MATSPALTENSUMME(704)];SUM
+BEZIRK;MS_M_Act_G;MS_M_Act_G;MS_M_Act_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5523)] / [MATSPALTENSUMME(704)];SUM
+BEZIRK;MS_P_Act_G;MS_P_Act_G;MS_P_Act_G;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5524)] / [MATSPALTENSUMME(704)];SUM
 MODUS;Target_MS_activity_G;Target_MS_activity_G;Target_MS_activity_G;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_G;const_activity_G;const_activity_G;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_G;Trips_activity_G;Trips_activity_G;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_G_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_G;TRIPS_ACTIVITY_G;TRIPS_ACTIVITY_G;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_G];SUM
 MODUS;MS_activity_G;MS_activity_G;MS_activity_G;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_G] / [NETZ\TRIPS_ACTIVITY_G];SUM
+BEZIRK;MS_F_Act_K;MS_F_Act_K;MS_F_Act_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5525)] / [MATSPALTENSUMME(705)];SUM
+BEZIRK;MS_R_Act_K;MS_R_Act_K;MS_R_Act_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5526)] / [MATSPALTENSUMME(705)];SUM
+BEZIRK;MS_O_Act_K;MS_O_Act_K;MS_O_Act_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5527)] / [MATSPALTENSUMME(705)];SUM
+BEZIRK;MS_M_Act_K;MS_M_Act_K;MS_M_Act_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5528)] / [MATSPALTENSUMME(705)];SUM
+BEZIRK;MS_P_Act_K;MS_P_Act_K;MS_P_Act_K;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5529)] / [MATSPALTENSUMME(705)];SUM
 MODUS;Target_MS_activity_K;Target_MS_activity_K;Target_MS_activity_K;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_K;const_activity_K;const_activity_K;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_K;Trips_activity_K;Trips_activity_K;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_K_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_K;TRIPS_ACTIVITY_K;TRIPS_ACTIVITY_K;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_K];SUM
 MODUS;MS_activity_K;MS_activity_K;MS_activity_K;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_K] / [NETZ\TRIPS_ACTIVITY_K];SUM
+BEZIRK;MS_F_Act_M;MS_F_Act_M;MS_F_Act_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5530)] / [MATSPALTENSUMME(706)];SUM
+BEZIRK;MS_R_Act_M;MS_R_Act_M;MS_R_Act_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5531)] / [MATSPALTENSUMME(706)];SUM
+BEZIRK;MS_O_Act_M;MS_O_Act_M;MS_O_Act_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5532)] / [MATSPALTENSUMME(706)];SUM
+BEZIRK;MS_M_Act_M;MS_M_Act_M;MS_M_Act_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5533)] / [MATSPALTENSUMME(706)];SUM
+BEZIRK;MS_P_Act_M;MS_P_Act_M;MS_P_Act_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5534)] / [MATSPALTENSUMME(706)];SUM
 MODUS;Target_MS_activity_M;Target_MS_activity_M;Target_MS_activity_M;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_M;const_activity_M;const_activity_M;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_M;Trips_activity_M;Trips_activity_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_M_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_M;TRIPS_ACTIVITY_M;TRIPS_ACTIVITY_M;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_M];SUM
 MODUS;MS_activity_M;MS_activity_M;MS_activity_M;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_M] / [NETZ\TRIPS_ACTIVITY_M];SUM
+BEZIRK;MS_F_Act_O;MS_F_Act_O;MS_F_Act_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5535)] / [MATSPALTENSUMME(707)];SUM
+BEZIRK;MS_R_Act_O;MS_R_Act_O;MS_R_Act_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5536)] / [MATSPALTENSUMME(707)];SUM
+BEZIRK;MS_O_Act_O;MS_O_Act_O;MS_O_Act_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5537)] / [MATSPALTENSUMME(707)];SUM
+BEZIRK;MS_M_Act_O;MS_M_Act_O;MS_M_Act_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5538)] / [MATSPALTENSUMME(707)];SUM
+BEZIRK;MS_P_Act_O;MS_P_Act_O;MS_P_Act_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5539)] / [MATSPALTENSUMME(707)];SUM
 MODUS;Target_MS_activity_O;Target_MS_activity_O;Target_MS_activity_O;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_O;const_activity_O;const_activity_O;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_O;Trips_activity_O;Trips_activity_O;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_O_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_O;TRIPS_ACTIVITY_O;TRIPS_ACTIVITY_O;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_O];SUM
 MODUS;MS_activity_O;MS_activity_O;MS_activity_O;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_O] / [NETZ\TRIPS_ACTIVITY_O];SUM
+BEZIRK;MS_F_Act_R;MS_F_Act_R;MS_F_Act_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5540)] / [MATSPALTENSUMME(708)];SUM
+BEZIRK;MS_R_Act_R;MS_R_Act_R;MS_R_Act_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5541)] / [MATSPALTENSUMME(708)];SUM
+BEZIRK;MS_O_Act_R;MS_O_Act_R;MS_O_Act_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5542)] / [MATSPALTENSUMME(708)];SUM
+BEZIRK;MS_M_Act_R;MS_M_Act_R;MS_M_Act_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5543)] / [MATSPALTENSUMME(708)];SUM
+BEZIRK;MS_P_Act_R;MS_P_Act_R;MS_P_Act_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5544)] / [MATSPALTENSUMME(708)];SUM
 MODUS;Target_MS_activity_R;Target_MS_activity_R;Target_MS_activity_R;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_R;const_activity_R;const_activity_R;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_R;Trips_activity_R;Trips_activity_R;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_R_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_R;TRIPS_ACTIVITY_R;TRIPS_ACTIVITY_R;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_R];SUM
 MODUS;MS_activity_R;MS_activity_R;MS_activity_R;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_R] / [NETZ\TRIPS_ACTIVITY_R];SUM
+BEZIRK;MS_F_Act_S;MS_F_Act_S;MS_F_Act_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5545)] / [MATSPALTENSUMME(709)];SUM
+BEZIRK;MS_R_Act_S;MS_R_Act_S;MS_R_Act_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5546)] / [MATSPALTENSUMME(709)];SUM
+BEZIRK;MS_O_Act_S;MS_O_Act_S;MS_O_Act_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5547)] / [MATSPALTENSUMME(709)];SUM
+BEZIRK;MS_M_Act_S;MS_M_Act_S;MS_M_Act_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5548)] / [MATSPALTENSUMME(709)];SUM
+BEZIRK;MS_P_Act_S;MS_P_Act_S;MS_P_Act_S;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5549)] / [MATSPALTENSUMME(709)];SUM
 MODUS;Target_MS_activity_S;Target_MS_activity_S;Target_MS_activity_S;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_S;const_activity_S;const_activity_S;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_S;Trips_activity_S;Trips_activity_S;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_S_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_S;TRIPS_ACTIVITY_S;TRIPS_ACTIVITY_S;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_S];SUM
 MODUS;MS_activity_S;MS_activity_S;MS_activity_S;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_S] / [NETZ\TRIPS_ACTIVITY_S];SUM
+BEZIRK;MS_F_Act_T;MS_F_Act_T;MS_F_Act_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5550)] / [MATSPALTENSUMME(710)];SUM
+BEZIRK;MS_R_Act_T;MS_R_Act_T;MS_R_Act_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5551)] / [MATSPALTENSUMME(710)];SUM
+BEZIRK;MS_O_Act_T;MS_O_Act_T;MS_O_Act_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5552)] / [MATSPALTENSUMME(710)];SUM
+BEZIRK;MS_M_Act_T;MS_M_Act_T;MS_M_Act_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5553)] / [MATSPALTENSUMME(710)];SUM
+BEZIRK;MS_P_Act_T;MS_P_Act_T;MS_P_Act_T;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5554)] / [MATSPALTENSUMME(710)];SUM
 MODUS;Target_MS_activity_T;Target_MS_activity_T;Target_MS_activity_T;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_T;const_activity_T;const_activity_T;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_T;Trips_activity_T;Trips_activity_T;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_T_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_T;TRIPS_ACTIVITY_T;TRIPS_ACTIVITY_T;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_T];SUM
 MODUS;MS_activity_T;MS_activity_T;MS_activity_T;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_T] / [NETZ\TRIPS_ACTIVITY_T];SUM
+BEZIRK;MS_F_Act_U;MS_F_Act_U;MS_F_Act_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5555)] / [MATSPALTENSUMME(711)];SUM
+BEZIRK;MS_R_Act_U;MS_R_Act_U;MS_R_Act_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5556)] / [MATSPALTENSUMME(711)];SUM
+BEZIRK;MS_O_Act_U;MS_O_Act_U;MS_O_Act_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5557)] / [MATSPALTENSUMME(711)];SUM
+BEZIRK;MS_M_Act_U;MS_M_Act_U;MS_M_Act_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5558)] / [MATSPALTENSUMME(711)];SUM
+BEZIRK;MS_P_Act_U;MS_P_Act_U;MS_P_Act_U;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5559)] / [MATSPALTENSUMME(711)];SUM
 MODUS;Target_MS_activity_U;Target_MS_activity_U;Target_MS_activity_U;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_U;const_activity_U;const_activity_U;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_U;Trips_activity_U;Trips_activity_U;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_U_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_U;TRIPS_ACTIVITY_U;TRIPS_ACTIVITY_U;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_U];SUM
 MODUS;MS_activity_U;MS_activity_U;MS_activity_U;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_U] / [NETZ\TRIPS_ACTIVITY_U];SUM
+BEZIRK;MS_F_Act_V;MS_F_Act_V;MS_F_Act_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5560)] / [MATSPALTENSUMME(712)];SUM
+BEZIRK;MS_R_Act_V;MS_R_Act_V;MS_R_Act_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5561)] / [MATSPALTENSUMME(712)];SUM
+BEZIRK;MS_O_Act_V;MS_O_Act_V;MS_O_Act_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5562)] / [MATSPALTENSUMME(712)];SUM
+BEZIRK;MS_M_Act_V;MS_M_Act_V;MS_M_Act_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5563)] / [MATSPALTENSUMME(712)];SUM
+BEZIRK;MS_P_Act_V;MS_P_Act_V;MS_P_Act_V;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5564)] / [MATSPALTENSUMME(712)];SUM
 MODUS;Target_MS_activity_V;Target_MS_activity_V;Target_MS_activity_V;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_V;const_activity_V;const_activity_V;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_V;Trips_activity_V;Trips_activity_V;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_V_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_V;TRIPS_ACTIVITY_V;TRIPS_ACTIVITY_V;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_V];SUM
 MODUS;MS_activity_V;MS_activity_V;MS_activity_V;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_V] / [NETZ\TRIPS_ACTIVITY_V];SUM
+BEZIRK;MS_F_Act_W;MS_F_Act_W;MS_F_Act_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5565)] / [MATSPALTENSUMME(713)];SUM
 OBERBEZIRK;MS_Home_Mode_F;MS_Home_Mode_F;MS_Home_Mode_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5566)] / [MATSPALTENSUMME(913)];SUM
 BEZIRK;MS_Home_Mode_F;MS_Home_Mode_F;MS_Home_Mode_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5565)] / [MATSPALTENSUMME(713)];SUM
-OBERBEZIRK;Distance_Home_F;Distance_Home_F;Distance_Home_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(868)] / [MATSZEILENSUMME(5566)];SUM
-BEZIRK;Distance_Home_F;Distance_Home_F;Distance_Home_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(818)] / [MATSZEILENSUMME(5565)];SUM
+OBERBEZIRK;Distance_Home_F;Distance_Home_F;Distance_Home_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(868)] / [MATZEILENSUMME(5566)];SUM
+BEZIRK;Distance_Home_F;Distance_Home_F;Distance_Home_F;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(818)] / [MATZEILENSUMME(5565)];SUM
+BEZIRK;MS_R_Act_W;MS_R_Act_W;MS_R_Act_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5567)] / [MATSPALTENSUMME(713)];SUM
 OBERBEZIRK;MS_Home_Mode_R;MS_Home_Mode_R;MS_Home_Mode_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5568)] / [MATSPALTENSUMME(913)];SUM
 BEZIRK;MS_Home_Mode_R;MS_Home_Mode_R;MS_Home_Mode_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5567)] / [MATSPALTENSUMME(713)];SUM
-OBERBEZIRK;Distance_Home_R;Distance_Home_R;Distance_Home_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(869)] / [MATSZEILENSUMME(5568)];SUM
-BEZIRK;Distance_Home_R;Distance_Home_R;Distance_Home_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(819)] / [MATSZEILENSUMME(5567)];SUM
+OBERBEZIRK;Distance_Home_R;Distance_Home_R;Distance_Home_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(869)] / [MATZEILENSUMME(5568)];SUM
+BEZIRK;Distance_Home_R;Distance_Home_R;Distance_Home_R;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(819)] / [MATZEILENSUMME(5567)];SUM
+BEZIRK;MS_O_Act_W;MS_O_Act_W;MS_O_Act_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5569)] / [MATSPALTENSUMME(713)];SUM
 OBERBEZIRK;MS_Home_Mode_O;MS_Home_Mode_O;MS_Home_Mode_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5570)] / [MATSPALTENSUMME(913)];SUM
 BEZIRK;MS_Home_Mode_O;MS_Home_Mode_O;MS_Home_Mode_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5569)] / [MATSPALTENSUMME(713)];SUM
-OBERBEZIRK;Distance_Home_O;Distance_Home_O;Distance_Home_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(870)] / [MATSZEILENSUMME(5570)];SUM
-BEZIRK;Distance_Home_O;Distance_Home_O;Distance_Home_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(820)] / [MATSZEILENSUMME(5569)];SUM
+OBERBEZIRK;Distance_Home_O;Distance_Home_O;Distance_Home_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(870)] / [MATZEILENSUMME(5570)];SUM
+BEZIRK;Distance_Home_O;Distance_Home_O;Distance_Home_O;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(820)] / [MATZEILENSUMME(5569)];SUM
+BEZIRK;MS_M_Act_W;MS_M_Act_W;MS_M_Act_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5571)] / [MATSPALTENSUMME(713)];SUM
 OBERBEZIRK;MS_Home_Mode_M;MS_Home_Mode_M;MS_Home_Mode_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5572)] / [MATSPALTENSUMME(913)];SUM
 BEZIRK;MS_Home_Mode_M;MS_Home_Mode_M;MS_Home_Mode_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5571)] / [MATSPALTENSUMME(713)];SUM
-OBERBEZIRK;Distance_Home_M;Distance_Home_M;Distance_Home_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(871)] / [MATSZEILENSUMME(5572)];SUM
-BEZIRK;Distance_Home_M;Distance_Home_M;Distance_Home_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(821)] / [MATSZEILENSUMME(5571)];SUM
+OBERBEZIRK;Distance_Home_M;Distance_Home_M;Distance_Home_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(871)] / [MATZEILENSUMME(5572)];SUM
+BEZIRK;Distance_Home_M;Distance_Home_M;Distance_Home_M;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(821)] / [MATZEILENSUMME(5571)];SUM
+BEZIRK;MS_P_Act_W;MS_P_Act_W;MS_P_Act_W;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5573)] / [MATSPALTENSUMME(713)];SUM
 OBERBEZIRK;MS_Home_Mode_P;MS_Home_Mode_P;MS_Home_Mode_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5574)] / [MATSPALTENSUMME(913)];SUM
 BEZIRK;MS_Home_Mode_P;MS_Home_Mode_P;MS_Home_Mode_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5573)] / [MATSPALTENSUMME(713)];SUM
-OBERBEZIRK;Distance_Home_P;Distance_Home_P;Distance_Home_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(872)] / [MATSZEILENSUMME(5574)];SUM
-BEZIRK;Distance_Home_P;Distance_Home_P;Distance_Home_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATSZEILENSUMME(822)] / [MATSZEILENSUMME(5573)];SUM
+OBERBEZIRK;Distance_Home_P;Distance_Home_P;Distance_Home_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(872)] / [MATZEILENSUMME(5574)];SUM
+BEZIRK;Distance_Home_P;Distance_Home_P;Distance_Home_P;Double;MIN;MAX;;;;255;3;FORMEL;[MATZEILENSUMME(822)] / [MATZEILENSUMME(5573)];SUM
 MODUS;Target_MS_activity_W;Target_MS_activity_W;Target_MS_activity_W;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_W;const_activity_W;const_activity_W;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_W;Trips_activity_W;Trips_activity_W;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_W_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_W;TRIPS_ACTIVITY_W;TRIPS_ACTIVITY_W;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_W];SUM
 MODUS;MS_activity_W;MS_activity_W;MS_activity_W;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_W] / [NETZ\TRIPS_ACTIVITY_W];SUM
+BEZIRK;MS_F_Act_Z;MS_F_Act_Z;MS_F_Act_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5575)] / [MATSPALTENSUMME(714)];SUM
+BEZIRK;MS_R_Act_Z;MS_R_Act_Z;MS_R_Act_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5576)] / [MATSPALTENSUMME(714)];SUM
+BEZIRK;MS_O_Act_Z;MS_O_Act_Z;MS_O_Act_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5577)] / [MATSPALTENSUMME(714)];SUM
+BEZIRK;MS_M_Act_Z;MS_M_Act_Z;MS_M_Act_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5578)] / [MATSPALTENSUMME(714)];SUM
+BEZIRK;MS_P_Act_Z;MS_P_Act_Z;MS_P_Act_Z;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5579)] / [MATSPALTENSUMME(714)];SUM
 MODUS;Target_MS_activity_Z;Target_MS_activity_Z;Target_MS_activity_Z;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_Z;const_activity_Z;const_activity_Z;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_Z;Trips_activity_Z;Trips_activity_Z;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_Z_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_Z;TRIPS_ACTIVITY_Z;TRIPS_ACTIVITY_Z;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_Z];SUM
 MODUS;MS_activity_Z;MS_activity_Z;MS_activity_Z;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_Z] / [NETZ\TRIPS_ACTIVITY_Z];SUM
+BEZIRK;MS_F_Act_Y;MS_F_Act_Y;MS_F_Act_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5580)] / [MATSPALTENSUMME(715)];SUM
+BEZIRK;MS_R_Act_Y;MS_R_Act_Y;MS_R_Act_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5581)] / [MATSPALTENSUMME(715)];SUM
+BEZIRK;MS_O_Act_Y;MS_O_Act_Y;MS_O_Act_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5582)] / [MATSPALTENSUMME(715)];SUM
+BEZIRK;MS_M_Act_Y;MS_M_Act_Y;MS_M_Act_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5583)] / [MATSPALTENSUMME(715)];SUM
+BEZIRK;MS_P_Act_Y;MS_P_Act_Y;MS_P_Act_Y;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5584)] / [MATSPALTENSUMME(715)];SUM
 MODUS;Target_MS_activity_Y;Target_MS_activity_Y;Target_MS_activity_Y;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_Y;const_activity_Y;const_activity_Y;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_Y;Trips_activity_Y;Trips_activity_Y;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_Y_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_Y;TRIPS_ACTIVITY_Y;TRIPS_ACTIVITY_Y;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_Y];SUM
 MODUS;MS_activity_Y;MS_activity_Y;MS_activity_Y;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_Y] / [NETZ\TRIPS_ACTIVITY_Y];SUM
+BEZIRK;MS_F_Act_I;MS_F_Act_I;MS_F_Act_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5585)] / [MATSPALTENSUMME(716)];SUM
+BEZIRK;MS_R_Act_I;MS_R_Act_I;MS_R_Act_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5586)] / [MATSPALTENSUMME(716)];SUM
+BEZIRK;MS_O_Act_I;MS_O_Act_I;MS_O_Act_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5587)] / [MATSPALTENSUMME(716)];SUM
+BEZIRK;MS_M_Act_I;MS_M_Act_I;MS_M_Act_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5588)] / [MATSPALTENSUMME(716)];SUM
+BEZIRK;MS_P_Act_I;MS_P_Act_I;MS_P_Act_I;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5589)] / [MATSPALTENSUMME(716)];SUM
 MODUS;Target_MS_activity_I;Target_MS_activity_I;Target_MS_activity_I;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_I;const_activity_I;const_activity_I;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_I;Trips_activity_I;Trips_activity_I;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_I_"+[CODE], Mat[SUM]);SUM
 Netz;TRIPS_ACTIVITY_I;TRIPS_ACTIVITY_I;TRIPS_ACTIVITY_I;Double;MIN;MAX;;;;255;3;FORMEL;[SUM:MODI\TRIPS_ACTIVITY_I];SUM
 MODUS;MS_activity_I;MS_activity_I;MS_activity_I;Double;MIN;MAX;;;;255;3;FORMEL;[TRIPS_ACTIVITY_I] / [NETZ\TRIPS_ACTIVITY_I];SUM
+BEZIRK;MS_F_Act_J;MS_F_Act_J;MS_F_Act_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5590)] / [MATSPALTENSUMME(717)];SUM
+BEZIRK;MS_R_Act_J;MS_R_Act_J;MS_R_Act_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5591)] / [MATSPALTENSUMME(717)];SUM
+BEZIRK;MS_O_Act_J;MS_O_Act_J;MS_O_Act_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5592)] / [MATSPALTENSUMME(717)];SUM
+BEZIRK;MS_M_Act_J;MS_M_Act_J;MS_M_Act_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5593)] / [MATSPALTENSUMME(717)];SUM
+BEZIRK;MS_P_Act_J;MS_P_Act_J;MS_P_Act_J;Double;MIN;MAX;;;;255;3;FORMEL;[MATSPALTENSUMME(5594)] / [MATSPALTENSUMME(717)];SUM
 MODUS;Target_MS_activity_J;Target_MS_activity_J;Target_MS_activity_J;Double;MIN;MAX;;;;255;3;DATEN;;SUM
 MODUS;const_activity_J;const_activity_J;const_activity_J;Double;MIN;MAX;0;;;255;3;DATEN;;SUM
 MODUS;Trips_activity_J;Trips_activity_J;Trips_activity_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(MATRIX Mat, Mat[CODE]="Activity_J_"+[CODE], Mat[SUM]);SUM
