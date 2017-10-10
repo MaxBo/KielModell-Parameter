@@ -1,6 +1,6 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-10-09
+* 2017-10-10
 *
 * Tabelle: Versionsblock
 *
@@ -1781,7 +1781,7 @@ Netz;DistanceKorrBisKm_OV;DistanceKorrBisKm_OV;DistanceKorrBisKm_OV;Double;MIN;M
 Netz;DistanceKorrFaktor_OV;DistanceKorrFaktor_OV;DistanceKorrFaktor_OV;Double;MIN;MAX;-1.5;;;255;3;DATEN;;SUM
 Bezirk;Binnendistanz_area;Binnendistanz_area;Binnendistanz_area;Double;MIN;MAX;;;geschätzte Binnendistanz in km;255;3;FORMEL;SQRT([FLAECHEKM2]) / 3;SUM
 Netz;DistanceKorrBisKm_Pkw;DistanceKorrBisKm_Pkw;DistanceKorrBisKm_Pkw;Double;MIN;MAX;1.2;;;255;3;DATEN;;SUM
-Netz;DistanceKorrFaktor_Pkw;DistanceKorrFaktor_Pkw;DistanceKorrFaktor_Pkw;Double;MIN;MAX;-5;;;255;3;DATEN;;SUM
+Netz;DistanceKorrFaktor_Pkw;DistanceKorrFaktor_Pkw;DistanceKorrFaktor_Pkw;Double;MIN;MAX;-7;;;255;3;DATEN;;SUM
 Netz;faktor_binnenpendler;faktor_binnenpendler;faktor_binnenpendler;Double;MIN;MAX;1.28;;;255;3;DATEN;;SUM
 Netz;faktor_einpendler;faktor_einpendler;faktor_einpendler;Double;MIN;MAX;1.430976;;;255;3;DATEN;;SUM
 Netz;faktor_auspendler;faktor_auspendler;faktor_auspendler;Double;MIN;MAX;1.27264235846709;;;255;3;DATEN;;SUM
