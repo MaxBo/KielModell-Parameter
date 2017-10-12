@@ -1,6 +1,6 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-10-10
+* 2017-10-11
 *
 * Tabelle: Versionsblock
 *
@@ -2691,6 +2691,14 @@ MODUS;Trips_RegionMitEinpendler;Trips_RegionMitEinpendler;Trips_RegionMitEinpend
 NETZ;Trips_RegionMitEinpendler;Trips_RegionMitEinpendler;Trips_RegionMitEinpendler;Double;MIN;MAX;;;Gesamtzahl der Regionsbewohner;255;3;FORMEL;[SUM:MODI\Trips_RegionMitEinpendler];SUM
 MODUS;MS_Trips_RegionMitEinpendler;MS_Trips_RegionMitEinpendler;MS_Trips_RegionMitEinpendler;Double;MIN;MAX;;;Modal Split incl. Einpendler;255;3;FORMEL;[Trips_RegionMitEinpendler] / [NETZ\Trips_RegionMitEinpendler];SUM
 Modus;Target_MEAN_DISTANCE;Target_MEAN_DISTANCE;Target_MEAN_DISTANCE;Double;MIN;MAX;;;;255;2;DATEN;;SUM
+VSYS;VSYS_FV_PREFERENCE;VSYS_FV_PREFERENCE;VSYS_FV_PREFERENCE;Double;MIN;MAX;1;;;255;3;DATEN;;SUM
+
+*
+* Tabelle: Verkehrssysteme (geändert)
+*
+$*VSYS:CODE;TYP;VSYS_FV_PREFERENCE
+FAE;OV;0.2
+FV;OV;0.5
 
 *
 * Tabelle: Ganglinien (eingefügt)
