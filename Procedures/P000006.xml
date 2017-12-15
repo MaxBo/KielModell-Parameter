@@ -1,5 +1,5 @@
 <?xml  version = "1.0"  encoding = "UTF-8"?>
-<PROCEDURES  VERSION = "19">
+<PROCEDURES  VERSION = "20">
   <OPERATIONS>
     <OPERATION
       NO = "1"
@@ -38,7 +38,7 @@
       CODE = ""
       OPERATIONTYPE = "Group"
       ACTIVE = "1"
-      COMMENT = "Umlegung"
+      COMMENT = "IV-Umlegung"
       EXECUTED = "0"
       STARTTIME = ""
       ENDTIME = ""
@@ -52,53 +52,9 @@
     <OPERATION
       NO = "4"
       CODE = ""
-      OPERATIONTYPE = "PrTAssignment"
-      ACTIVE = "1"
-      COMMENT = "Pkw-Umlegung"
-      EXECUTED = "0"
-      STARTTIME = ""
-      ENDTIME = ""
-      DURATION = ""
-      MESSAGES = ""
-      RESULTMESSAGE = ""
-      SUCCESS = "0"
-      COMPUTENODE = "">
-      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Equilibrium"        DSEGSET = "B_L1,B_L2,B_Li,B_P,FV,LkwFern,Pkw">
-        <EQUILIBRIUMPARA>
-          <EQUIINITIALSOLUTIONPARA            USECURRENTSOLUTION = "1">
-            <DEMANDSHAREPARA>
-              <ATTRIBUTE                NAME = "DEMANDSHARE">
-                <ATTRITEM                  SUBATTR1 = "1"                  VALUE = "50"                />                
-                <ATTRITEM                  SUBATTR1 = "2"                  VALUE = "30"                />                
-                <ATTRITEM                  SUBATTR1 = "3"                  VALUE = "20"                />                
-                <ATTRITEM                  SUBATTR1 = "4"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "5"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "6"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "7"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "8"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "9"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "10"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "11"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "12"                  VALUE = "0"                />                
-              </ATTRIBUTE>
-            </DEMANDSHAREPARA>
-          </EQUIINITIALSOLUTIONPARA>
-          <EQUISTOPCRITERIAPARA
-            MAXNUMOUTERIT = "20"
-            MAXABSIMPDEV = "0"
-            MAXRELIMPDEV = "0"
-            MAXRELATIVEGAP = "0.0001">
-            <NETBALANCING              GENERALVALUE = "5"            />            
-          </EQUISTOPCRITERIAPARA>
-        </EQUILIBRIUMPARA>
-      </PRTASSIGNMENTPARA>
-    </OPERATION>
-    <OPERATION
-      NO = "5"
-      CODE = ""
       OPERATIONTYPE = "PuTOperatingIndicators"
       ACTIVE = "1"
-      COMMENT = "um die Busse je Streckenabschnitt zu berechnen"
+      COMMENT = "Grundbelastung durch Busse berechnen"
       EXECUTED = "0"
       STARTTIME = ""
       ENDTIME = ""
@@ -114,16 +70,16 @@
           ONLYACTIVEVEHICLEJOURNEYSECTIONS = "0"
         />        
         <PUTOPINDPERFORMANCEPARA
-          CALCULATEFORTERRITORIES = "0"
+          CALCULATEFORTERRITORIES = "1"
           EMPTYJOURNEYSREFERENCE = "Empty time from pre and post preparation time"
           EMPTYJOURNEYSSHAREBEFORE = "0"
           CALCULATETERRITORYINDICATORS = "0"
-          CALCULATETURNREL = "0"
+          CALCULATETURNREL = "1"
           USEUSERDEFINEDPRFACTORSFORPASSTRIPCHAINS = "0"
           USERDEFINEDPASSTRIPCHAINPRFACTORSUPPLY = "1"
           USERDEFINEDPASSTRIPCHAINPRFACHOURCOST = "1"
         />        
-        <PUTOPINDDEMANDPARA          CALCULATEFORTERRITORIES = "0"        />        
+        <PUTOPINDDEMANDPARA          CALCULATEFORTERRITORIES = "1"        />        
         <PUTOPINDREVENUEPARA
           CALCULATE = "0"
           CALCULATEFORTERRITORIES = "0"
@@ -227,11 +183,55 @@
       </PUTOPINDPARAMETERS>
     </OPERATION>
     <OPERATION
+      NO = "5"
+      CODE = ""
+      OPERATIONTYPE = "PrTAssignment"
+      ACTIVE = "1"
+      COMMENT = "Pkw-Umlegung"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = "">
+      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Equilibrium"        DSEGSET = "B_L1,B_L2,B_Li,B_P,FV,LkwFern,Pkw">
+        <EQUILIBRIUMPARA>
+          <EQUIINITIALSOLUTIONPARA            USECURRENTSOLUTION = "1">
+            <DEMANDSHAREPARA>
+              <ATTRIBUTE                NAME = "DEMANDSHARE">
+                <ATTRITEM                  SUBATTR1 = "1"                  VALUE = "50"                />                
+                <ATTRITEM                  SUBATTR1 = "2"                  VALUE = "30"                />                
+                <ATTRITEM                  SUBATTR1 = "3"                  VALUE = "20"                />                
+                <ATTRITEM                  SUBATTR1 = "4"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "5"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "6"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "7"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "8"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "9"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "10"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "11"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "12"                  VALUE = "0"                />                
+              </ATTRIBUTE>
+            </DEMANDSHAREPARA>
+          </EQUIINITIALSOLUTIONPARA>
+          <EQUISTOPCRITERIAPARA
+            MAXNUMOUTERIT = "20"
+            MAXABSIMPDEV = "0"
+            MAXRELIMPDEV = "0"
+            MAXRELATIVEGAP = "0.0001">
+            <NETBALANCING              GENERALVALUE = "5"            />            
+          </EQUISTOPCRITERIAPARA>
+        </EQUILIBRIUMPARA>
+      </PRTASSIGNMENTPARA>
+    </OPERATION>
+    <OPERATION
       NO = "6"
       CODE = ""
       OPERATIONTYPE = "AssignmentAnalysis"
       ACTIVE = "1"
-      COMMENT = "Vergleich Kfz-Belastung mit Zähldaten"
+      COMMENT = ""
       EXECUTED = "0"
       STARTTIME = ""
       ENDTIME = ""
@@ -242,7 +242,7 @@
       COMPUTENODE = "">
       <ASSIGNMENTANALYSISPARA
         NETOBJECTTYPE = "LINK"
-        MODELEDVALUEATTRID = "KFZ_GES"
+        MODELEDVALUEATTRID = "VOLVEHPRT(AP)"
         OBSERVEDVALUEATTRID = "Z_GES"
         CLASSIFICATIONATTRID = "LINKTYPE\NO"
         ONLYACTIVE = "1"
@@ -1253,7 +1253,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -1385,7 +1385,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -1451,12 +1451,12 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
           BPR2_A = "0.45"
-          BPR2_B1 = "3"
+          BPR2_B1 = "2.5"
           BPR2_B2 = "10"
           BPR3_A = "1"
           BPR3_B = "2"
@@ -1517,12 +1517,12 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
-          BPR2_A = "0.6"
-          BPR2_B1 = "3"
+          BPR2_A = "0.35"
+          BPR2_B1 = "2"
           BPR2_B2 = "10"
           BPR3_A = "1"
           BPR3_B = "2"
@@ -1587,7 +1587,7 @@
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
-          BPR2_A = "0.05"
+          BPR2_A = "0.3"
           BPR2_B1 = "10"
           BPR2_B2 = "10"
           BPR3_A = "1"
@@ -1649,11 +1649,11 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
-          BPR2_A = "0.2"
+          BPR2_A = "0.3"
           BPR2_B1 = "10"
           BPR2_B2 = "10"
           BPR3_A = "1"
@@ -1715,7 +1715,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -1781,7 +1781,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -1847,7 +1847,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -1913,7 +1913,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -1979,7 +1979,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2177,7 +2177,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2243,7 +2243,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2309,7 +2309,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2375,7 +2375,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2441,7 +2441,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2507,7 +2507,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2573,7 +2573,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2639,7 +2639,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2705,7 +2705,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2771,7 +2771,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2837,7 +2837,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2903,7 +2903,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -2969,7 +2969,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3035,7 +3035,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3101,7 +3101,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3167,7 +3167,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3233,7 +3233,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3299,7 +3299,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3365,7 +3365,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3431,7 +3431,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3497,7 +3497,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3563,7 +3563,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3629,7 +3629,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3695,7 +3695,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3761,7 +3761,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3827,7 +3827,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3893,7 +3893,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -3959,7 +3959,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4025,7 +4025,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4091,7 +4091,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4157,7 +4157,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4223,7 +4223,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4289,7 +4289,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4355,7 +4355,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4421,7 +4421,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "12"
+          CAPACITYFACTOR = "11"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4487,11 +4487,11 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
-          BPR2_A = "1.5"
+          BPR2_A = "2"
           BPR2_B1 = "3"
           BPR2_B2 = "2"
           BPR3_A = "1"
@@ -4553,7 +4553,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4619,7 +4619,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4685,7 +4685,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "12"
+          CAPACITYFACTOR = "11"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4755,8 +4755,140 @@
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
-          BPR2_A = "0.5"
+          BPR2_A = "0.25"
           BPR2_B1 = "10"
+          BPR2_B2 = "10"
+          BPR3_A = "1"
+          BPR3_B = "2"
+          BPR3_D = "0"
+          INRETS_A = "1"
+          CONICAL_A = "4"
+          CONICAL_MARGINAL_A = "4"
+          QUADRATIC_A = "1"
+          QUADRATIC_B = "1"
+          QUADRATIC_D = "1"
+          LOGISTIC_A = "1"
+          LOGISTIC_B = "1"
+          LOGISTIC_D = "1"
+          LOGISTIC_F = "1"
+          SIGMOIDAL_MMF_A = "1"
+          SIGMOIDAL_MMF_B = "1"
+          SIGMOIDAL_MMF_D = "1"
+          SIGMOIDAL_MMF_F = "1"
+          TMODEL_A1 = "0"
+          TMODEL_A2 = "0"
+          TMODEL_B1 = "2"
+          TMODEL_B2 = "2"
+          TMODEL_D1 = "1"
+          TMODEL_D2 = "1"
+          TMODEL_F1 = "0"
+          TMODEL_F2 = "0"
+          TMODEL_SATCRIT = "1"
+          AKCELIK_A = "1"
+          AKCELIK_B = "1"
+          AKCELIK_D = "1800"
+          LOHSE_A = "1"
+          LOHSE_B = "3"
+          LOHSE_SATCRIT = "1"
+          SCHILLER_A = "3"
+          SCHILLER_B = "1"
+          SCHILLER_D = "0.001"
+          SCHILLER_F = "10"
+          SCHILLER_SATCRIT = "1"
+          EXPONENTIAL_A = "1"
+          EXPONENTIAL_B = "1"
+          EXPONENTIAL_D = "1"
+          EXPONENTIAL_SATCRIT = "1"
+          AKCELIK2_A = "1"
+          AKCELIK2_B = "1"
+          AKCELIK2_D = "1"
+          USER_A1 = "1"
+          USER_B1 = "1"
+          USER_D1 = "1"
+          USER_F1 = "1"
+          USER_A2 = "1"
+          USER_B2 = "1"
+          USER_D2 = "1"
+          USER_F2 = "1"
+          USER_SATCRIT = "1"
+        />        
+        <VDFUNCTION
+          VDFUNCTIONNUMBER = "55"
+          VDFUNCTIONTYPE = "BPR2"
+          BLOCKED = "0"
+          HARDBLOCKING = "0"
+          CAPACITYFACTOR = "10"
+          BPR_A = "1"
+          BPR_B = "2"
+          BPR_BISREAL = "0"
+          BPR2_A = "0.25"
+          BPR2_B1 = "10"
+          BPR2_B2 = "5"
+          BPR3_A = "1"
+          BPR3_B = "2"
+          BPR3_D = "0"
+          INRETS_A = "1"
+          CONICAL_A = "4"
+          CONICAL_MARGINAL_A = "4"
+          QUADRATIC_A = "1"
+          QUADRATIC_B = "1"
+          QUADRATIC_D = "1"
+          LOGISTIC_A = "1"
+          LOGISTIC_B = "1"
+          LOGISTIC_D = "1"
+          LOGISTIC_F = "1"
+          SIGMOIDAL_MMF_A = "1"
+          SIGMOIDAL_MMF_B = "1"
+          SIGMOIDAL_MMF_D = "1"
+          SIGMOIDAL_MMF_F = "1"
+          TMODEL_A1 = "0"
+          TMODEL_A2 = "0"
+          TMODEL_B1 = "2"
+          TMODEL_B2 = "2"
+          TMODEL_D1 = "1"
+          TMODEL_D2 = "1"
+          TMODEL_F1 = "0"
+          TMODEL_F2 = "0"
+          TMODEL_SATCRIT = "1"
+          AKCELIK_A = "1"
+          AKCELIK_B = "1"
+          AKCELIK_D = "1800"
+          LOHSE_A = "1"
+          LOHSE_B = "3"
+          LOHSE_SATCRIT = "1"
+          SCHILLER_A = "3"
+          SCHILLER_B = "1"
+          SCHILLER_D = "0.001"
+          SCHILLER_F = "10"
+          SCHILLER_SATCRIT = "1"
+          EXPONENTIAL_A = "1"
+          EXPONENTIAL_B = "1"
+          EXPONENTIAL_D = "1"
+          EXPONENTIAL_SATCRIT = "1"
+          AKCELIK2_A = "1"
+          AKCELIK2_B = "1"
+          AKCELIK2_D = "1"
+          USER_A1 = "1"
+          USER_B1 = "1"
+          USER_D1 = "1"
+          USER_F1 = "1"
+          USER_A2 = "1"
+          USER_B2 = "1"
+          USER_D2 = "1"
+          USER_F2 = "1"
+          USER_SATCRIT = "1"
+        />        
+        <VDFUNCTION
+          VDFUNCTIONNUMBER = "56"
+          VDFUNCTIONTYPE = "BPR2"
+          BLOCKED = "0"
+          HARDBLOCKING = "0"
+          CAPACITYFACTOR = "11"
+          BPR_A = "1"
+          BPR_B = "2"
+          BPR_BISREAL = "0"
+          BPR2_A = "0.45"
+          BPR2_B1 = "6"
           BPR2_B2 = "10"
           BPR3_A = "1"
           BPR3_B = "2"
@@ -4817,7 +4949,7 @@
           VDFUNCTIONTYPE = "BPR"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "11"
+          CAPACITYFACTOR = "10"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"
@@ -4908,7 +5040,7 @@
           <ATTRITEM            SUBATTR1 = "24"            VALUE = "3"          />          
           <ATTRITEM            SUBATTR1 = "25"            VALUE = "1"          />          
           <ATTRITEM            SUBATTR1 = "26"            VALUE = "54"          />          
-          <ATTRITEM            SUBATTR1 = "27"            VALUE = "2"          />          
+          <ATTRITEM            SUBATTR1 = "27"            VALUE = "56"          />          
           <ATTRITEM            SUBATTR1 = "28"            VALUE = "15"          />          
           <ATTRITEM            SUBATTR1 = "29"            VALUE = "16"          />          
           <ATTRITEM            SUBATTR1 = "30"            VALUE = "17"          />          
@@ -4935,12 +5067,12 @@
           <ATTRITEM            SUBATTR1 = "51"            VALUE = "32"          />          
           <ATTRITEM            SUBATTR1 = "52"            VALUE = "33"          />          
           <ATTRITEM            SUBATTR1 = "53"            VALUE = "48"          />          
-          <ATTRITEM            SUBATTR1 = "54"            VALUE = "54"          />          
+          <ATTRITEM            SUBATTR1 = "54"            VALUE = "6"          />          
           <ATTRITEM            SUBATTR1 = "55"            VALUE = "34"          />          
           <ATTRITEM            SUBATTR1 = "56"            VALUE = "51"          />          
           <ATTRITEM            SUBATTR1 = "57"            VALUE = "52"          />          
-          <ATTRITEM            SUBATTR1 = "58"            VALUE = "54"          />          
-          <ATTRITEM            SUBATTR1 = "59"            VALUE = "99"          />          
+          <ATTRITEM            SUBATTR1 = "58"            VALUE = "6"          />          
+          <ATTRITEM            SUBATTR1 = "59"            VALUE = "6"          />          
           <ATTRITEM            SUBATTR1 = "60"            VALUE = "45"          />          
           <ATTRITEM            SUBATTR1 = "61"            VALUE = "46"          />          
           <ATTRITEM            SUBATTR1 = "62"            VALUE = "44"          />          
@@ -4961,7 +5093,7 @@
           <ATTRITEM            SUBATTR1 = "77"            VALUE = "37"          />          
           <ATTRITEM            SUBATTR1 = "78"            VALUE = "38"          />          
           <ATTRITEM            SUBATTR1 = "79"            VALUE = "39"          />          
-          <ATTRITEM            SUBATTR1 = "80"            VALUE = "47"          />          
+          <ATTRITEM            SUBATTR1 = "80"            VALUE = "55"          />          
           <ATTRITEM            SUBATTR1 = "81"            VALUE = "47"          />          
           <ATTRITEM            SUBATTR1 = "82"            VALUE = "47"          />          
           <ATTRITEM            SUBATTR1 = "83"            VALUE = "47"          />          
@@ -4984,7 +5116,7 @@
         </ATTRIBUTE>
       </VDFUNCTIONS>
     </VDFUNCTIONSPARAMETERS>
-    <IMPEDANCEFUNCTIONS      TSYSCODE = "F"      USEDETAILEDCALCULATION = "1">
+    <IMPEDANCEFUNCTIONS      TSYSCODE = "F"      USEDETAILEDCALCULATION = "0">
       <LINCOMB        NETOBJECTTYPE = "">
         <LINCOMBITEM
           NO = "1"
@@ -5048,7 +5180,7 @@
         />        
         <LINCOMBITEM
           NO = "2"
-          FIRSTATTRCOEFF = "5"
+          FIRSTATTRCOEFF = "6"
           FIRSTATTRNAME = "LENGTH"
           OPERATION = "None"
           SECONDATTRCOEFF = "0"
@@ -5096,7 +5228,7 @@
         />        
       </LINCOMB>
     </IMPEDANCEFUNCTIONS>
-    <IMPEDANCEFUNCTIONS      TSYSCODE = "Pkw"      USEDETAILEDCALCULATION = "0">
+    <IMPEDANCEFUNCTIONS      TSYSCODE = "Pkw"      USEDETAILEDCALCULATION = "1">
       <LINCOMB        NETOBJECTTYPE = "">
         <LINCOMBITEM
           NO = "1"
@@ -5108,7 +5240,7 @@
         />        
         <LINCOMBITEM
           NO = "2"
-          FIRSTATTRCOEFF = "5"
+          FIRSTATTRCOEFF = "6"
           FIRSTATTRNAME = "LENGTH"
           OPERATION = "None"
           SECONDATTRCOEFF = "0"
@@ -5120,6 +5252,22 @@
           NO = "1"
           FIRSTATTRCOEFF = "100"
           FIRSTATTRNAME = "TCUR_PRTSYS(Pkw)"
+          OPERATION = "None"
+          SECONDATTRCOEFF = "0"
+          SECONDATTRNAME = "1.0"
+        />        
+        <LINCOMBITEM
+          NO = "2"
+          FIRSTATTRCOEFF = "6"
+          FIRSTATTRNAME = "LENGTH"
+          OPERATION = "None"
+          SECONDATTRCOEFF = "0"
+          SECONDATTRNAME = "1.0"
+        />        
+        <LINCOMBITEM
+          NO = "3"
+          FIRSTATTRCOEFF = "6000"
+          FIRSTATTRNAME = "MALUSAUFFAHRT"
           OPERATION = "None"
           SECONDATTRCOEFF = "0"
           SECONDATTRNAME = "1.0"
@@ -5156,7 +5304,7 @@
         />        
       </LINCOMB>
     </IMPEDANCEFUNCTIONS>
-    <IMPEDANCEFUNCTIONS      TSYSCODE = "R"      USEDETAILEDCALCULATION = "1">
+    <IMPEDANCEFUNCTIONS      TSYSCODE = "R"      USEDETAILEDCALCULATION = "0">
       <LINCOMB        NETOBJECTTYPE = "">
         <LINCOMBITEM
           NO = "1"
@@ -5542,6 +5690,204 @@
           USER_F2 = "1"
           USER_SATCRIT = "1"
         />        
+        <VDFUNCTION
+          VDFUNCTIONNUMBER = "5"
+          VDFUNCTIONTYPE = "BPR"
+          BLOCKED = "0"
+          HARDBLOCKING = "0"
+          CAPACITYFACTOR = "11"
+          BPR_A = "0.5"
+          BPR_B = "5"
+          BPR_BISREAL = "0"
+          BPR2_A = "1"
+          BPR2_B1 = "2"
+          BPR2_B2 = "2"
+          BPR3_A = "1"
+          BPR3_B = "2"
+          BPR3_D = "0"
+          INRETS_A = "1"
+          CONICAL_A = "4"
+          CONICAL_MARGINAL_A = "4"
+          QUADRATIC_A = "1"
+          QUADRATIC_B = "1"
+          QUADRATIC_D = "1"
+          LOGISTIC_A = "1"
+          LOGISTIC_B = "1"
+          LOGISTIC_D = "1"
+          LOGISTIC_F = "1"
+          SIGMOIDAL_MMF_A = "1"
+          SIGMOIDAL_MMF_B = "1"
+          SIGMOIDAL_MMF_D = "1"
+          SIGMOIDAL_MMF_F = "1"
+          TMODEL_A1 = "0"
+          TMODEL_A2 = "0"
+          TMODEL_B1 = "2"
+          TMODEL_B2 = "2"
+          TMODEL_D1 = "1"
+          TMODEL_D2 = "1"
+          TMODEL_F1 = "0"
+          TMODEL_F2 = "0"
+          TMODEL_SATCRIT = "1"
+          AKCELIK_A = "1"
+          AKCELIK_B = "1"
+          AKCELIK_D = "1800"
+          LOHSE_A = "1"
+          LOHSE_B = "3"
+          LOHSE_SATCRIT = "1"
+          SCHILLER_A = "3"
+          SCHILLER_B = "1"
+          SCHILLER_D = "0.001"
+          SCHILLER_F = "10"
+          SCHILLER_SATCRIT = "1"
+          EXPONENTIAL_A = "1"
+          EXPONENTIAL_B = "1"
+          EXPONENTIAL_D = "1"
+          EXPONENTIAL_SATCRIT = "1"
+          AKCELIK2_A = "1"
+          AKCELIK2_B = "1"
+          AKCELIK2_D = "1"
+          USER_A1 = "1"
+          USER_B1 = "1"
+          USER_D1 = "1"
+          USER_F1 = "1"
+          USER_A2 = "1"
+          USER_B2 = "1"
+          USER_D2 = "1"
+          USER_F2 = "1"
+          USER_SATCRIT = "1"
+        />        
+        <VDFUNCTION
+          VDFUNCTIONNUMBER = "6"
+          VDFUNCTIONTYPE = "BPR"
+          BLOCKED = "0"
+          HARDBLOCKING = "0"
+          CAPACITYFACTOR = "11"
+          BPR_A = "0.5"
+          BPR_B = "5"
+          BPR_BISREAL = "0"
+          BPR2_A = "1"
+          BPR2_B1 = "2"
+          BPR2_B2 = "2"
+          BPR3_A = "1"
+          BPR3_B = "2"
+          BPR3_D = "0"
+          INRETS_A = "1"
+          CONICAL_A = "4"
+          CONICAL_MARGINAL_A = "4"
+          QUADRATIC_A = "1"
+          QUADRATIC_B = "1"
+          QUADRATIC_D = "1"
+          LOGISTIC_A = "1"
+          LOGISTIC_B = "1"
+          LOGISTIC_D = "1"
+          LOGISTIC_F = "1"
+          SIGMOIDAL_MMF_A = "1"
+          SIGMOIDAL_MMF_B = "1"
+          SIGMOIDAL_MMF_D = "1"
+          SIGMOIDAL_MMF_F = "1"
+          TMODEL_A1 = "0"
+          TMODEL_A2 = "0"
+          TMODEL_B1 = "2"
+          TMODEL_B2 = "2"
+          TMODEL_D1 = "1"
+          TMODEL_D2 = "1"
+          TMODEL_F1 = "0"
+          TMODEL_F2 = "0"
+          TMODEL_SATCRIT = "1"
+          AKCELIK_A = "1"
+          AKCELIK_B = "1"
+          AKCELIK_D = "1800"
+          LOHSE_A = "1"
+          LOHSE_B = "3"
+          LOHSE_SATCRIT = "1"
+          SCHILLER_A = "3"
+          SCHILLER_B = "1"
+          SCHILLER_D = "0.001"
+          SCHILLER_F = "10"
+          SCHILLER_SATCRIT = "1"
+          EXPONENTIAL_A = "1"
+          EXPONENTIAL_B = "1"
+          EXPONENTIAL_D = "1"
+          EXPONENTIAL_SATCRIT = "1"
+          AKCELIK2_A = "1"
+          AKCELIK2_B = "1"
+          AKCELIK2_D = "1"
+          USER_A1 = "1"
+          USER_B1 = "1"
+          USER_D1 = "1"
+          USER_F1 = "1"
+          USER_A2 = "1"
+          USER_B2 = "1"
+          USER_D2 = "1"
+          USER_F2 = "1"
+          USER_SATCRIT = "1"
+        />        
+        <VDFUNCTION
+          VDFUNCTIONNUMBER = "7"
+          VDFUNCTIONTYPE = "BPR"
+          BLOCKED = "0"
+          HARDBLOCKING = "0"
+          CAPACITYFACTOR = "11"
+          BPR_A = "0.5"
+          BPR_B = "5"
+          BPR_BISREAL = "0"
+          BPR2_A = "1"
+          BPR2_B1 = "2"
+          BPR2_B2 = "2"
+          BPR3_A = "1"
+          BPR3_B = "2"
+          BPR3_D = "0"
+          INRETS_A = "1"
+          CONICAL_A = "4"
+          CONICAL_MARGINAL_A = "4"
+          QUADRATIC_A = "1"
+          QUADRATIC_B = "1"
+          QUADRATIC_D = "1"
+          LOGISTIC_A = "1"
+          LOGISTIC_B = "1"
+          LOGISTIC_D = "1"
+          LOGISTIC_F = "1"
+          SIGMOIDAL_MMF_A = "1"
+          SIGMOIDAL_MMF_B = "1"
+          SIGMOIDAL_MMF_D = "1"
+          SIGMOIDAL_MMF_F = "1"
+          TMODEL_A1 = "0"
+          TMODEL_A2 = "0"
+          TMODEL_B1 = "2"
+          TMODEL_B2 = "2"
+          TMODEL_D1 = "1"
+          TMODEL_D2 = "1"
+          TMODEL_F1 = "0"
+          TMODEL_F2 = "0"
+          TMODEL_SATCRIT = "1"
+          AKCELIK_A = "1"
+          AKCELIK_B = "1"
+          AKCELIK_D = "1800"
+          LOHSE_A = "1"
+          LOHSE_B = "3"
+          LOHSE_SATCRIT = "1"
+          SCHILLER_A = "3"
+          SCHILLER_B = "1"
+          SCHILLER_D = "0.001"
+          SCHILLER_F = "10"
+          SCHILLER_SATCRIT = "1"
+          EXPONENTIAL_A = "1"
+          EXPONENTIAL_B = "1"
+          EXPONENTIAL_D = "1"
+          EXPONENTIAL_SATCRIT = "1"
+          AKCELIK2_A = "1"
+          AKCELIK2_B = "1"
+          AKCELIK2_D = "1"
+          USER_A1 = "1"
+          USER_B1 = "1"
+          USER_D1 = "1"
+          USER_F1 = "1"
+          USER_A2 = "1"
+          USER_B2 = "1"
+          USER_D2 = "1"
+          USER_F2 = "1"
+          USER_SATCRIT = "1"
+        />        
         <TURNVDFUNCTIONS>
           <ATTRIBUTE            NAME = "VDFUNCTIONNO_TURNTYPE">
             <ATTRITEM              SUBATTR1 = "0"              VALUE = "1"            />            
@@ -5549,9 +5895,9 @@
             <ATTRITEM              SUBATTR1 = "2"              VALUE = "1"            />            
             <ATTRITEM              SUBATTR1 = "3"              VALUE = "1"            />            
             <ATTRITEM              SUBATTR1 = "4"              VALUE = "1"            />            
-            <ATTRITEM              SUBATTR1 = "5"              VALUE = "1"            />            
-            <ATTRITEM              SUBATTR1 = "6"              VALUE = "1"            />            
-            <ATTRITEM              SUBATTR1 = "7"              VALUE = "1"            />            
+            <ATTRITEM              SUBATTR1 = "5"              VALUE = "5"            />            
+            <ATTRITEM              SUBATTR1 = "6"              VALUE = "6"            />            
+            <ATTRITEM              SUBATTR1 = "7"              VALUE = "7"            />            
             <ATTRITEM              SUBATTR1 = "8"              VALUE = "1"            />            
             <ATTRITEM              SUBATTR1 = "9"              VALUE = "1"            />            
           </ATTRIBUTE>
@@ -5724,10 +6070,10 @@
       CODE = "0024"
       NAME = "0-24"
       ISAGGREGATE = "1"
-      DERIVEDFROM = "0006,0609,0912,1215,1519,1922,2224"
+      DERIVEDFROM = ""
       AGGRFUNCTION = "SUM"
       STARTDAYINDEX = "1"
-      STARTTIME = "00:00:00"
+      STARTTIME = "22:00:00"
       ENDDAYINDEX = "1"
       ENDTIME = "23:59:59"
     />    
