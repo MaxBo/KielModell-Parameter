@@ -604,7 +604,7 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 7020;LogsumMatrix;Logsum PEN_EWoP AP;Kenngröße;Bezirk;;;LogsumMatrix;2;DATEN;;;;;;;;;PEN_EWoP;AP;;;1;0;0;;;Pendler
 7021;LogsumMatrix;Logsum PEN_FernPENoP YP;Kenngröße;Bezirk;;;LogsumMatrix;2;DATEN;;;;;;;;;PEN_FernPENoP;YP;;;1;0;0;;;Pendler
 7022;LogsumMatrix;Logsum PEN_AZoP ZP;Kenngröße;Bezirk;;;LogsumMatrix;2;DATEN;;;;;;;;;PEN_AZoP;ZP;;;1;0;0;;;Pendler
-9000;Accessibility_EWhP_A;Erreichbare Arbeitsplätze mit hP;Kenngröße;Bezirk;;;Accessibility_EWhP_A;2;FORMEL;(TO[WERTSTRUKTURGROESSE(ZP_PEN_A)] + TO[WERTSTRUKTURGROESSE(ZP_PEN_Y)]) * EXP([LS_A] * Matrix([CODE]="LogsumMatrix" & [NACHFRMODELLCODE]="Pendler" & [AKTIVCODE]="AP" & [PGRUPPENCODE]="PEN_EWhP"));;;;;;;;;;;;0;0;0;;;
+*9000;Accessibility_EWhP_A;Erreichbare Arbeitsplätze mit hP;Kenngröße;Bezirk;;;Accessibility_EWhP_A;2;FORMEL;(TO[WERTSTRUKTURGROESSE(ZP_PEN_A)] + TO[WERTSTRUKTURGROESSE(ZP_PEN_Y)]) * EXP([LS_A] * Matrix([CODE]="LogsumMatrix" & [NACHFRMODELLCODE]="Pendler" & [AKTIVCODE]="AP" & [PGRUPPENCODE]="PEN_EWhP"));;;;;;;;;;;;0;0;0;;;
 
 *
 * Tabelle: Benutzerdefinierte Attribute (eingefügt)
@@ -650,6 +650,6 @@ NETZ;LS_EINPEN_J;LS_EINPEN_J;LS_EINPEN_J;Double;MIN;MAX;;;;255;3;FORMEL;TableLoo
 NETZ;LS_MS_M;LS_MS_M;LS_MS_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(Activity Act, Act[CODE] = "M", Act[LS_MS]);SUM
 NETZ;LS_OS_M;LS_OS_M;LS_OS_M;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(Activity Act, Act[CODE] = "M", Act[LS_OS]);SUM
 NETZ;LS_EINPENFERN_Y;LS_EINPENFERN_Y;LS_EINPENFERN_Y;Double;MIN;MAX;;;;255;3;FORMEL;TableLookup(Activity Act, Act[CODE] = "Y", Act[LS_EINPENFERN]);SUM
-BEZIRK;LogSum_EWhP_A;LogSum_EWhP_A;LogSum_EWhP_A;Double;MIN;MAX;;;;255;3;FORMEL;LN([MATROWSUM(9000)]);SUM
-BEZIRK;KF_LOGSUM_berechnet;KF_LOGSUM_berechnet;KF_LOGSUM_berechnet;Double;MIN;MAX;;;;255;3;FORMEL;If([NO]<1000000, POW(1 / (EXP([LogSum_EWhP_A] - TableLookup(ZONE Bez,Bez[NO] = 511702, BEZ[LogSum_EWhP_A]))), .15), 1) ;SUM
+*BEZIRK;LogSum_EWhP_A;LogSum_EWhP_A;LogSum_EWhP_A;Double;MIN;MAX;;;;255;3;FORMEL;LN([MATZEILENSUMME(9000)]);SUM
+*BEZIRK;KF_LOGSUM_berechnet;KF_LOGSUM_berechnet;KF_LOGSUM_berechnet;Double;MIN;MAX;;;;255;3;FORMEL;If([NO]<1000000, POW(1 / (EXP([LogSum_EWhP_A] - TableLookup(ZONE Bez,Bez[NO] = 511702, BEZ[LogSum_EWhP_A]))), .15), 1) ;SUM
 

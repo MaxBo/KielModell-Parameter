@@ -1,6 +1,6 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 2017-10-11
+* 2017-11-18
 *
 * Tabelle: Versionsblock
 *
@@ -2102,32 +2102,32 @@ $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTE
 2072;car_availability_oP_O;Wege mit Verkehrsmittel O der Gruppe car_availability_oP;Nachfrage;Bezirk;;;car_availability_oP_O;2;DATEN;;;;;;O;;;;;;;0;0;0;;car_availability_oP;
 2073;car_availability_oP_M;Wege mit Verkehrsmittel M der Gruppe car_availability_oP;Nachfrage;Bezirk;;;car_availability_oP_M;2;DATEN;;;;;;M;;;;;;;0;0;0;;car_availability_oP;
 2074;car_availability_oP_P;Wege mit Verkehrsmittel P der Gruppe car_availability_oP;Nachfrage;Bezirk;;;car_availability_oP_P;2;DATEN;;;;;;P;;;;;;;0;0;0;;car_availability_oP;
-1010;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1011;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1010;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1011;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1012;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1013;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_0_6;2;DATEN;;1;00:00:00;06:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1014;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1015;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1014;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1015;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1016;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1017;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_6_9;2;DATEN;;1;06:00:00;09:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1018;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1019;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1018;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1019;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1020;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1021;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_9_12;2;DATEN;;1;09:00:00;12:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1022;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1023;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1022;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1023;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1024;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1025;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_12_15;2;DATEN;;1;12:00:00;15:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1026;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1027;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1026;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1027;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1028;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1029;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_15_19;2;DATEN;;1;15:00:00;19:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1030;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1031;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1030;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
+1031;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1032;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
 1033;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_19_22;2;DATEN;;1;19:00:00;22:00:00;Abfahrtszeit;;;;;;;;1;0;0;;;
-1034;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;;
-1035;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;;
+1034;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;;
+1035;FAR;Fahrpreis Xg;Kenngröße;Bezirk;Xg;;FAR_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;;
 1036;XADT;Erweiterte Anpassungszeit Xg;Kenngröße;Bezirk;Xg;;XADT_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;;
 1037;JRD;Reiseweite Xg;Kenngröße;Bezirk;Xg;;JRD_22_24;2;DATEN;;1;22:00:00;23:59:59;Abfahrtszeit;;;;;;;;1;0;0;;;
 1038;PJT;Empfundene Reisezeit Xg;Kenngröße;Bezirk;Xg;;PJT;2;DATEN;;;;;Abfahrtszeit;;;;;;;;0;0;0;;;
