@@ -1,0 +1,249 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 19.12.17
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE;UNIT
+10.000;Net;DEU;KM
+
+* 
+* Tabelle: Oberlinien
+* 
+$OBERLINIE:NAME;KOMMENTAR
+SPNV;
+Tram;
+
+* 
+* Tabelle: Linien
+* 
+$LINIE:NAME;VSYSCODE;OLINNAME
+10;Bus;
+11;Bus;
+119;Bus;
+12;Bus;
+120;Bus;
+13;Bus;
+14;Bus;
+15;Bus;
+16;Bus;
+1605 Schnellbus FL-Kappeln;Bus;
+17;Bus;
+18;Bus;
+19;Bus;
+20;Bus;
+200;Bus;
+201;Bus;
+210;Bus;
+217;Bus;
+218;Bus;
+219;Bus;
+220;Bus;
+221;Bus;
+222;Bus;
+230;Bus;
+231;Bus;
+232;Bus;
+233;Bus;
+260;Bus;
+261;Bus;
+2ALiT;ALT;
+300;Bus;
+3080;Bus;
+311;Bus;
+312;Bus;
+313;Bus;
+314;Bus;
+328;Bus;
+331;Bus;
+332;Bus;
+341;Bus;
+342;Bus;
+343;Bus;
+350;Bus;
+351;Bus;
+352;Bus;
+353;Bus;
+360;Bus;
+361;Bus;
+362;Bus;
+363;Bus;
+364;Bus;
+366;Bus;
+4;Bus;
+4010;Bus;
+410;Bus;
+411;Bus;
+412;Bus;
+413;Bus;
+416;Bus;
+424;Bus;
+425;Bus;
+426;Bus;
+427;Bus;
+4310;Bus;
+4330;Bus;
+451;Bus;
+4550;Bus;
+4610;Bus;
+4630;Bus;
+4810;Bus;
+520;Bus;
+620;Bus;
+640;Bus;
+701;Bus;
+702;Bus;
+703;Bus;
+704;Bus;
+705;Bus;
+830;Bus;
+900;Bus;
+901;Bus;
+902;Bus;
+921;Bus;
+922;Bus;
+AKN;NV;SPNV
+ALITA;ALT;
+F1 - Fördelinie;FAE;
+F2 - Schwentinelinie;FAE;
+Hamburg-Flensburg;NV;SPNV
+Hamburg-Kiel;NV;SPNV
+Hamburg-Lübeck;NV;SPNV
+HH-Fl IC/EC;FV;SPNV
+HH-Fl ICE;FV;SPNV
+HH-Kbh;FV;SPNV
+HH-Kiel IC/EC;FV;SPNV
+HH-Kiel ICE;FV;SPNV
+Husum-Bad St. Peter Ording;NV;SPNV
+Kiel-Eckernförde;NV;SPNV
+Kiel-Flensburg;NV;SPNV
+Kiel-Husum;NV;SPNV
+Kiel-Lübeck RB;NV;SPNV
+Kiel-Lübeck RE;NV;SPNV
+Kiel-Schönberger Strand;NV;SPNV
+M1;Bus;
+M2;Bus;
+N1;Bus;
+N2;Bus;
+Neumünster-Flensburg;NV;SPNV
+NMS Bus_1;Bus;
+NMS Bus_12;Bus;
+NMS Bus_14;Bus;
+NMS Bus_16;Bus;
+NMS Bus_2;Bus;
+NMS Bus_22;Bus;
+NMS Bus_3;Bus;
+NMS Bus_33;Bus;
+NMS Bus_4;Bus;
+NMS Bus_5;Bus;
+NMS Bus_6;Bus;
+NMS Bus_66;Bus;
+NMS Bus_7;Bus;
+NMS Bus_77;Bus;
+NMS Bus_7915;Bus;
+NMS Bus_8;Bus;
+NMS Bus_9;Bus;
+NOB;NV;SPNV
+NOK-Fähre Holtenau;FAE;
+Nordbahn HH;NV;SPNV
+Nordbahn SH;NV;SPNV
+PLÖ Bus_220Rest;Bus;
+PLÖ Bus_361;Bus;
+PLÖ Bus_5809;Bus;
+RB Vogelfluglinie;NV;SPNV
+RD Bus_0002;Bus;
+RD Bus_0003;Bus;
+RD Bus_0005;Bus;
+RD Bus_0006;Bus;
+RD Bus_0007;Bus;
+RD Bus_0010;Bus;
+RD Bus_0011;Bus;
+RD Bus_0012;Bus;
+RD Bus_0014;Bus;
+RD Bus_0015;Bus;
+RD Bus_0016;Bus;
+RD Bus_0017;Bus;
+RD Bus_0019;Bus;
+RD Bus_0021;Bus;
+RD Bus_0022;Bus;
+RD Bus_0023;Bus;
+RD Bus_0024;Bus;
+RD Bus_0025;Bus;
+RD Bus_0028;Bus;
+RD Bus_0171;Bus;
+RD Bus_1;Bus;
+RD Bus_1003;Bus;
+RD Bus_14a;Bus;
+RD Bus_1645;Bus;
+RD Bus_2;Bus;
+RD Bus_2820;Bus;
+RD Bus_3010;Bus;
+RD Bus_3011;Bus;
+RD Bus_3012;Bus;
+RD Bus_3020;Bus;
+RD Bus_3021;Bus;
+RD Bus_3030;Bus;
+RD Bus_3031;Bus;
+RD Bus_3040;Bus;
+RD Bus_3050;Bus;
+RD Bus_3060;Bus;
+RD Bus_3070;Bus;
+RD Bus_3080;Bus;
+RD Bus_3210;Bus;
+RD Bus_3211;Bus;
+RD Bus_3220;Bus;
+RD Bus_3221;Bus;
+RD Bus_3230;Bus;
+RD Bus_3231;Bus;
+RD Bus_3240;Bus;
+RD Bus_3241;Bus;
+RD Bus_3250;Bus;
+RD Bus_3251;Bus;
+RD Bus_3253;Bus;
+RD Bus_3254;Bus;
+RD Bus_3260;Bus;
+RD Bus_3270;Bus;
+RD Bus_3280;Bus;
+RD Bus_3290;Bus;
+RD Bus_3291;Bus;
+RD Bus_3295;Bus;
+RD Bus_3296;Bus;
+RD Bus_3310;Bus;
+RD Bus_3510;Bus;
+RD Bus_3525;Bus;
+RD Bus_4;Bus;
+RD Bus_4011;Bus;
+RD Bus_4611;Bus;
+RD Bus_4612;Bus;
+RD Bus_4613;Bus;
+RD Bus_4614;Bus;
+RD Bus_4615;Bus;
+RD Bus_4616;Bus;
+RD Bus_4620;Bus;
+RD Bus_521;Bus;
+RD Bus_522;Bus;
+RD Bus_6551;Bus;
+RD Bus_7;Bus;
+RD Bus_821;Bus;
+RD Bus_831;Bus;
+RD Bus_832;Bus;
+RD Bus_833;Bus;
+RD Bus_834;Bus;
+RD Bus_835;Bus;
+RD LT_3525;ALT;
+RD LT_7;ALT;
+RE HH-HL;NV;SPNV
+Schul;Bus;
+SE Bus_410;Bus;
+SL Bus_1547;Bus;
+SL Bus_1635;Bus;
+SL Bus_1645;Bus;
+STB1;STB;Tram
+STB2;STB;Tram
+STB3;STB;Tram
+T1;Bus;
+T2;Bus;
+X1;Bus;
+X2;Bus;
+X3;Bus;
+
