@@ -1,0 +1,55 @@
+Modifikation 160:
+
+Folgende Änderungen wurden vorgenommen:
+
+- Verschieben von Knoten:
+in Russee, Rd. Landstraße
+in Raisdorf am Kreisel Gewerbegebiet
+
+- Verschieben von Knoten und Einfügen neuer Strecke am verschobenen Knoten:
+Lerchenstraße eigefügt, Knoten an der Hopfenstr. verschobenen
+Kirchenweg in Gaarden-Ost eingefügt, Knoten an Röntgenstr. verschobenen
+
+- Knoten gelöscht und entsprechend neue Strecken eingefügt:
+mehrere Zwischenknoten auf B76 und B404 gelöscht.
+-> Linienrouten, Fahrzeitprofile und Fahrplanfahrten auf Linie 71, 72, 900,, 901, 902, 902S wg. Zwischenknoten 7000014
+-> Linienrouten, Fahrzeitprofile und Fahrplanfahrten auf Linie 5ALit wg. 7000025
+-> Linienrouten, Fahrzeitprofile und Fahrplanfahrten auf Linie 4550 wg. 7000018 und 7000027
+
+Zwischenknoten 7000014 und 7000015 gelöscht in Schilksee -> Haltepunkt Schilksee Kirche auf Strecke neu erzeugt
+-> Linienrouten der 33, 501, 502, 701 verändert
+
+
+- Neue Strecken mit Splitten vorhandener Strecken:
+  "Reeperbahn" an Preetzer Chaussee eingefügt
+  -> Linienrouten 300,32,34,4310,4330 verändert
+ 
+  "Chemnitzstr" an Zustrowstraße eingefügt (keine Auswirkungen auf Busverkehr)
+  
+  "Gerhardstr" parallel zur Holtenauer eingefügt 
+  -> Strecke Holtenauer/Waitzstraße gesplittet und Haltepunkt auf neuer Strecke erzeugt
+     und Linienrouten 51, 61, 620 verändert
+
+  "Wrangelstraße" zw. Holtenauer und Feldstraße eingefügt
+  -> Linienrouten der 11, 501, 502, 701, 703, 900, 901 modifiziert
+  
+  "Lessingplatz" an Knooper Weg -> Knoten eingefügt
+  -> Linienrouten der 42, 50, 51, 520, 62, 620 angepasst
+  
+
+  
+-> Letzlich sind in allen Modifikationen eine Vielzahl von Linien betroffen.
+Das ganze lässt sich nach m.E. nur durch ein Script lösen, dass die Anpassungen automatisch vornimmt.
+ Mit folgendem Algorithmus:
+ - suche betroffene (gelöschte/eingefügte) Knoten bzw. Haltestellen auf Strecken
+ - for all Modifikations
+   - for all Linienroutenelement
+     - if gesplitteteStrecke (VonKnoten->NachKnoten) in Linienroutenelemente:
+	     - insert neuerKnoten in LRE
+		 - adjust Index in FZPE und in Fahrplanfahrten und FZPE
+	 - if gelöschterKnoten in LRE
+	    - lösche gelöschterKnoten aus LRE		 
+		- adjust Index in FZPE und in Fahrplanfahrten und FZPE
+
+	finally:
+    - Alle Längen neu berechnen
