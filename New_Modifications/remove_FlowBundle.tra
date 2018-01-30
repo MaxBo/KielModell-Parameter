@@ -1,0 +1,25 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 10.02.17
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10.000;Trans;DEU
+
+* 
+* Tabelle: Matrizen
+* 
+$-MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;LOADMATRIX;MATRIXFOLDER
+411;FlowBundle;;Nachfrage;Bezirk;F;;;3;Formel;FlowBundleMatrix("F");;;;NEUTRAL;;;;;;0;S
+412;FlowBundle;;Nachfrage;Bezirk;Pkw;;;3;Formel;FlowBundleMatrix("Pkw");;;;NEUTRAL;;;;;;0;S
+413;FlowBundle;;Nachfrage;Bezirk;R;;;3;Formel;FlowBundleMatrix("R");;;;NEUTRAL;;;;;;0;S
+604;FlowBundle;;Nachfrage;Bezirk;B_L1;;;3;Formel;FlowBundleMatrix("B_L1");;;;NEUTRAL;;;;;;0;S
+605;FlowBundle;;Nachfrage;Bezirk;B_L2;;;3;Formel;FlowBundleMatrix("B_L2");;;;NEUTRAL;;;;;;0;S
+606;FlowBundle;;Nachfrage;Bezirk;B_Li;;;3;Formel;FlowBundleMatrix("B_Li");;;;NEUTRAL;;;;;;0;S
+607;FlowBundle;;Nachfrage;Bezirk;B_P;;;3;Formel;FlowBundleMatrix("B_P");;;;NEUTRAL;;;;;;0;S
+608;FlowBundle;;Nachfrage;Bezirk;FV;;;3;Formel;FlowBundleMatrix("FV");;;;NEUTRAL;;;;;;0;S
+609;FlowBundle;;Nachfrage;Bezirk;LkwFern;;;3;Formel;FlowBundleMatrix("LkwFern");;;;NEUTRAL;;;;;;0;S
+665;FlowBundle;;Nachfrage;Bezirk;XFV;;;3;Formel;FlowBundleMatrix("XFV");;;;NEUTRAL;;;;;;0;S
+666;FlowBundle;;Nachfrage;Bezirk;Xm;;;3;Formel;FlowBundleMatrix("Xm");;;;NEUTRAL;;;;;;0;S
+671;FlowBundle;;Nachfrage;Bezirk;Xg;;;3;Formel;FlowBundleMatrix("Xg");;;;NEUTRAL;;;;;;0;S

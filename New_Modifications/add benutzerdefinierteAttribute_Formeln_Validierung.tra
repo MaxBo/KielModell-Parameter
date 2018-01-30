@@ -1,0 +1,174 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 10.02.17
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10.000;Trans;DEU
+
+* 
+* Tabelle: Benutzerdefinierte Attribute
+* 
+$+BENUTZERDEFATTRIBUTE:OBJID;ATTID;CODE;NAME;DATENTYP;MINWERT;MAXWERT;STANDARDWERT;STRINGSTANDARDWERT;KOMMENTAR;MAXSTRINGLAENGE;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;QUERSCHNITTSLOGIK
+NETZ;NOT_CONVERGED_A;NOT_CONVERGED_A;RSA not Converged for Activity A;Bool;0.000;1.000;;;;255;3;Formel;[MIN:BEZIRKE\ZONE_KF_A] < 0.95 | [MAX:BEZIRKE\ZONE_KF_A] > 1.05;MAX
+NETZ;NOT_CONVERGED_ANY_ACTIVITY;NOT_CONVERGED_ANY_ACTIVITY;RSA not Converged for at least one Activity;Bool;0.000;1.000;;;;255;3;Formel;[NOT_CONVERGED_A] | [NOT_CONVERGED_M] | [NOT_CONVERGED_U] | [NOT_CONVERGED_Z];MAX
+NETZ;NOT_CONVERGED_M;NOT_CONVERGED_M;RSA not Converged for Activity M;Bool;0.000;1.000;;;;255;3;Formel;[MIN:BEZIRKE\ZONE_KF_M] < 0.95 | [MAX:BEZIRKE\ZONE_KF_M] > 1.05;MAX
+NETZ;NOT_CONVERGED_PENDLER;NOT_CONVERGED_PENDLER;RSA not Converged for Activity PENDLER;Bool;0.000;1.000;;;;255;3;Formel;[MIN:BEZIRKE\ZONE_KF_PENDLER] < 0.95 | [MAX:BEZIRKE\ZONE_KF_PENDLER] > 1.02;MAX
+NETZ;NOT_CONVERGED_U;NOT_CONVERGED_U;RSA not Converged for Activity U;Bool;0.000;1.000;;;;255;3;Formel;[MIN:BEZIRKE\ZONE_KF_U] < 0.95 | [MAX:BEZIRKE\ZONE_KF_U] > 1.05;MAX
+NETZ;NOT_CONVERGED_Z;NOT_CONVERGED_Z;RSA not Converged for Activity Z;Bool;0.000;1.000;;;;255;3;Formel;[MIN:BEZIRKE\ZONE_KF_Z] < 0.95 | [MAX:BEZIRKE\ZONE_KF_Z] > 1.05;MAX
+NETZ;TOTAL_ACTUAL_TRIPS_A;Total_actual_trips_A;Actual Trips for Activity A;Double;MIN;MAX;;;;255;3;Formel;[SUM:BEZIRKE\ZONE_ACTUAL_TRIPS_A];SUM
+NETZ;TOTAL_ACTUAL_TRIPS_M;Total_actual_trips_M;Actual Trips for Activity M;Double;MIN;MAX;;;;255;3;Formel;[SUM:BEZIRKE\ZONE_ACTUAL_TRIPS_M];SUM
+NETZ;TOTAL_ACTUAL_TRIPS_PENDLER;Total_actual_trips_PENDLER;Actual Trips for Activity PENDLER;Double;MIN;MAX;;;;255;3;Formel;[SUM:BEZIRKE\ZONE_ACTUAL_TRIPS_PENDLER];SUM
+NETZ;TOTAL_ACTUAL_TRIPS_U;Total_actual_trips_U;Actual Trips for Activity U;Double;MIN;MAX;;;;255;3;Formel;[SUM:BEZIRKE\ZONE_ACTUAL_TRIPS_U];SUM
+NETZ;TOTAL_ACTUAL_TRIPS_Z;Total_actual_trips_Z;Actual Trips for Activity Z;Double;MIN;MAX;;;;255;3;Formel;[SUM:BEZIRKE\ZONE_ACTUAL_TRIPS_Z];SUM
+NETZ;TRIPS_ACTIVITY_A;Trips_Activity_A;Trips to Activity A;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(15.0)];SUM
+NETZ;TRIPS_ACTIVITY_B;Trips_Activity_B;Trips to Activity B;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(23.0)];SUM
+NETZ;TRIPS_ACTIVITY_E;Trips_Activity_E;Trips to Activity E;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(25.0)];SUM
+NETZ;TRIPS_ACTIVITY_F;Trips_Activity_F;Trips to Activity F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(27.0)];SUM
+NETZ;TRIPS_ACTIVITY_G;Trips_Activity_G;Trips to Activity G;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(29.0)];SUM
+NETZ;TRIPS_ACTIVITY_K;Trips_Activity_K;Trips to Activity K;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(31.0)];SUM
+NETZ;TRIPS_ACTIVITY_M;Trips_Activity_M;Trips to Activity M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(16.0)];SUM
+NETZ;TRIPS_ACTIVITY_O;Trips_Activity_O;Trips to Activity O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(33.0)];SUM
+NETZ;TRIPS_ACTIVITY_PENDLER;Trips_Activity_Pendler;Trips to Activity Pendler;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(697.0)];SUM
+NETZ;TRIPS_ACTIVITY_R;Trips_Activity_R;Trips to Activity R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(35.0)];SUM
+NETZ;TRIPS_ACTIVITY_S;Trips_Activity_S;Trips to Activity S;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(37.0)];SUM
+NETZ;TRIPS_ACTIVITY_T;Trips_Activity_T;Trips to Activity T;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(39.0)];SUM
+NETZ;TRIPS_ACTIVITY_U;Trips_Activity_U;Trips to Activity U;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(17.0)];SUM
+NETZ;TRIPS_ACTIVITY_V;Trips_Activity_V;Trips to Activity V;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(41.0)];SUM
+NETZ;TRIPS_ACTIVITY_W;Trips_Activity_W;Trips to Activity W;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(43.0)];SUM
+NETZ;TRIPS_ACTIVITY_Z;Trips_Activity_Z;Trips to Activity Z;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(18.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_EP;trips_car_availability_eP;Trips of car_availability groups eP;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_CAR_AVAILABILITY_EP_F] + [TRIPS_CAR_AVAILABILITY_EP_M] + [TRIPS_CAR_AVAILABILITY_EP_O] + [TRIPS_CAR_AVAILABILITY_EP_P] + [TRIPS_CAR_AVAILABILITY_EP_R];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_EP_F;trips_car_availability_eP_F;Trips of car_availability groups eP by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(110.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_EP_M;trips_car_availability_eP_M;Trips of car_availability groups eP by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(111.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_EP_O;trips_car_availability_eP_O;Trips of car_availability groups eP by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(112.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_EP_P;trips_car_availability_eP_P;Trips of car_availability groups eP by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(113.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_EP_R;trips_car_availability_eP_R;Trips of car_availability groups eP by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(114.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_HP;trips_car_availability_hP;Trips of car_availability groups hP;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_CAR_AVAILABILITY_HP_F] + [TRIPS_CAR_AVAILABILITY_HP_M] + [TRIPS_CAR_AVAILABILITY_HP_O] + [TRIPS_CAR_AVAILABILITY_HP_P] + [TRIPS_CAR_AVAILABILITY_HP_R];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_HP_F;trips_car_availability_hP_F;Trips of car_availability groups hP by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(115.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_HP_M;trips_car_availability_hP_M;Trips of car_availability groups hP by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(116.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_HP_O;trips_car_availability_hP_O;Trips of car_availability groups hP by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(117.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_HP_P;trips_car_availability_hP_P;Trips of car_availability groups hP by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(118.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_HP_R;trips_car_availability_hP_R;Trips of car_availability groups hP by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(119.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_OP;trips_car_availability_oP;Trips of car_availability groups oP;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_CAR_AVAILABILITY_OP_F] + [TRIPS_CAR_AVAILABILITY_OP_M] + [TRIPS_CAR_AVAILABILITY_OP_O] + [TRIPS_CAR_AVAILABILITY_OP_P] + [TRIPS_CAR_AVAILABILITY_OP_R];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_OP_F;trips_car_availability_oP_F;Trips of car_availability groups oP by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(120.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_OP_M;trips_car_availability_oP_M;Trips of car_availability groups oP by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(121.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_OP_O;trips_car_availability_oP_O;Trips of car_availability groups oP by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(122.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_OP_P;trips_car_availability_oP_P;Trips of car_availability groups oP by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(123.0)];SUM
+NETZ;TRIPS_CAR_AVAILABILITY_OP_R;trips_car_availability_oP_R;Trips of car_availability groups oP by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(124.0)];SUM
+NETZ;TRIPS_MODE_F;TRIPS_MODE_F;Trips with Mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(9.0)];SUM
+NETZ;TRIPS_MODE_M;TRIPS_MODE_M;Trips with Mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(12.0)];SUM
+NETZ;TRIPS_MODE_O;TRIPS_MODE_O;Trips with Mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(11.0)];SUM
+NETZ;TRIPS_MODE_P;TRIPS_MODE_P;Trips with Mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(13.0)];SUM
+NETZ;TRIPS_MODE_R;TRIPS_MODE_R;Trips with Mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(10.0)];SUM
+NETZ;TRIPS_OCCUPATION_AZ;trips_occupation_AZ;Trips of occupation groups AZ;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_AZ_F] + [TRIPS_OCCUPATION_AZ_M] + [TRIPS_OCCUPATION_AZ_O] + [TRIPS_OCCUPATION_AZ_P] + [TRIPS_OCCUPATION_AZ_R];SUM
+NETZ;TRIPS_OCCUPATION_AZ_F;trips_occupation_AZ_F;Trips of occupation groups AZ by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(59.0)];SUM
+NETZ;TRIPS_OCCUPATION_AZ_M;trips_occupation_AZ_M;Trips of occupation groups AZ by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(61.0)];SUM
+NETZ;TRIPS_OCCUPATION_AZ_O;trips_occupation_AZ_O;Trips of occupation groups AZ by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(62.0)];SUM
+NETZ;TRIPS_OCCUPATION_AZ_P;trips_occupation_AZ_P;Trips of occupation groups AZ by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(63.0)];SUM
+NETZ;TRIPS_OCCUPATION_AZ_R;trips_occupation_AZ_R;Trips of occupation groups AZ by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(64.0)];SUM
+NETZ;TRIPS_OCCUPATION_EW;trips_occupation_EW;Trips of occupation groups EW;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_EW_F] + [TRIPS_OCCUPATION_EW_M] + [TRIPS_OCCUPATION_EW_O] + [TRIPS_OCCUPATION_EW_P] + [TRIPS_OCCUPATION_EW_R];SUM
+NETZ;TRIPS_OCCUPATION_EW_F;trips_occupation_EW_F;Trips of occupation groups EW by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(65.0)];SUM
+NETZ;TRIPS_OCCUPATION_EW_M;trips_occupation_EW_M;Trips of occupation groups EW by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(66.0)];SUM
+NETZ;TRIPS_OCCUPATION_EW_O;trips_occupation_EW_O;Trips of occupation groups EW by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(67.0)];SUM
+NETZ;TRIPS_OCCUPATION_EW_P;trips_occupation_EW_P;Trips of occupation groups EW by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(68.0)];SUM
+NETZ;TRIPS_OCCUPATION_EW_R;trips_occupation_EW_R;Trips of occupation groups EW by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(69.0)];SUM
+NETZ;TRIPS_OCCUPATION_GS;trips_occupation_GS;Trips of occupation groups GS;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_GS_F] + [TRIPS_OCCUPATION_GS_M] + [TRIPS_OCCUPATION_GS_O] + [TRIPS_OCCUPATION_GS_P] + [TRIPS_OCCUPATION_GS_R];SUM
+NETZ;TRIPS_OCCUPATION_GS_F;trips_occupation_GS_F;Trips of occupation groups GS by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(70.0)];SUM
+NETZ;TRIPS_OCCUPATION_GS_M;trips_occupation_GS_M;Trips of occupation groups GS by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(71.0)];SUM
+NETZ;TRIPS_OCCUPATION_GS_O;trips_occupation_GS_O;Trips of occupation groups GS by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(72.0)];SUM
+NETZ;TRIPS_OCCUPATION_GS_P;trips_occupation_GS_P;Trips of occupation groups GS by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(73.0)];SUM
+NETZ;TRIPS_OCCUPATION_GS_R;trips_occupation_GS_R;Trips of occupation groups GS by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(74.0)];SUM
+NETZ;TRIPS_OCCUPATION_KI;trips_occupation_KI;Trips of occupation groups KI;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_KI_F] + [TRIPS_OCCUPATION_KI_M] + [TRIPS_OCCUPATION_KI_O] + [TRIPS_OCCUPATION_KI_P] + [TRIPS_OCCUPATION_KI_R];SUM
+NETZ;TRIPS_OCCUPATION_KI_F;trips_occupation_KI_F;Trips of occupation groups KI by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(75.0)];SUM
+NETZ;TRIPS_OCCUPATION_KI_M;trips_occupation_KI_M;Trips of occupation groups KI by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(76.0)];SUM
+NETZ;TRIPS_OCCUPATION_KI_O;trips_occupation_KI_O;Trips of occupation groups KI by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(77.0)];SUM
+NETZ;TRIPS_OCCUPATION_KI_P;trips_occupation_KI_P;Trips of occupation groups KI by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(78.0)];SUM
+NETZ;TRIPS_OCCUPATION_KI_R;trips_occupation_KI_R;Trips of occupation groups KI by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(79.0)];SUM
+NETZ;TRIPS_OCCUPATION_MS;trips_occupation_MS;Trips of occupation groups MS;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_MS_F] + [TRIPS_OCCUPATION_MS_M] + [TRIPS_OCCUPATION_MS_O] + [TRIPS_OCCUPATION_MS_P] + [TRIPS_OCCUPATION_MS_R];SUM
+NETZ;TRIPS_OCCUPATION_MS_F;trips_occupation_MS_F;Trips of occupation groups MS by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(80.0)];SUM
+NETZ;TRIPS_OCCUPATION_MS_M;trips_occupation_MS_M;Trips of occupation groups MS by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(81.0)];SUM
+NETZ;TRIPS_OCCUPATION_MS_O;trips_occupation_MS_O;Trips of occupation groups MS by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(82.0)];SUM
+NETZ;TRIPS_OCCUPATION_MS_P;trips_occupation_MS_P;Trips of occupation groups MS by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(83.0)];SUM
+NETZ;TRIPS_OCCUPATION_MS_R;trips_occupation_MS_R;Trips of occupation groups MS by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(84.0)];SUM
+NETZ;TRIPS_OCCUPATION_NE;trips_occupation_NE;Trips of occupation groups NE;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_NE_F] + [TRIPS_OCCUPATION_NE_M] + [TRIPS_OCCUPATION_NE_O] + [TRIPS_OCCUPATION_NE_P] + [TRIPS_OCCUPATION_NE_R];SUM
+NETZ;TRIPS_OCCUPATION_NE_F;trips_occupation_NE_F;Trips of occupation groups NE by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(85.0)];SUM
+NETZ;TRIPS_OCCUPATION_NE_M;trips_occupation_NE_M;Trips of occupation groups NE by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(86.0)];SUM
+NETZ;TRIPS_OCCUPATION_NE_O;trips_occupation_NE_O;Trips of occupation groups NE by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(87.0)];SUM
+NETZ;TRIPS_OCCUPATION_NE_P;trips_occupation_NE_P;Trips of occupation groups NE by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(88.0)];SUM
+NETZ;TRIPS_OCCUPATION_NE_R;trips_occupation_NE_R;Trips of occupation groups NE by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(89.0)];SUM
+NETZ;TRIPS_OCCUPATION_OS;trips_occupation_OS;Trips of occupation groups OS;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_OS_F] + [TRIPS_OCCUPATION_OS_M] + [TRIPS_OCCUPATION_OS_O] + [TRIPS_OCCUPATION_OS_P] + [TRIPS_OCCUPATION_OS_R];SUM
+NETZ;TRIPS_OCCUPATION_OS_F;trips_occupation_OS_F;Trips of occupation groups OS by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(90.0)];SUM
+NETZ;TRIPS_OCCUPATION_OS_M;trips_occupation_OS_M;Trips of occupation groups OS by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(91.0)];SUM
+NETZ;TRIPS_OCCUPATION_OS_O;trips_occupation_OS_O;Trips of occupation groups OS by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(92.0)];SUM
+NETZ;TRIPS_OCCUPATION_OS_P;trips_occupation_OS_P;Trips of occupation groups OS by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(93.0)];SUM
+NETZ;TRIPS_OCCUPATION_OS_R;trips_occupation_OS_R;Trips of occupation groups OS by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(94.0)];SUM
+NETZ;TRIPS_OCCUPATION_PEN;trips_occupation_PEN;Trips of occupation groups PEN;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_PEN_F] + [TRIPS_OCCUPATION_PEN_M] + [TRIPS_OCCUPATION_PEN_O] + [TRIPS_OCCUPATION_PEN_P] + [TRIPS_OCCUPATION_PEN_R];SUM
+NETZ;TRIPS_OCCUPATION_PEN_F;trips_occupation_PEN_F;Trips of occupation groups PEN by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(525.0)];SUM
+NETZ;TRIPS_OCCUPATION_PEN_M;trips_occupation_PEN_M;Trips of occupation groups PEN by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(526.0)];SUM
+NETZ;TRIPS_OCCUPATION_PEN_O;trips_occupation_PEN_O;Trips of occupation groups PEN by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(527.0)];SUM
+NETZ;TRIPS_OCCUPATION_PEN_P;trips_occupation_PEN_P;Trips of occupation groups PEN by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(528.0)];SUM
+NETZ;TRIPS_OCCUPATION_PEN_R;trips_occupation_PEN_R;Trips of occupation groups PEN by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(529.0)];SUM
+NETZ;TRIPS_OCCUPATION_RA;trips_occupation_RA;Trips of occupation groups RA;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_RA_F] + [TRIPS_OCCUPATION_RA_M] + [TRIPS_OCCUPATION_RA_O] + [TRIPS_OCCUPATION_RA_P] + [TRIPS_OCCUPATION_RA_R];SUM
+NETZ;TRIPS_OCCUPATION_RA_F;trips_occupation_RA_F;Trips of occupation groups RA by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(95.0)];SUM
+NETZ;TRIPS_OCCUPATION_RA_M;trips_occupation_RA_M;Trips of occupation groups RA by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(96.0)];SUM
+NETZ;TRIPS_OCCUPATION_RA_O;trips_occupation_RA_O;Trips of occupation groups RA by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(97.0)];SUM
+NETZ;TRIPS_OCCUPATION_RA_P;trips_occupation_RA_P;Trips of occupation groups RA by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(98.0)];SUM
+NETZ;TRIPS_OCCUPATION_RA_R;trips_occupation_RA_R;Trips of occupation groups RA by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(99.0)];SUM
+NETZ;TRIPS_OCCUPATION_RJ;trips_occupation_RJ;Trips of occupation groups RJ;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_RJ_F] + [TRIPS_OCCUPATION_RJ_M] + [TRIPS_OCCUPATION_RJ_O] + [TRIPS_OCCUPATION_RJ_P] + [TRIPS_OCCUPATION_RJ_R];SUM
+NETZ;TRIPS_OCCUPATION_RJ_F;trips_occupation_RJ_F;Trips of occupation groups RJ by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(100.0)];SUM
+NETZ;TRIPS_OCCUPATION_RJ_M;trips_occupation_RJ_M;Trips of occupation groups RJ by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(101.0)];SUM
+NETZ;TRIPS_OCCUPATION_RJ_O;trips_occupation_RJ_O;Trips of occupation groups RJ by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(102.0)];SUM
+NETZ;TRIPS_OCCUPATION_RJ_P;trips_occupation_RJ_P;Trips of occupation groups RJ by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(103.0)];SUM
+NETZ;TRIPS_OCCUPATION_RJ_R;trips_occupation_RJ_R;Trips of occupation groups RJ by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(104.0)];SUM
+NETZ;TRIPS_OCCUPATION_ST;trips_occupation_ST;Trips of occupation groups ST;Double;MIN;MAX;;;;255;3;Formel;[TRIPS_OCCUPATION_ST_F] + [TRIPS_OCCUPATION_ST_M] + [TRIPS_OCCUPATION_ST_O] + [TRIPS_OCCUPATION_ST_P] + [TRIPS_OCCUPATION_ST_R];SUM
+NETZ;TRIPS_OCCUPATION_ST_F;trips_occupation_ST_F;Trips of occupation groups ST by mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(105.0)];SUM
+NETZ;TRIPS_OCCUPATION_ST_M;trips_occupation_ST_M;Trips of occupation groups ST by mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(106.0)];SUM
+NETZ;TRIPS_OCCUPATION_ST_O;trips_occupation_ST_O;Trips of occupation groups ST by mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(107.0)];SUM
+NETZ;TRIPS_OCCUPATION_ST_P;trips_occupation_ST_P;Trips of occupation groups ST by mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(108.0)];SUM
+NETZ;TRIPS_OCCUPATION_ST_R;trips_occupation_ST_R;Trips of occupation groups ST by mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(109.0)];SUM
+NETZ;TRIPS_TOTAL;TRIPS_TOTAL;Total Trips including commuters;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(534.0)];SUM
+NETZ;TRIPS_TOTAL_REGION;TRIPS_TOTAL_REGION;Total Trips without commuters;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(8.0)];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_A;Trip_Distance_Activity_A;Mean Trip Distance to Activity A;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(21.0)] / [TRIPS_ACTIVITY_A];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_B;Trip_Distance_Activity_B;Mean Trip Distance to Activity B;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(24.0)] / [TRIPS_ACTIVITY_B];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_E;Trip_Distance_Activity_E;Mean Trip Distance to Activity E;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(26.0)] / [TRIPS_ACTIVITY_E];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_F;Trip_Distance_Activity_F;Mean Trip Distance to Activity F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(28.0)] / [TRIPS_ACTIVITY_F];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_G;Trip_Distance_Activity_G;Mean Trip Distance to Activity G;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(30.0)] / [TRIPS_ACTIVITY_G];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_K;Trip_Distance_Activity_K;Mean Trip Distance to Activity K;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(32.0)] / [TRIPS_ACTIVITY_K];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_M;Trip_Distance_Activity_M;Mean Trip Distance to Activity M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(45.0)] / [TRIPS_ACTIVITY_M];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_O;Trip_Distance_Activity_O;Mean Trip Distance to Activity O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(34.0)] / [TRIPS_ACTIVITY_O];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_R;Trip_Distance_Activity_R;Mean Trip Distance to Activity R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(36.0)] / [TRIPS_ACTIVITY_R];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_S;Trip_Distance_Activity_S;Mean Trip Distance to Activity S;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(38.0)] / [TRIPS_ACTIVITY_S];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_T;Trip_Distance_Activity_T;Mean Trip Distance to Activity T;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(40.0)] / [TRIPS_ACTIVITY_T];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_U;Trip_Distance_Activity_U;Mean Trip Distance to Activity U;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(46.0)] / [TRIPS_ACTIVITY_U];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_V;Trip_Distance_Activity_V;Mean Trip Distance to Activity V;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(42.0)] / [TRIPS_ACTIVITY_V];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_W;Trip_Distance_Activity_W;Mean Trip Distance to Activity W;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(44.0)] / [TRIPS_ACTIVITY_W];SUM
+NETZ;TRIP_DISTANCE_ACTIVITY_Z;Trip_Distance_Activity_Z;Mean Trip Distance to Activity Z;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(47.0)] / [TRIPS_ACTIVITY_Z];SUM
+NETZ;TRIP_DISTANCE_MODE_F;Trip_Distance_Mode_F;Mean Trip Distance with Mode F;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(540.0)] / [TRIPS_MODE_F];SUM
+NETZ;TRIP_DISTANCE_MODE_M;Trip_Distance_Mode_M;Mean Trip Distance with Mode M;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(541.0)] / [TRIPS_MODE_M];SUM
+NETZ;TRIP_DISTANCE_MODE_O;Trip_Distance_Mode_O;Mean Trip Distance with Mode O;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(542.0)] / [TRIPS_MODE_O];SUM
+NETZ;TRIP_DISTANCE_MODE_P;Trip_Distance_Mode_P;Mean Trip Distance with Mode P;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(543.0)] / [TRIPS_MODE_P];SUM
+NETZ;TRIP_DISTANCE_MODE_R;Trip_Distance_Mode_R;Mean Trip Distance with Mode R;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(544.0)] / [TRIPS_MODE_R];SUM
+NETZ;TRIP_DISTANCE_PENDLERMODELL;TRIP_DISTANCE_Pendlermodell;Mean Trip Distance Pendler mit WO KielRegion modelliert;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(600)] / [TRIPS_ACTIVITY_PENDLER];SUM
+NETZ;TRIP_DISTANCE_TOTAL;Trip_Distance_Total;Mean Trip Distance Trips in Region;Double;MIN;MAX;;;;255;3;Formel;[NETZSTATISTIK\BEZMATSUMME(546.0)] / [TRIPS_TOTAL_REGION];SUM
+BEZIRK;BINNENDISTANZ;BINNENDISTANZ;BINNENDISTANZ;LongLength;MIN;MAX;;;geschätzte Binnendistanz in km;0;3;Formel;SQRT([FLAECHEKM2]) / 3;SUM
+BEZIRK;ZONE_ACTUAL_TRIPS_A;Trips_actual_to_A;Actual Trips to Zone for Activity A;Double;MIN;MAX;;;;255;3;Formel;[MATSPALTENSUMME(530)];SUM
+BEZIRK;ZONE_ACTUAL_TRIPS_M;Trips_actual_to_M;Actual Trips to Zone for Activity M;Double;MIN;MAX;;;;255;3;Formel;[MATSPALTENSUMME(531)];SUM
+BEZIRK;ZONE_ACTUAL_TRIPS_PENDLER;Trips_actual_to_PENDLER;Actual Trips to Zone for Activity PENDLER;Double;MIN;MAX;;;;255;3;Formel;[MATSPALTENSUMME(611)];SUM
+BEZIRK;ZONE_ACTUAL_TRIPS_U;Trips_actual_to_U;Actual Trips to Zone for Activity U;Double;MIN;MAX;;;;255;3;Formel;[MATSPALTENSUMME(532)];SUM
+BEZIRK;ZONE_ACTUAL_TRIPS_Z;Trips_actual_to_Z;Actual Trips to Zone for Activity Z;Double;MIN;MAX;;;;255;3;Formel;[MATSPALTENSUMME(533)];SUM
+BEZIRK;ZONE_KF_A;Zonal Korrekturfaktor A;Zonal Korrekturfaktor for Activity A;Double;MIN;MAX;;;;255;3;Formel;[ZONE_TARGET_SHARE_A] / [ZONE_SHARE_ACTUAL_TRIPS_A];SUM
+BEZIRK;ZONE_KF_M;Zonal Korrekturfaktor M;Zonal Korrekturfaktor for Activity M;Double;MIN;MAX;;;;255;3;Formel;[ZONE_TARGET_SHARE_M] / [ZONE_SHARE_ACTUAL_TRIPS_M];SUM
+BEZIRK;ZONE_KF_PENDLER;Zonal Korrekturfaktor PENDLER;Zonal Korrekturfaktor for Activity PENDLER;Double;MIN;MAX;;;;255;3;Formel;[ZONE_TARGET_SHARE_A] / [ZONE_SHARE_ACTUAL_TRIPS_PENDLER];SUM
+BEZIRK;ZONE_KF_U;Zonal Korrekturfaktor U;Zonal Korrekturfaktor for Activity U;Double;MIN;MAX;;;;255;3;Formel;[ZONE_TARGET_SHARE_U] / [ZONE_SHARE_ACTUAL_TRIPS_U];SUM
+BEZIRK;ZONE_KF_Z;Zonal Korrekturfaktor Z;Zonal Korrekturfaktor for Activity Z;Double;MIN;MAX;;;;255;3;Formel;[ZONE_TARGET_SHARE_Z] / [ZONE_SHARE_ACTUAL_TRIPS_Z];SUM
+BEZIRK;ZONE_SHARE_ACTUAL_TRIPS_A;Share Zone on actual_trips_A;Share of Zone on actual Trips for Activity A;Double;MIN;MAX;;;;255;3;Formel;[ZONE_ACTUAL_TRIPS_A] / [NETZ\TOTAL_ACTUAL_TRIPS_A];SUM
+BEZIRK;ZONE_SHARE_ACTUAL_TRIPS_M;Share Zone on actual_trips_M;Share of Zone on actual Trips for Activity M;Double;MIN;MAX;;;;255;3;Formel;[ZONE_ACTUAL_TRIPS_M] / [NETZ\TOTAL_ACTUAL_TRIPS_M];SUM
+BEZIRK;ZONE_SHARE_ACTUAL_TRIPS_PENDLER;Share Zone on actual_trips_PENDLER;Share of Zone on actual Trips for Activity PENDLER;Double;MIN;MAX;;;;255;3;Formel;[ZONE_ACTUAL_TRIPS_PENDLER] / [NETZ\TOTAL_ACTUAL_TRIPS_PENDLER];SUM
+BEZIRK;ZONE_SHARE_ACTUAL_TRIPS_U;Share Zone on actual_trips_U;Share of Zone on actual Trips for Activity U;Double;MIN;MAX;;;;255;3;Formel;[ZONE_ACTUAL_TRIPS_U] / [NETZ\TOTAL_ACTUAL_TRIPS_U];SUM
+BEZIRK;ZONE_SHARE_ACTUAL_TRIPS_Z;Share Zone on actual_trips_Z;Share of Zone on actual Trips for Activity Z;Double;MIN;MAX;;;;255;3;Formel;[ZONE_ACTUAL_TRIPS_Z] / [NETZ\TOTAL_ACTUAL_TRIPS_Z];SUM
+BEZIRK;ZONE_TARGET_SHARE_A;Target Share of Zone for A;Share of zone on total ZP for Activity A;Double;MIN;MAX;;;;255;3;Formel;[ZP0_A] / [NETZ\SUM:BEZIRKE\ZP0_A];SUM
+BEZIRK;ZONE_TARGET_SHARE_M;Target Share of Zone for M;Share of zone on total ZP for Activity M;Double;MIN;MAX;;;;255;3;Formel;[ZP0_M] / [NETZ\SUM:BEZIRKE\ZP0_M];SUM
+BEZIRK;ZONE_TARGET_SHARE_U;Target Share of Zone for U;Share of zone on total ZP for Activity U;Double;MIN;MAX;;;;255;3;Formel;[ZP0_U] / [NETZ\SUM:BEZIRKE\ZP0_U];SUM
+BEZIRK;ZONE_TARGET_SHARE_Z;Target Share of Zone for Z;Share of zone on total ZP for Activity Z;Double;MIN;MAX;;;;255;3;Formel;[ZP0_Z] / [NETZ\SUM:BEZIRKE\ZP0_Z];SUM
+

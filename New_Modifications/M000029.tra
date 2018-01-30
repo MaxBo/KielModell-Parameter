@@ -1,0 +1,263 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 05.04.17
+* Von:  C:\Users\BvL\Desktop\Modellstand 02-17\Temp\Temp_Mod29.ver
+* Nach: *
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10;Trans;DEU
+
+* 
+* Tabelle: Linienrouten (gelöscht)
+* 
+$-LINIENROUTE:LINNAME;NAME;RICHTUNGCODE
+Kiel-Lübeck RB;RB84;>
+Kiel-Lübeck RB;RB84;<
+Kiel-Lübeck RB;RB84-Preetz;>
+Kiel-Lübeck RE;RE83;>
+Kiel-Lübeck RE;RE83;<
+
+* 
+* Tabelle: Linienrouten (eingefügt)
+* 
+$+LINIENROUTE:LINNAME;NAME;RICHTUNGCODE;ISTRINGLINIE
+Kiel-Lübeck RB;BuscheII;>;0
+Kiel-Lübeck RB;BuscheII;<;0
+
+* 
+* Tabelle: Linienrouten-Verläufe (eingefügt)
+* 
+$+LINIENROUTENELEMENT:LINNAME;LINROUTENAME;RICHTUNGCODE;INDEX;ISTROUTENPUNKT;KNOTNR;HPUNKTNR;NACHLAENGE
+Kiel-Lübeck RB;BuscheII;>;1;1;8000237;8000237;5,99318524km
+Kiel-Lübeck RB;BuscheII;>;2;1;8000749;8000749;7,729492780000002km
+Kiel-Lübeck RB;BuscheII;>;3;0;4244520;;0km
+Kiel-Lübeck RB;BuscheII;>;4;0;2100001695;2100001695;0km
+Kiel-Lübeck RB;BuscheII;>;5;1;8004750;8004750;7,62067816km
+Kiel-Lübeck RB;BuscheII;>;6;1;8004848;8004848;11,6107469km
+Kiel-Lübeck RB;BuscheII;>;7;1;8001941;8001941;5,31157068km
+Kiel-Lübeck RB;BuscheII;>;8;1;8003829;8003829;9,42015237km
+Kiel-Lübeck RB;BuscheII;>;9;0;2100001685;2100001685;0km
+Kiel-Lübeck RB;BuscheII;>;10;1;8004841;8004841;6,41939507km
+Kiel-Lübeck RB;BuscheII;>;11;1;8000011;8000011;11,26529518km
+Kiel-Lübeck RB;BuscheII;>;12;0;2100001811;;0km
+Kiel-Lübeck RB;BuscheII;>;13;1;8004879;8004879;5,86343397km
+Kiel-Lübeck RB;BuscheII;>;14;0;2100001810;;0km
+Kiel-Lübeck RB;BuscheII;>;15;0;2100001809;;0km
+Kiel-Lübeck RB;BuscheII;>;16;1;8004924;8004924;4,18896927km
+Kiel-Lübeck RB;BuscheII;>;17;0;2100001808;;0km
+Kiel-Lübeck RB;BuscheII;>;18;0;2100001807;;0km
+Kiel-Lübeck RB;BuscheII;>;19;1;8003477;8003477;5,277km
+Kiel-Lübeck RB;BuscheII;>;20;0;4244189;;0km
+Kiel-Lübeck RB;BuscheII;>;21;0;4244179;;0km
+Kiel-Lübeck RB;BuscheII;>;22;0;4244188;;0km
+Kiel-Lübeck RB;BuscheII;>;23;1;8000199;8000199;0km
+Kiel-Lübeck RB;BuscheII;<;1;1;8000199;8000199;5,277km
+Kiel-Lübeck RB;BuscheII;<;2;0;4244188;;0km
+Kiel-Lübeck RB;BuscheII;<;3;0;4244179;;0km
+Kiel-Lübeck RB;BuscheII;<;4;0;4244189;;0km
+Kiel-Lübeck RB;BuscheII;<;5;1;8003477;8003477;4,18896927km
+Kiel-Lübeck RB;BuscheII;<;6;0;2100001807;;0km
+Kiel-Lübeck RB;BuscheII;<;7;0;2100001808;;0km
+Kiel-Lübeck RB;BuscheII;<;8;1;8004924;8004924;5,86343397km
+Kiel-Lübeck RB;BuscheII;<;9;0;2100001809;;0km
+Kiel-Lübeck RB;BuscheII;<;10;0;2100001810;;0km
+Kiel-Lübeck RB;BuscheII;<;11;1;8004879;8004879;11,26529518km
+Kiel-Lübeck RB;BuscheII;<;12;0;2100001811;;0km
+Kiel-Lübeck RB;BuscheII;<;13;1;8000011;8000011;6,41939507km
+Kiel-Lübeck RB;BuscheII;<;14;1;8004841;8004841;9,42015237km
+Kiel-Lübeck RB;BuscheII;<;15;0;2100001685;2100001685;0km
+Kiel-Lübeck RB;BuscheII;<;16;1;8003829;8003829;5,31157068km
+Kiel-Lübeck RB;BuscheII;<;17;1;8001941;8001941;11,6107469km
+Kiel-Lübeck RB;BuscheII;<;18;1;8004848;8004848;7,62067816km
+Kiel-Lübeck RB;BuscheII;<;19;1;8004750;8004750;7,729492780000002km
+Kiel-Lübeck RB;BuscheII;<;20;0;2100001695;2100001695;0km
+Kiel-Lübeck RB;BuscheII;<;21;0;4244520;;0km
+Kiel-Lübeck RB;BuscheII;<;22;1;8000749;8000749;5,99318524km
+Kiel-Lübeck RB;BuscheII;<;23;1;8000237;8000237;0km
+
+* 
+* Tabelle: Fahrzeitprofile (eingefügt)
+* 
+$+FAHRZEITPROFIL:LINNAME;LINROUTENAME;RICHTUNGCODE;NAME;FZGKOMBNR;REFELEMINDEX
+Kiel-Lübeck RB;BuscheII;>;1;0;0
+Kiel-Lübeck RB;BuscheII;>;2;0;0
+Kiel-Lübeck RB;BuscheII;>;3;0;0
+Kiel-Lübeck RB;BuscheII;<;1;0;0
+Kiel-Lübeck RB;BuscheII;<;2;0;0
+Kiel-Lübeck RB;BuscheII;<;3;0;0
+
+* 
+* Tabelle: Fahrzeitprofil-Verläufe (eingefügt)
+* 
+$+FAHRZEITPROFILELEMENT:LINNAME;LINROUTENAME;RICHTUNGCODE;FZPROFILNAME;INDEX;LRELEMINDEX;AUS;EIN;ANKUNFT;ABFAHRT
+Kiel-Lübeck RB;BuscheII;>;1;1;1;0;1;00:00:00;00:00:00
+Kiel-Lübeck RB;BuscheII;>;1;2;2;1;1;00:07:00;00:07:00
+Kiel-Lübeck RB;BuscheII;>;1;3;5;1;1;00:13:00;00:16:00
+Kiel-Lübeck RB;BuscheII;>;1;4;6;1;1;00:21:00;00:22:00
+Kiel-Lübeck RB;BuscheII;>;1;5;7;1;1;00:30:00;00:33:00
+Kiel-Lübeck RB;BuscheII;>;1;6;8;1;1;00:37:00;00:38:00
+Kiel-Lübeck RB;BuscheII;>;1;7;10;1;1;00:45:00;00:46:00
+Kiel-Lübeck RB;BuscheII;>;1;8;11;1;1;00:51:00;00:52:00
+Kiel-Lübeck RB;BuscheII;>;1;9;13;1;1;00:59:00;01:01:00
+Kiel-Lübeck RB;BuscheII;>;1;10;23;1;0;01:12:00;01:12:00
+Kiel-Lübeck RB;BuscheII;>;2;1;1;0;1;00:00:00;00:00:00
+Kiel-Lübeck RB;BuscheII;>;2;2;2;1;1;00:06:00;00:06:00
+Kiel-Lübeck RB;BuscheII;>;2;3;7;1;1;00:22:00;00:25:00
+Kiel-Lübeck RB;BuscheII;>;2;4;8;1;1;00:29:00;00:30:00
+Kiel-Lübeck RB;BuscheII;>;2;5;10;1;1;00:37:00;00:38:00
+Kiel-Lübeck RB;BuscheII;>;2;6;11;1;1;00:43:00;00:44:00
+Kiel-Lübeck RB;BuscheII;>;2;7;13;1;1;00:51:00;00:53:00
+Kiel-Lübeck RB;BuscheII;>;2;8;23;1;0;01:04:00;01:04:00
+Kiel-Lübeck RB;BuscheII;>;3;1;1;0;1;00:00:00;00:00:00
+Kiel-Lübeck RB;BuscheII;>;3;2;13;1;1;00:00:00;00:00:00
+Kiel-Lübeck RB;BuscheII;>;3;3;16;1;1;00:06:00;00:08:00
+Kiel-Lübeck RB;BuscheII;>;3;4;19;1;1;00:13:00;00:16:00
+Kiel-Lübeck RB;BuscheII;>;3;5;23;1;0;00:20:00;00:20:00
+Kiel-Lübeck RB;BuscheII;<;1;1;1;0;1;00:00:00;00:00:00
+Kiel-Lübeck RB;BuscheII;<;1;2;11;1;1;00:11:00;00:13:00
+Kiel-Lübeck RB;BuscheII;<;1;3;13;1;1;00:20:00;00:21:00
+Kiel-Lübeck RB;BuscheII;<;1;4;14;1;1;00:26:00;00:27:00
+Kiel-Lübeck RB;BuscheII;<;1;5;16;1;1;00:34:00;00:35:00
+Kiel-Lübeck RB;BuscheII;<;1;6;17;1;1;00:39:00;00:42:00
+Kiel-Lübeck RB;BuscheII;<;1;7;18;1;1;00:50:00;00:51:00
+Kiel-Lübeck RB;BuscheII;<;1;8;19;1;1;00:56:00;00:59:00
+Kiel-Lübeck RB;BuscheII;<;1;9;22;1;1;01:05:00;01:05:00
+Kiel-Lübeck RB;BuscheII;<;1;10;23;1;0;01:12:00;01:12:00
+Kiel-Lübeck RB;BuscheII;<;2;1;1;0;1;00:00:00;00:00:00
+Kiel-Lübeck RB;BuscheII;<;2;2;11;1;1;00:11:00;00:13:00
+Kiel-Lübeck RB;BuscheII;<;2;3;13;1;1;00:20:00;00:21:00
+Kiel-Lübeck RB;BuscheII;<;2;4;14;1;1;00:26:00;00:27:00
+Kiel-Lübeck RB;BuscheII;<;2;5;16;1;1;00:34:00;00:35:00
+Kiel-Lübeck RB;BuscheII;<;2;6;17;1;1;00:39:00;00:42:00
+Kiel-Lübeck RB;BuscheII;<;2;7;22;1;1;00:58:00;00:58:00
+Kiel-Lübeck RB;BuscheII;<;2;8;23;1;0;01:04:00;01:04:00
+Kiel-Lübeck RB;BuscheII;<;3;1;1;0;1;00:00:00;00:00:00
+Kiel-Lübeck RB;BuscheII;<;3;2;5;1;1;00:04:00;00:07:00
+Kiel-Lübeck RB;BuscheII;<;3;3;8;1;1;00:12:00;00:14:00
+Kiel-Lübeck RB;BuscheII;<;3;4;11;1;1;00:20:00;00:20:00
+Kiel-Lübeck RB;BuscheII;<;3;5;23;1;0;00:20:00;00:20:00
+
+* 
+* Tabelle: Fahrplanfahrten (eingefügt)
+* 
+$+FAHRPLANFAHRT:NR;NAME;ABFAHRT;LINNAME;LINROUTENAME;RICHTUNGCODE;FZPROFILNAME;VONFZPELEMINDEX;NACHFZPELEMINDEX;BETREIBERNR;TAKTFAHRTGRPNR
+262331;;13:07:00;Kiel-Lübeck RB;BuscheII;>;2;1;8;22;0
+262332;;13:29:00;Kiel-Lübeck RB;BuscheII;>;1;1;10;22;0
+262333;;13:07:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262334;;13:18:00;Kiel-Lübeck RB;BuscheII;<;1;1;10;22;0
+262335;;13:48:00;Kiel-Lübeck RB;BuscheII;<;2;1;8;22;0
+262336;;13:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262337;;14:29:00;Kiel-Lübeck RB;BuscheII;>;1;1;10;22;0
+262338;;15:29:00;Kiel-Lübeck RB;BuscheII;>;1;1;10;22;0
+262339;;16:29:00;Kiel-Lübeck RB;BuscheII;>;1;1;10;22;0
+262340;;17:29:00;Kiel-Lübeck RB;BuscheII;>;1;1;10;22;0
+262341;;18:29:00;Kiel-Lübeck RB;BuscheII;>;1;1;10;22;0
+262342;;19:29:00;Kiel-Lübeck RB;BuscheII;>;1;1;10;22;0
+262343;;14:07:00;Kiel-Lübeck RB;BuscheII;>;2;1;8;22;0
+262344;;15:07:00;Kiel-Lübeck RB;BuscheII;>;2;1;8;22;0
+262345;;16:07:00;Kiel-Lübeck RB;BuscheII;>;2;1;8;22;0
+262346;;17:07:00;Kiel-Lübeck RB;BuscheII;>;2;1;8;22;0
+262347;;18:07:00;Kiel-Lübeck RB;BuscheII;>;2;1;8;22;0
+262348;;19:07:00;Kiel-Lübeck RB;BuscheII;>;2;1;8;22;0
+262349;;13:37:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262350;;14:07:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262351;;14:37:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262352;;15:07:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262353;;15:37:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262354;;16:07:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262355;;16:37:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262356;;17:07:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262357;;17:37:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262358;;18:07:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262359;;18:37:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262360;;19:07:00;Kiel-Lübeck RB;BuscheII;>;3;2;5;22;0
+262361;;14:18:00;Kiel-Lübeck RB;BuscheII;<;1;1;10;22;0
+262362;;15:18:00;Kiel-Lübeck RB;BuscheII;<;1;1;10;22;0
+262363;;16:18:00;Kiel-Lübeck RB;BuscheII;<;1;1;10;22;0
+262364;;17:18:00;Kiel-Lübeck RB;BuscheII;<;1;1;10;22;0
+262365;;18:18:00;Kiel-Lübeck RB;BuscheII;<;1;1;10;22;0
+262366;;19:18:00;Kiel-Lübeck RB;BuscheII;<;1;1;10;22;0
+262367;;14:48:00;Kiel-Lübeck RB;BuscheII;<;2;1;8;22;0
+262368;;15:48:00;Kiel-Lübeck RB;BuscheII;<;2;1;8;22;0
+262369;;16:48:00;Kiel-Lübeck RB;BuscheII;<;2;1;8;22;0
+262370;;17:48:00;Kiel-Lübeck RB;BuscheII;<;2;1;8;22;0
+262371;;18:48:00;Kiel-Lübeck RB;BuscheII;<;2;1;8;22;0
+262372;;19:48:00;Kiel-Lübeck RB;BuscheII;<;2;1;8;22;0
+262373;;13:32:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262374;;14:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262375;;14:32:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262376;;15:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262377;;15:32:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262378;;16:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262379;;16:32:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262380;;17:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262381;;17:32:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262382;;18:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262383;;18:32:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262384;;19:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262385;;19:32:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+262386;;20:02:00;Kiel-Lübeck RB;BuscheII;<;3;1;5;22;0
+
+* 
+* Tabelle: Fahrplanfahrtabschnitte (eingefügt)
+* 
+$+FAHRPLANFAHRTABSCHNITT:FPLFAHRTNR;NR;VONFZPELEMINDEX;NACHFZPELEMINDEX;VTAGNR;FZGKOMBNR;FZGKOMBSET
+262331;1;1;8;1;0;
+262332;1;1;10;1;0;
+262333;1;2;5;1;0;
+262334;1;1;10;1;0;
+262335;1;1;8;1;0;
+262336;1;1;5;1;0;
+262337;1;1;10;1;0;
+262338;1;1;10;1;0;
+262339;1;1;10;1;0;
+262340;1;1;10;1;0;
+262341;1;1;10;1;0;
+262342;1;1;10;1;0;
+262343;1;1;8;1;0;
+262344;1;1;8;1;0;
+262345;1;1;8;1;0;
+262346;1;1;8;1;0;
+262347;1;1;8;1;0;
+262348;1;1;8;1;0;
+262349;1;2;5;1;0;
+262350;1;2;5;1;0;
+262351;1;2;5;1;0;
+262352;1;2;5;1;0;
+262353;1;2;5;1;0;
+262354;1;2;5;1;0;
+262355;1;2;5;1;0;
+262356;1;2;5;1;0;
+262357;1;2;5;1;0;
+262358;1;2;5;1;0;
+262359;1;2;5;1;0;
+262360;1;2;5;1;0;
+262361;1;1;10;1;0;
+262362;1;1;10;1;0;
+262363;1;1;10;1;0;
+262364;1;1;10;1;0;
+262365;1;1;10;1;0;
+262366;1;1;10;1;0;
+262367;1;1;8;1;0;
+262368;1;1;8;1;0;
+262369;1;1;8;1;0;
+262370;1;1;8;1;0;
+262371;1;1;8;1;0;
+262372;1;1;8;1;0;
+262373;1;1;5;1;0;
+262374;1;1;5;1;0;
+262375;1;1;5;1;0;
+262376;1;1;5;1;0;
+262377;1;1;5;1;0;
+262378;1;1;5;1;0;
+262379;1;1;5;1;0;
+262380;1;1;5;1;0;
+262381;1;1;5;1;0;
+262382;1;1;5;1;0;
+262383;1;1;5;1;0;
+262384;1;1;5;1;0;
+262385;1;1;5;1;0;
+262386;1;1;5;1;0;
+

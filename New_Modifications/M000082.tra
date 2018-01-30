@@ -1,0 +1,15 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 2017-05-02
+*
+* Tabelle: Versionsblock
+*
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10.000;Trans;DEU
+
+*
+* Tabelle: Benutzerdefinierte Attribute (eingefügt)
+*
+$+BENUTZERDEFATTRIBUTE:OBJID;ATTID;CODE;NAME;DATENTYP;MINWERT;MAXWERT;STANDARDWERT;STRINGSTANDARDWERT;KOMMENTAR;MAXSTRINGLAENGE;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;QUERSCHNITTSLOGIK
+MODUS;Trips_RegionMitEinpendler;Trips_RegionMitEinpendler;Trips_RegionMitEinpendler;Double;MIN;MAX;;;Gesamtzahl der Wege der Regionsbewohner incl. Einpendler;255;3;DATEN;;SUM
+MODUS;MS_Trips_RegionMitEinpendler;MS_Trips_RegionMitEinpendler;MS_Trips_RegionMitEinpendler;Double;MIN;MAX;;;Modal Split incl. Einpendler;255;3;DATEN;;SUM

@@ -1,0 +1,45 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 10.02.17
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10.000;Trans;DEU
+
+* 
+* Tabelle: Matrizen
+* 
+$-MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;LOADMATRIX;MATRIXFOLDER
+14;Aussen2Aussen;Aussen2Aussen;Kenngröße;Bezirk;;;;3;Formel;-999999 * (FROM[NR] >= 1000000) * (TO[NR] >= 1000000);;;;NEUTRAL;;;;;;0;S
+21;VL_Activity_A;Verkehrsleistung A;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Activity_A")*Matrix([CODE] = "DIS");;;;NEUTRAL;;;;;;0;S
+24;VL_Activity_B;Verkehrsleistung B;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 23)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+26;VL_Activity_E;Verkehrsleistung E;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 25)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+28;VL_Activity_F;Verkehrsleistung F;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 27)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+30;VL_Activity_G;Verkehrsleistung G;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 29)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+32;VL_Activity_K;Verkehrsleistung K;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 31)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+34;VL_Activity_O;Verkehrsleistung O;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 33)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+36;VL_Activity_R;Verkehrsleistung R;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 35)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+38;VL_Activity_S;Verkehrsleistung S;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 37)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+40;VL_Activity_T;Verkehrsleistung T;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 39)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+42;VL_Activity_V;Verkehrsleistung V;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 41)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+44;VL_Activity_W;Verkehrsleistung W;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 43)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+45;VL_Activity_M;Verkehrsleistung M;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 16)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+46;VL_Activity_U;Verkehrsleistung U;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 17)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+47;VL_Activity_Z;Verkersleistung Z;Nachfrage;Bezirk;;;;3;Formel;Matrix([NR] = 18)*Matrix([NR] = 20);;;;NEUTRAL;;;;;;0;S
+491;No_Connection_Forward;No_Connection_Forward;Kenngröße;Bezirk;;;;3;Formel;1 / ((1/999999) + 0.0065 * (Matrix([CODE] = "PJT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) < 99999)\\n+0.8311 * (Matrix([CODE] = "PJT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) < 99999)\\n+0.1408 * (Matrix([CODE] = "PJT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) < 99999)\\n+0.0216 * (Matrix([CODE] = "PJT" & [VONZEIT]=43200.0 & [BISZEIT]=54000.0) < 99999));;;;NEUTRAL;;;;;;0;S
+492;No_Connection_Backward;No_Connection_Backward;Kenngröße;Bezirk;;;;3;Formel;1 / ((1/999999) + 0.0159 * (Matrix([CODE] = "PJT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) < 99999)\\n+0.6534 * (Matrix([CODE] = "PJT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) < 99999)\\n+0.3307 * (Matrix([CODE] = "PJT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) < 99999));;;;NEUTRAL;;;;;;0;S
+493;weighted_skim_matrix;weighted_skim_matrix;Kenngröße;Bezirk;;;;3;Formel;\\nIF((Matrix([CODE]="No_Connection_Forward")<999999):\\nMatrix([CODE]="No_Connection_Forward")* 0.5 * (\\n0.0065 * IF((Matrix([CODE] = "PJT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) < 99999):\\nMatrix([CODE] = "PJT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) +\\n0.8 * POW((Matrix([CODE] = "XADT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) * 4 + 1):0.8): 0)\\n+\\n0.8311 * IF((Matrix([CODE] = "PJT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) < 99999):\\nMatrix([CODE] = "PJT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) +\\n0.8 * POW((Matrix([CODE] = "XADT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) * 4 + 1):0.8): 0)\\n+\\n0.1408 * IF((Matrix([CODE] = "PJT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) < 99999):\\nMatrix([CODE] = "PJT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) +\\n0.8 * POW((Matrix([CODE] = "XADT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) * 4 + 1):0.8): 0)\\n+\\n0.0216 * IF((Matrix([CODE] = "PJT" & [VONZEIT]=43200.0 & [BISZEIT]=54000.0) < 99999):\\nMatrix([CODE] = "PJT" & [VONZEIT]=43200.0 & [BISZEIT]=54000.0) +\\n0.8 * POW((Matrix([CODE] = "XADT" & [VONZEIT]=43200.0 & [BISZEIT]=54000.0) * 4 + 1):0.8): 0)):\\n999999)\\n + \\n\\nIF((Matrix([CODE]="No_Connection_Backward")<999999):\\nMatrix([CODE]="No_Connection_Backward")* 0.5 * (\\n0.0159 * IF((Matrix([CODE] = "PJT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) < 99999):\\nMatrix([CODE] = "PJT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) +\\n0.8 * POW((Matrix([CODE] = "XADT" & [VONZEIT]=0.0 & [BISZEIT]=21600.0) * 4 + 1):0.8): 0)\\n+\\n0.6534 * IF((Matrix([CODE] = "PJT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) < 99999):\\nMatrix([CODE] = "PJT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) +\\n0.8 * POW((Matrix([CODE] = "XADT" & [VONZEIT]=21600.0 & [BISZEIT]=32400.0) * 4 + 1):0.8): 0)\\n+\\n0.3307 * IF((Matrix([CODE] = "PJT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) < 99999):\\nMatrix([CODE] = "PJT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) +\\n0.8 * POW((Matrix([CODE] = "XADT" & [VONZEIT]=32400.0 & [BISZEIT]=43200.0) * 4 + 1):0.8): 0)):\\n999999);;;;NEUTRAL;;;;;;0;S
+540;VL_Mode_F;Verkehrsleistung F;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Demand_F")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;F;;;;;0;S
+541;VL_Mode_M;Verkehrsleistung M;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Demand_M")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;M;;;;;0;S
+542;VL_Mode_O;Verkehrsleistung O;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Demand_O")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;O;;;;;0;S
+543;VL_Mode_P;Verkehrsleistung P;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Demand_P")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;P;;;;;0;S
+544;VL_Mode_R;Verkehrsleistung R;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Demand_R")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;R;;;;;0;S
+545;PkwKosten;PkwKosten;Kenngröße;Bezirk;;;PkwKosten;3;Formel;Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw") * [COST_PER_KM_PKW];;;;NEUTRAL;;;;;;0;M
+546;VL_Total_Region;Verkehrsleistung Total Region;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Demand_Total")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;;;;;;0;S
+547;VL_Total_All;Verkehrsleistung Total All;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "AllDemand_Total")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;;;;;;0;S
+548;Pendlermatrix;W x A;Nachfrage;Bezirk;;;C:\Users\MaxBohnet\Desktop\pendler.txt;3;Daten;;;00:00:00;24:00:00;NEUTRAL;;;;;;0;S
+549;Pendlermatrix_OBB;Pendlermatrix_Oberbezirke;Nachfrage;Oberbezirk;;;Pendlermatrix_OBB;3;Daten;;;;;NEUTRAL;;;;;;0;M
+600;VL__Pendler;Verkehrsleistung  Pendler;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Pendlermatrix_modelliert_ohne_Einpendler")*Matrix([CODE] = "DIS" & [NSEGCODE] = "Pkw");;;;NEUTRAL;;;;;;0;S
+613;Pendler_OBB_incl_nicht_SVB;Pendlermatrix_OBB_incl_nicht_SVB;Nachfrage;Oberbezirk;;;Pendler_OBB_incl_nicht_SVB;3;Formel;Matrix([CODE]="Pendlermatrix_OBB") * 1.25;;;;NEUTRAL;;;;;;0;M
+667;OV_Anteil OBB;OV_Anteil OBB;Nachfrage;Oberbezirk;;;OV_Anteil OBB;3;Formel;Matrix([CODE]="Demand_O_OBB") / Matrix([CODE]="Demand_Total_OBB") * 100;;;;NEUTRAL;;;;;;0;M

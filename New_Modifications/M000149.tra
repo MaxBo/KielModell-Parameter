@@ -1,0 +1,31 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 16.02.17
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE;UNIT
+10.00;Trans;DEU;KM
+
+* 
+* Tabelle: Aktivitäten(geändert)
+* 
+$*AKTIVITAET:CODE;PARKING_ZONE_0;PARKING_ZONE_1;PARKING_ZONE_2;PARKING_ZONE_3;PARKING_ZONE_4;PARKING_ZONE_5;PARKING_ZONE_6;PARKING_ZONE_7;PARKING_ZONE_8
+A;0;3;5;6;6;7;12;2;9
+B;0;3;4;4;4;7;10;2;9
+E;0;3;4;4;4;5;10;2;8
+F;0;2;3;3;3;4;6;4;6
+G;0;2;3;3;3;3;4;0;4
+K;0;2;3;3;3;3;4;0;4
+M;0;3;4;4;4;7;10;0;9
+O;0;3;4;3;3;4;8;2;6
+R;0;3;4;3;3;4;6;2;6
+S;0;2;3;3;3;4;6;0;6
+T;0;3;4;3;3;4;6;0;6
+U;0;2;3;4;4;6;8;0;8
+V;0;2;3;2;2;2;4;0;4
+W;0;2;3;2;2;4;4;0;4
+Y;0;3;5;6;6;7;12;2;9
+Z;0;3;4;4;4;7;10;0;9
+I;0;3;4;4;4;7;10;0;9
+J;0;3;4;4;4;7;10;0;9
