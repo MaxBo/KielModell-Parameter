@@ -1,8 +1,8 @@
 $VISION
 * Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
-* 07.01.18
+* 08.01.18
 * Von:  E:\601 aktuelles Szenario\Modellstand 12-17\Temp\Temp_Mod185.ver
-* Nach: E:\601 aktuelles Szenario\Modellstand 12-17\Kiel.vpdbx*
+* Nach: *
 * 
 * Tabelle: Versionsblock
 * 
@@ -203,8 +203,8 @@ $+ANBINDUNG:BEZNR;KNOTNR;RICHTUNG;TYPNR;VSYSSET;LAENGE;T0-VSYS(F);T0-VSYS(LKW);T
 130209;2100101982;Z;5;OF;0.55372934615744918km;40s;40s;420s;40s;40s;1
 130404;2100101982;Q;5;OF;0.79205551724682988km;57s;57s;540s;57s;57s;1
 130404;2100101982;Z;5;OF;0.79205551724682988km;57s;57s;540s;57s;57s;1
-130407;2100101982;Q;5;OF;0.40481854168849779km;29s;29s;360s;29s;29s;1
-130407;2100101982;Z;5;OF;0.40481854168849779km;29s;29s;360s;29s;29s;1
+130407;2100101982;Q;5;OF;0.40481854168849785km;29s;29s;360s;29s;29s;1
+130407;2100101982;Z;5;OF;0.40481854168849785km;29s;29s;360s;29s;29s;1
 130409;2100101982;Q;5;OF;0.26090657512956861km;19s;19s;180s;19s;19s;1
 130409;2100101982;Z;5;OF;0.26090657512956861km;19s;19s;180s;19s;19s;1
 130410;2100101982;Q;5;OF;0.28555253982709417km;21s;21s;240s;21s;21s;1
@@ -279,6 +279,56 @@ $+LINIE:NAME;VSYSCODE;FZGKOMBNR;TARIFSYSTEMMENGE;BETREIBERNR;ZWERT1
 RT1;STB;0;1;0;0
 
 * 
+* Tabelle: Linienrouten (eingefügt)
+* 
+$+LINIENROUTE:LINNAME;NAME;RICHTUNGCODE;ISTRINGLINIE
+Kiel-Schönberger Strand;Ki-SBS;>;0
+Kiel-Schönberger Strand;SBS-KI;>;0
+
+* 
+* Tabelle: Linienrouten-Verläufe (eingefügt)
+* 
+$+LINIENROUTENELEMENT:LINNAME;LINROUTENAME;RICHTUNGCODE;INDEX;ISTROUTENPUNKT;KNOTNR;HPUNKTNR;NACHLAENGE
+Kiel-Schönberger Strand;Ki-SBS;>;1;1;8000199;8000199;4.0891851083661246km
+Kiel-Schönberger Strand;Ki-SBS;>;2;0;4244188;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;3;0;4244179;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;4;1;2000004740;2000004740;1.0786152375381941km
+Kiel-Schönberger Strand;Ki-SBS;>;5;1;2000004741;2000004741;3.1933310455446491km
+Kiel-Schönberger Strand;Ki-SBS;>;6;0;4244180;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;7;1;2000004743;2000004743;1.6002123114826527km
+Kiel-Schönberger Strand;Ki-SBS;>;8;1;2000004744;2000004744;5.7163710236701464km
+Kiel-Schönberger Strand;Ki-SBS;>;9;0;4244187;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;10;0;4244181;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;11;0;4244185;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;12;0;4244186;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;13;0;4244184;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;14;1;2000004746;2000004746;3.8256452164536983km
+Kiel-Schönberger Strand;Ki-SBS;>;15;0;4244183;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;16;1;2000004747;2000004747;2.2484646691676482km
+Kiel-Schönberger Strand;Ki-SBS;>;17;1;2000004748;2000004748;3.8522964397360169km
+Kiel-Schönberger Strand;Ki-SBS;>;18;0;4244182;;0km
+Kiel-Schönberger Strand;Ki-SBS;>;19;1;2000004749;2000004749;0km
+Kiel-Schönberger Strand;SBS-KI;>;1;1;2000004749;2000004749;3.8522964397360169km
+Kiel-Schönberger Strand;SBS-KI;>;2;0;4244182;;0km
+Kiel-Schönberger Strand;SBS-KI;>;3;1;2000004748;2000004748;2.2484646691676482km
+Kiel-Schönberger Strand;SBS-KI;>;4;1;2000004747;2000004747;3.8256452164536983km
+Kiel-Schönberger Strand;SBS-KI;>;5;0;4244183;;0km
+Kiel-Schönberger Strand;SBS-KI;>;6;1;2000004746;2000004746;5.7163710236701455km
+Kiel-Schönberger Strand;SBS-KI;>;7;0;4244184;;0km
+Kiel-Schönberger Strand;SBS-KI;>;8;0;4244186;;0km
+Kiel-Schönberger Strand;SBS-KI;>;9;0;4244185;;0km
+Kiel-Schönberger Strand;SBS-KI;>;10;0;4244181;;0km
+Kiel-Schönberger Strand;SBS-KI;>;11;0;4244187;;0km
+Kiel-Schönberger Strand;SBS-KI;>;12;1;2000004744;2000004744;1.6002123114826527km
+Kiel-Schönberger Strand;SBS-KI;>;13;1;2000004743;2000004743;3.1933310455446491km
+Kiel-Schönberger Strand;SBS-KI;>;14;0;4244180;;0km
+Kiel-Schönberger Strand;SBS-KI;>;15;1;2000004741;2000004741;1.0786152375381941km
+Kiel-Schönberger Strand;SBS-KI;>;16;1;2000004740;2000004740;4.0891851083661246km
+Kiel-Schönberger Strand;SBS-KI;>;17;0;4244179;;0km
+Kiel-Schönberger Strand;SBS-KI;>;18;0;4244188;;0km
+Kiel-Schönberger Strand;SBS-KI;>;19;1;8000199;8000199;0km
+
+* 
 * Tabelle: Fahrzeitprofile (geändert)
 * 
 $*FAHRZEITPROFIL:LINNAME;LINROUTENAME;RICHTUNGCODE;NAME;FZGKOMBNR
@@ -288,6 +338,180 @@ Hamburg-Kiel;RE70;<;RE70;17
 Hamburg-Kiel;RE70;<;RE7kopp;17
 Hamburg-Kiel;S77;>;S77;19
 Hamburg-Kiel;S77;<;S77;19
+
+* 
+* Tabelle: Fahrzeitprofile (eingefügt)
+* 
+$+FAHRZEITPROFIL:LINNAME;LINROUTENAME;RICHTUNGCODE;NAME;FZGKOMBNR;REFELEMINDEX
+Kiel-Schönberger Strand;Ki-SBS;>;1;19;0
+Kiel-Schönberger Strand;SBS-KI;>;1;19;0
+
+* 
+* Tabelle: Fahrzeitprofil-Verläufe (eingefügt)
+* 
+$+FAHRZEITPROFILELEMENT:LINNAME;LINROUTENAME;RICHTUNGCODE;FZPROFILNAME;INDEX;LRELEMINDEX;AUS;EIN;ANKUNFT;ABFAHRT
+Kiel-Schönberger Strand;Ki-SBS;>;1;1;1;0;1;00:00:00;00:00:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;2;4;1;1;00:05:00;00:05:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;3;5;1;1;00:07:00;00:07:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;4;7;1;1;00:11:00;00:11:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;5;8;1;1;00:13:00;00:13:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;6;14;1;1;00:18:00;00:18:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;7;16;1;1;00:22:00;00:22:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;8;17;1;1;00:24:00;00:24:00
+Kiel-Schönberger Strand;Ki-SBS;>;1;9;19;1;0;00:28:00;00:28:00
+Kiel-Schönberger Strand;SBS-KI;>;1;1;1;0;1;00:00:00;00:00:00
+Kiel-Schönberger Strand;SBS-KI;>;1;2;3;1;1;00:04:00;00:04:00
+Kiel-Schönberger Strand;SBS-KI;>;1;3;4;1;1;00:06:00;00:06:00
+Kiel-Schönberger Strand;SBS-KI;>;1;4;6;1;1;00:10:00;00:10:00
+Kiel-Schönberger Strand;SBS-KI;>;1;5;12;1;1;00:15:00;00:15:00
+Kiel-Schönberger Strand;SBS-KI;>;1;6;13;1;1;00:17:00;00:17:00
+Kiel-Schönberger Strand;SBS-KI;>;1;7;15;1;1;00:21:00;00:21:00
+Kiel-Schönberger Strand;SBS-KI;>;1;8;16;1;1;00:23:00;00:23:00
+Kiel-Schönberger Strand;SBS-KI;>;1;9;19;1;0;00:28:00;00:28:00
+
+* 
+* Tabelle: Fahrplanfahrten (eingefügt)
+* 
+$+FAHRPLANFAHRT:NR;NAME;ABFAHRT;LINNAME;LINROUTENAME;RICHTUNGCODE;FZPROFILNAME;VONFZPELEMINDEX;NACHFZPELEMINDEX;BETREIBERNR;TAKTFAHRTGRPNR
+117088210;;05:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088211;;06:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088212;;07:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088213;;08:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088214;;09:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088215;;10:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088216;;11:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088217;;12:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088218;;13:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088219;;14:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088220;;15:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088221;;16:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088222;;17:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088223;;18:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088224;;19:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088225;;20:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088226;;21:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088227;;22:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088228;;23:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088229;;24:07:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088230;;07:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088231;;08:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088232;;09:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088233;;10:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088234;;11:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088235;;12:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088236;;13:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088237;;14:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088238;;15:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088239;;16:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088240;;17:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088241;;18:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088242;;19:37:00;Kiel-Schönberger Strand;Ki-SBS;>;1;1;9;22;0
+117088243;;05:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088244;;06:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088245;;07:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088246;;08:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088247;;09:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088248;;10:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088249;;11:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088250;;12:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088251;;13:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088252;;14:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088253;;15:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088254;;16:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088255;;17:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088256;;18:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088257;;19:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088258;;20:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088259;;21:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088260;;22:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088261;;23:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088262;;24:07:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088263;;06:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088264;;07:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088265;;08:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088266;;09:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088267;;10:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088268;;11:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088269;;12:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088270;;13:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088271;;14:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088272;;15:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088273;;16:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088274;;17:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088275;;18:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+117088276;;19:37:00;Kiel-Schönberger Strand;SBS-KI;>;1;1;9;22;0
+
+* 
+* Tabelle: Fahrplanfahrtabschnitte (eingefügt)
+* 
+$+FAHRPLANFAHRTABSCHNITT:FPLFAHRTNR;NR;VONFZPELEMINDEX;NACHFZPELEMINDEX;VTAGNR;FZGKOMBNR;FZGKOMBSET;SAISONNR
+117088210;1;1;9;1;19;;0
+117088211;1;1;9;1;19;;0
+117088212;1;1;9;1;19;;0
+117088213;1;1;9;1;19;;0
+117088214;1;1;9;1;19;;0
+117088215;1;1;9;1;19;;0
+117088216;1;1;9;1;19;;0
+117088217;1;1;9;1;19;;0
+117088218;1;1;9;1;19;;0
+117088219;1;1;9;1;19;;0
+117088220;1;1;9;1;19;;0
+117088221;1;1;9;1;19;;0
+117088222;1;1;9;1;19;;0
+117088223;1;1;9;1;19;;0
+117088224;1;1;9;1;19;;0
+117088225;1;1;9;1;19;;0
+117088226;1;1;9;1;19;;0
+117088227;1;1;9;1;19;;0
+117088228;1;1;9;1;19;;0
+117088229;1;1;9;1;19;;0
+117088230;1;1;9;1;19;;0
+117088231;1;1;9;1;19;;0
+117088232;1;1;9;1;19;;0
+117088233;1;1;9;1;19;;0
+117088234;1;1;9;1;19;;0
+117088235;1;1;9;1;19;;0
+117088236;1;1;9;1;19;;0
+117088237;1;1;9;1;19;;0
+117088238;1;1;9;1;19;;0
+117088239;1;1;9;1;19;;0
+117088240;1;1;9;1;19;;0
+117088241;1;1;9;1;19;;0
+117088242;1;1;9;1;19;;0
+117088243;1;1;9;1;19;;0
+117088244;1;1;9;1;19;;0
+117088245;1;1;9;1;19;;0
+117088246;1;1;9;1;19;;0
+117088247;1;1;9;1;19;;0
+117088248;1;1;9;1;19;;0
+117088249;1;1;9;1;19;;0
+117088250;1;1;9;1;19;;0
+117088251;1;1;9;1;19;;0
+117088252;1;1;9;1;19;;0
+117088253;1;1;9;1;19;;0
+117088254;1;1;9;1;19;;0
+117088255;1;1;9;1;19;;0
+117088256;1;1;9;1;19;;0
+117088257;1;1;9;1;19;;0
+117088258;1;1;9;1;19;;0
+117088259;1;1;9;1;19;;0
+117088260;1;1;9;1;19;;0
+117088261;1;1;9;1;19;;0
+117088262;1;1;9;1;19;;0
+117088263;1;1;9;1;19;;0
+117088264;1;1;9;1;19;;0
+117088265;1;1;9;1;19;;0
+117088266;1;1;9;1;19;;0
+117088267;1;1;9;1;19;;0
+117088268;1;1;9;1;19;;0
+117088269;1;1;9;1;19;;0
+117088270;1;1;9;1;19;;0
+117088271;1;1;9;1;19;;0
+117088272;1;1;9;1;19;;0
+117088273;1;1;9;1;19;;0
+117088274;1;1;9;1;19;;0
+117088275;1;1;9;1;19;;0
+117088276;1;1;9;1;19;;0
 
 * 
 * Tabelle: Haltestellenbereichs-Übergangsgehzeiten (geändert)
