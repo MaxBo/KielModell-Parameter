@@ -18,7 +18,9 @@ A;VisemT;1;10.0
 * Da man dann aber viel zu viel Verkehr auf der A215 und A210 bekommt, lass ich es auf dem niedrigeren Niveau.
 * Hier setze ich den Zielwert aus der SrV vom 10.7 auf 8.2 km runter, um weniger Verkehr in den Zügen und den Autobahnen in der Region zu haben.
 * Der Durchschnittswert wird durch Fernfahrten > 100 km hochgezogen
-B;VisemT;1;8.2
+* Mittelwert für B: 10.7. Wird durch weite Wege nach oben gezogen, daher Zielwert für Modell bei 7.5
+* Großteil der Besuche auf kurzen Distanzen
+B;VisemT;1;7.5
 E;VisemT;1;6.54
 F;VisemT;1;3.68
 G;VisemT;1;3.10
@@ -27,13 +29,15 @@ M;VisemT;1;7.65
 O;VisemT;1;8.18
 R;VisemT;1;4.61
 S;VisemT;1;5.75
-T;VisemT;1;11.6
+* Mittelwert für T: 11.6. Wird bei N=94 von einigen Ausreissern dominiert, daher Zielwert für Modell bei 9
+T;VisemT;1;9
 * Mittelwert für U: 7.3. Dies führt zu einem zu geringen Koeffizienten 
 U;VisemT;1;6.3
 V;VisemT;1;3.47
 W;VisemT;0;8.15
 Y;VisemT;0;
-Z;VisemT;1;15.70
+* Mittelwert für Z: 20.2. Wird bei N=84 von einigen Ausreißern nach Hamburg dominiert, daher Zielwert für Modell bei 11.5
+Z;VisemT;1;11.5
 I;VisemT;1;8.2
 J;VisemT;1;18
 

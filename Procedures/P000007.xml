@@ -1597,7 +1597,7 @@
           VDFUNCTIONTYPE = "BPR2"
           BLOCKED = "0"
           HARDBLOCKING = "0"
-          CAPACITYFACTOR = "10"
+          CAPACITYFACTOR = "11"
           BPR_A = "1"
           BPR_B = "2"
           BPR_BISREAL = "0"

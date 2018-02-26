@@ -1,191 +1,5 @@
 <?xml  version = "1.0"  encoding = "UTF-8"?>
-<PROCEDURES  VERSION = "19">
-  <OPERATIONS>
-    <OPERATION
-      NO = "1"
-      CODE = ""
-      OPERATIONTYPE = "Group"
-      ACTIVE = "1"
-      COMMENT = "Matrizen laden"
-      EXECUTED = "0"
-      STARTTIME = ""
-      ENDTIME = ""
-      DURATION = ""
-      MESSAGES = ""
-      RESULTMESSAGE = ""
-      SUCCESS = "0"
-      COMPUTENODE = "">
-      <GROUPPARA        ISEXPANDED = "1"      />      
-    </OPERATION>
-    <OPERATION
-      NO = "2"
-      CODE = ""
-      OPERATIONTYPE = "AddIn"
-      ACTIVE = "1"
-      COMMENT = "Lade Matrizen"
-      EXECUTED = "1"
-      STARTTIME = "2017-4-29 22:42:20"
-      ENDTIME = "2017-4-29 22:42:34"
-      DURATION = "14s"
-      MESSAGES = "Beim Einfügen einer externen Matrix ins Netzmodell sind 21344 Warnungen aufgetreten. Folgende Quellobjekte sind nicht im Netz vorhanden, die Matrixdaten werden überlesen: 180110;270103;270104;406201;406202;406204;407301;407405;409101;409102;409103;409104;500502;500503;503402;503403;504301;504302;504303;504305 und 3 weitere. : OK&#xA;AddIn VISEM_Kiel: Load 22 matrices, 0 not found&#xA;"
-      RESULTMESSAGE = ""
-      SUCCESS = "1"
-      COMPUTENODE = "">
-      <ADDINPARA        ADDINID = "GGR_LOAD_MATRICES"        ADDINPARAMETER = ""      />      
-    </OPERATION>
-    <OPERATION
-      NO = "3"
-      CODE = ""
-      OPERATIONTYPE = "Group"
-      ACTIVE = "1"
-      COMMENT = "Umlegung"
-      EXECUTED = "0"
-      STARTTIME = ""
-      ENDTIME = ""
-      DURATION = ""
-      MESSAGES = ""
-      RESULTMESSAGE = ""
-      SUCCESS = "0"
-      COMPUTENODE = "">
-      <GROUPPARA        ISEXPANDED = "1"      />      
-    </OPERATION>
-    <OPERATION
-      NO = "4"
-      CODE = ""
-      OPERATIONTYPE = "PrTAssignment"
-      ACTIVE = "0"
-      COMMENT = "Pkw-Umlegung"
-      EXECUTED = "0"
-      STARTTIME = ""
-      ENDTIME = ""
-      DURATION = ""
-      MESSAGES = ""
-      RESULTMESSAGE = ""
-      SUCCESS = "0"
-      COMPUTENODE = "">
-      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Equilibrium"        DSEGSET = "B_L1,B_L2,B_Li,B_P,FV,LkwFern,Pkw">
-        <EQUILIBRIUMPARA>
-          <EQUIINITIALSOLUTIONPARA            USECURRENTSOLUTION = "1">
-            <DEMANDSHAREPARA>
-              <ATTRIBUTE                NAME = "DEMANDSHARE">
-                <ATTRITEM                  SUBATTR1 = "1"                  VALUE = "50"                />                
-                <ATTRITEM                  SUBATTR1 = "2"                  VALUE = "30"                />                
-                <ATTRITEM                  SUBATTR1 = "3"                  VALUE = "20"                />                
-                <ATTRITEM                  SUBATTR1 = "4"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "5"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "6"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "7"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "8"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "9"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "10"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "11"                  VALUE = "0"                />                
-                <ATTRITEM                  SUBATTR1 = "12"                  VALUE = "0"                />                
-              </ATTRIBUTE>
-            </DEMANDSHAREPARA>
-          </EQUIINITIALSOLUTIONPARA>
-          <EQUISTOPCRITERIAPARA
-            MAXNUMOUTERIT = "20"
-            MAXABSIMPDEV = "0"
-            MAXRELIMPDEV = "0"
-            MAXRELATIVEGAP = "0.0001">
-            <NETBALANCING              GENERALVALUE = "5"            />            
-          </EQUISTOPCRITERIAPARA>
-        </EQUILIBRIUMPARA>
-      </PRTASSIGNMENTPARA>
-    </OPERATION>
-    <OPERATION
-      NO = "5"
-      CODE = ""
-      OPERATIONTYPE = "AssignmentAnalysis"
-      ACTIVE = "0"
-      COMMENT = ""
-      EXECUTED = "0"
-      STARTTIME = ""
-      ENDTIME = ""
-      DURATION = ""
-      MESSAGES = ""
-      RESULTMESSAGE = ""
-      SUCCESS = "0"
-      COMPUTENODE = "">
-      <ASSIGNMENTANALYSISPARA
-        NETOBJECTTYPE = "LINK"
-        MODELEDVALUEATTRID = "VOLVEHPRT(AP)"
-        OBSERVEDVALUEATTRID = "Z_GES"
-        CLASSIFICATIONATTRID = "LINKTYPE\NO"
-        ONLYACTIVE = "1"
-        ONLYPOSITIVE = "1"
-        CLASSIFY = "1"
-        USETOLERANCES = "1"
-        MAXGEH = "5">
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "1000"          TOLERANCE = "100%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "2000"          TOLERANCE = "100%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "3000"          TOLERANCE = "54%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "4000"          TOLERANCE = "51%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "5000"          TOLERANCE = "48%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "6000"          TOLERANCE = "45%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "7000"          TOLERANCE = "42%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "8000"          TOLERANCE = "40%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "10000"          TOLERANCE = "38%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "11000"          TOLERANCE = "36%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "12000"          TOLERANCE = "35%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "13000"          TOLERANCE = "34%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "15000"          TOLERANCE = "32%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "17000"          TOLERANCE = "30%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "20000"          TOLERANCE = "28.000000000000004%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "22000"          TOLERANCE = "27%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "24000"          TOLERANCE = "26%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "26000"          TOLERANCE = "25%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "30000"          TOLERANCE = "24.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "35000"          TOLERANCE = "23.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "40000"          TOLERANCE = "22.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "45000"          TOLERANCE = "21.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "50000"          TOLERANCE = "21%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "55000"          TOLERANCE = "19.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "60000"          TOLERANCE = "18.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "65000"          TOLERANCE = "17.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "70000"          TOLERANCE = "16.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "75000"          TOLERANCE = "15.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "80000"          TOLERANCE = "14.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "90000"          TOLERANCE = "14.2%"        />        
-        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "100000"          TOLERANCE = "14.099999999999998%"        />        
-      </ASSIGNMENTANALYSISPARA>
-    </OPERATION>
-    <OPERATION
-      NO = "6"
-      CODE = ""
-      OPERATIONTYPE = "PrTAssignment"
-      ACTIVE = "1"
-      COMMENT = ""
-      EXECUTED = "0"
-      STARTTIME = ""
-      ENDTIME = ""
-      DURATION = ""
-      MESSAGES = ""
-      RESULTMESSAGE = ""
-      SUCCESS = "0"
-      COMPUTENODE = "">
-      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Incremental"        DSEGSET = "Wiver_1,Wiver_10,Wiver_11,Wiver_12,Wiver_14,Wiver_2,Wiver_3,Wiver_4,Wiver_5,Wiver_61,Wiver_62,Wiver_63,Wiver_7,Wiver_8,Wiver_9">
-        <INCREMENTALPARA>
-          <DEMANDSHAREPARA>
-            <ATTRIBUTE              NAME = "DEMANDSHARE">
-              <ATTRITEM                SUBATTR1 = "1"                VALUE = "100"              />              
-              <ATTRITEM                SUBATTR1 = "2"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "3"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "4"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "5"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "6"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "7"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "8"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "9"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "10"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "11"                VALUE = "0"              />              
-              <ATTRITEM                SUBATTR1 = "12"                VALUE = "0"              />              
-            </ATTRIBUTE>
-          </DEMANDSHAREPARA>
-        </INCREMENTALPARA>
-      </PRTASSIGNMENTPARA>
-    </OPERATION>
-  </OPERATIONS>
+<PROCEDURES  VERSION = "1705">
   <FUNCTIONS>
     <PUTSKIMMATRIXSETTINGS
       USELONGLENGTH = "1"
@@ -197,7 +11,7 @@
       DISCOMFORTPARAB = "4.5">
       <SINGLESKIMMATRIXSETTINGS
         NAME = "JOURNEYTIME"
-        FILEEXTENSION = "JRT"
+        CODE = "JRT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -211,7 +25,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "JOURNEYTIMEADAPTED"
-        FILEEXTENSION = "JRTA"
+        CODE = "JRTA"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -225,7 +39,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "RIDETIME"
-        FILEEXTENSION = "RIT"
+        CODE = "RIT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -239,7 +53,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "RIDETIMEADAPTED"
-        FILEEXTENSION = "RITA"
+        CODE = "RITA"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -253,7 +67,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "INVEHTIME"
-        FILEEXTENSION = "IVT"
+        CODE = "IVT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -267,7 +81,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "PUTAUXTIME"
-        FILEEXTENSION = "AXT"
+        CODE = "AXT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -281,7 +95,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ORIGINWAITTIME"
-        FILEEXTENSION = "OWT"
+        CODE = "OWT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -295,7 +109,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ORIGINWAITTIMEADAPTED"
-        FILEEXTENSION = "OWTA"
+        CODE = "OWTA"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -309,7 +123,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "TRANSFERWAITTIME"
-        FILEEXTENSION = "TWT"
+        CODE = "TWT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -323,7 +137,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "TRANSFERWAITTIMEADAPTED"
-        FILEEXTENSION = "TWTA"
+        CODE = "TWTA"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -337,7 +151,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "EXTTRANSFERWAITTIME"
-        FILEEXTENSION = "XTWT"
+        CODE = "XTWT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -351,7 +165,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "WEIGHTEDORIGINWAITTIME"
-        FILEEXTENSION = "WOWT"
+        CODE = "WOWT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -365,7 +179,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "WEIGHTEDTRANSFERWAITTIME"
-        FILEEXTENSION = "WTWT"
+        CODE = "WTWT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -379,7 +193,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "WALKTIME"
-        FILEEXTENSION = "WKT"
+        CODE = "WKT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -393,7 +207,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ACCESSTIME"
-        FILEEXTENSION = "ACT"
+        CODE = "ACT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -407,7 +221,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "EGRESSTIME"
-        FILEEXTENSION = "EGT"
+        CODE = "EGT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -421,7 +235,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "PERCEIVEDJOURNEYTIME"
-        FILEEXTENSION = "PJT"
+        CODE = "PJT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -435,7 +249,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "NUMTRANSFERS"
-        FILEEXTENSION = "NTR"
+        CODE = "NTR"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -449,7 +263,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "EXTIMPEDANCE"
-        FILEEXTENSION = "XIMP"
+        CODE = "XIMP"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -463,7 +277,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "SERVICEFREQUENCY"
-        FILEEXTENSION = "SFQ"
+        CODE = "SFQ"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -477,7 +291,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "SHARINGTRAVELTIME"
-        FILEEXTENSION = "SHTT"
+        CODE = "SHTT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -490,8 +304,8 @@
         NUMDECPLACES = "2"
       />      
       <SINGLESKIMMATRIXSETTINGS
-        NAME = "SHARINGACCESSTIME"
-        FILEEXTENSION = "SHAT"
+        NAME = "SHARINGRENTALPROCESSTIME"
+        CODE = "SHAT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -504,8 +318,8 @@
         NUMDECPLACES = "2"
       />      
       <SINGLESKIMMATRIXSETTINGS
-        NAME = "SHARINGTRAVELDISTANCE"
-        FILEEXTENSION = "SHTD"
+        NAME = "SHARINGTRAVELDIST"
+        CODE = "SHTD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -518,8 +332,8 @@
         NUMDECPLACES = "2"
       />      
       <SINGLESKIMMATRIXSETTINGS
-        NAME = "SHARINGEGRESSTIME"
-        FILEEXTENSION = "SHET"
+        NAME = "SHARINGRETURNPROCESSTIME"
+        CODE = "SHET"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -533,7 +347,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "DIRECTDIST"
-        FILEEXTENSION = "DID"
+        CODE = "DID"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -547,7 +361,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "JOURNEYDIST"
-        FILEEXTENSION = "JRD"
+        CODE = "JRD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -561,7 +375,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "RIDEDIST"
-        FILEEXTENSION = "RID"
+        CODE = "RID"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -575,7 +389,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "INVEHDIST"
-        FILEEXTENSION = "IVD"
+        CODE = "IVD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -589,7 +403,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "PUTAUXDIST"
-        FILEEXTENSION = "AXD"
+        CODE = "AXD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -603,7 +417,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "WALKDIST"
-        FILEEXTENSION = "WKD"
+        CODE = "WKD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -617,7 +431,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ACCESSDIST"
-        FILEEXTENSION = "ACD"
+        CODE = "ACD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -631,7 +445,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "EGRESSDIST"
-        FILEEXTENSION = "EGD"
+        CODE = "EGD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -645,7 +459,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "JOURNEYSPEED"
-        FILEEXTENSION = "JRS"
+        CODE = "JRS"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -659,7 +473,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "DIRECTDISTSPEED"
-        FILEEXTENSION = "DIS"
+        CODE = "DIS"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -673,7 +487,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "FARE"
-        FILEEXTENSION = "FAR"
+        CODE = "FAR"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -687,7 +501,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "NUMFZ"
-        FILEEXTENSION = "NFZ"
+        CODE = "NFZ"
         IGNOREDODVALUE = "99"
         NOPATHSFOUNDVALUE = "99"
         DIAGONALTYPE = "CONST"
@@ -701,7 +515,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "NUMOPERATORCHANGES"
-        FILEEXTENSION = "NOC"
+        CODE = "NOC"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -715,7 +529,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "INVEHDISTBYTSYS"
-        FILEEXTENSION = "IVTD"
+        CODE = "IVTD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -729,7 +543,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "INVEHDISTPERCBYTSYS"
-        FILEEXTENSION = "IVTP"
+        CODE = "IVTP"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -743,7 +557,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "INVEHTIMEBYTSYS"
-        FILEEXTENSION = "IVTT"
+        CODE = "IVTT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -757,7 +571,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "IMPEDANCE"
-        FILEEXTENSION = "IPD"
+        CODE = "IPD"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -771,7 +585,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "UTILITY"
-        FILEEXTENSION = "UTL"
+        CODE = "UTL"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -785,7 +599,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "PATHLEGATTRIBUTE"
-        FILEEXTENSION = "PLA"
+        CODE = "PLA"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -799,7 +613,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ADAPTATIONTIME"
-        FILEEXTENSION = "ADT"
+        CODE = "ADT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -813,7 +627,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "EXTADAPTATIONTIME"
-        FILEEXTENSION = "XADT"
+        CODE = "XADT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -827,7 +641,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "EQUIVALENTJOURNEYTIME"
-        FILEEXTENSION = "EJT"
+        CODE = "EJT"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -841,7 +655,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "DISCOMFORT"
-        FILEEXTENSION = "DISC"
+        CODE = "DISC"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -899,7 +713,7 @@
       </USERDEFSKIM>
       <SINGLESKIMMATRIXSETTINGS
         NAME = "T0"
-        FILEEXTENSION = "TT0"
+        CODE = "TT0"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -913,7 +727,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "TCUR"
-        FILEEXTENSION = "TTC"
+        CODE = "TTC"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -927,7 +741,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "V0"
-        FILEEXTENSION = "VP0"
+        CODE = "VP0"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -941,7 +755,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "VCUR"
-        FILEEXTENSION = "VPC"
+        CODE = "VPC"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -955,7 +769,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "IMPEDANCE"
-        FILEEXTENSION = "IMP"
+        CODE = "IMP"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -969,7 +783,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "TRIPDIST"
-        FILEEXTENSION = "DIS"
+        CODE = "DIS"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -983,7 +797,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "DIRECTDIST"
-        FILEEXTENSION = "DID"
+        CODE = "DID"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -997,7 +811,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ADDVAL1"
-        FILEEXTENSION = "AD1"
+        CODE = "AD1"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -1011,7 +825,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ADDVAL2"
-        FILEEXTENSION = "AD2"
+        CODE = "AD2"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -1025,7 +839,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ADDVAL3"
-        FILEEXTENSION = "AD3"
+        CODE = "AD3"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -1039,7 +853,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "ADDVAL_TSYS"
-        FILEEXTENSION = "ADS"
+        CODE = "ADS"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -1053,7 +867,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "TOLL"
-        FILEEXTENSION = "TOL"
+        CODE = "TOL"
         IGNOREDODVALUE = "999999"
         NOPATHSFOUNDVALUE = "999999"
         DIAGONALTYPE = "CONST"
@@ -1067,7 +881,7 @@
       />      
       <SINGLESKIMMATRIXSETTINGS
         NAME = "USERDEF"
-        FILEEXTENSION = "UDS"
+        CODE = "UDS"
         IGNOREDODVALUE = "0"
         NOPATHSFOUNDVALUE = "0"
         DIAGONALTYPE = "CONST"
@@ -5122,6 +4936,10 @@
       ICAIDEALSATURATIONFLOWRATE = "1900"
       ICAIDEALSATURATIONFLOWRATEICU1 = "1600"
       ICAIDEALSATURATIONFLOWRATEICU2 = "1600"
+      ICAIDEALSATURATIONFLOWRATECCG = "1850"
+      ICAPCULENGTH = "6m"
+      ICAPEDESTRIANWALKINGSPEED = "1.2000000000000002m/s"
+      ICARIGHTTURNPEDESTRIANFACTOR = "Toronto"
       USEMAXICATWOWAYSTOP = "1"
       MAXICATWOWAYSTOP = "10min"
       USEMAXICAROUNDABOUT = "1"
@@ -5539,6 +5357,7 @@
       NUMBEROFVOLUMESLICESPHASE1 = "10"
       CALCULATIONVARIANT = "SEQUENTIALROUTEPROCESSING"
     />    
+    <PATHSEQUENCESKIMMATRIXSETTINGS    />    
     <ANALYSISTIMES
       USEONPUTRESULTS = "1"
       USEONPRTRESULTS = "1"
@@ -5645,4 +5464,208 @@
       ASSIGNEDVOLUMEFORMULAMATRIXCODE = "AssignedVol"
     />    
   </FUNCTIONS>
+  <OPERATIONS>
+    <OPERATION
+      NO = "1"
+      CODE = ""
+      OPERATIONTYPE = "Group"
+      ACTIVE = "1"
+      COMMENT = "Matrizen laden"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = ""
+      WARNINGCOUNT = ""
+      ERRORCOUNT = ""
+      INFORMATIONCOUNT = "">
+      <GROUPPARA        ISEXPANDED = "1"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "2"
+      CODE = ""
+      OPERATIONTYPE = "AddIn"
+      ACTIVE = "1"
+      COMMENT = "Lade Matrizen"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = ""
+      WARNINGCOUNT = ""
+      ERRORCOUNT = ""
+      INFORMATIONCOUNT = "">
+      <ADDINPARA        ADDINID = "GGR_LOAD_MATRICES"        ADDINPARAMETER = ""      />      
+    </OPERATION>
+    <OPERATION
+      NO = "3"
+      CODE = ""
+      OPERATIONTYPE = "Group"
+      ACTIVE = "1"
+      COMMENT = "Umlegung"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = ""
+      WARNINGCOUNT = ""
+      ERRORCOUNT = ""
+      INFORMATIONCOUNT = "">
+      <GROUPPARA        ISEXPANDED = "1"      />      
+    </OPERATION>
+    <OPERATION
+      NO = "4"
+      CODE = ""
+      OPERATIONTYPE = "PrTAssignment"
+      ACTIVE = "0"
+      COMMENT = "Pkw-Umlegung"
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = ""
+      WARNINGCOUNT = ""
+      ERRORCOUNT = ""
+      INFORMATIONCOUNT = "">
+      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Equilibrium"        DSEGSET = "B_L1,B_L2,B_Li,B_P,FV,LkwFern,Pkw">
+        <EQUILIBRIUMPARA>
+          <EQUIINITIALSOLUTIONPARA            USECURRENTSOLUTION = "1">
+            <DEMANDSHAREPARA>
+              <ATTRIBUTE                NAME = "DEMANDSHARE">
+                <ATTRITEM                  SUBATTR1 = "1"                  VALUE = "50"                />                
+                <ATTRITEM                  SUBATTR1 = "2"                  VALUE = "30"                />                
+                <ATTRITEM                  SUBATTR1 = "3"                  VALUE = "20"                />                
+                <ATTRITEM                  SUBATTR1 = "4"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "5"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "6"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "7"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "8"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "9"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "10"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "11"                  VALUE = "0"                />                
+                <ATTRITEM                  SUBATTR1 = "12"                  VALUE = "0"                />                
+              </ATTRIBUTE>
+            </DEMANDSHAREPARA>
+          </EQUIINITIALSOLUTIONPARA>
+          <EQUISTOPCRITERIAPARA
+            MAXNUMOUTERIT = "20"
+            MAXABSIMPDEV = "0"
+            MAXRELIMPDEV = "0"
+            MAXRELATIVEGAP = "0.0001">
+            <NETBALANCING              GENERALVALUE = "5"            />            
+          </EQUISTOPCRITERIAPARA>
+        </EQUILIBRIUMPARA>
+      </PRTASSIGNMENTPARA>
+    </OPERATION>
+    <OPERATION
+      NO = "5"
+      CODE = ""
+      OPERATIONTYPE = "AssignmentAnalysis"
+      ACTIVE = "0"
+      COMMENT = ""
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = ""
+      WARNINGCOUNT = ""
+      ERRORCOUNT = ""
+      INFORMATIONCOUNT = "">
+      <ASSIGNMENTANALYSISPARA
+        NETOBJECTTYPE = "LINK"
+        MODELEDVALUEATTRID = "VOLVEHPRT(AP)"
+        OBSERVEDVALUEATTRID = "Z_GES"
+        CLASSIFICATIONATTRID = "LINKTYPE\NO"
+        ONLYACTIVE = "1"
+        ONLYPOSITIVE = "1"
+        CLASSIFY = "1"
+        USETOLERANCES = "1"
+        MAXGEH = "5">
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "1000"          TOLERANCE = "100%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "2000"          TOLERANCE = "100%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "3000"          TOLERANCE = "54%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "4000"          TOLERANCE = "51%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "5000"          TOLERANCE = "48%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "6000"          TOLERANCE = "45%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "7000"          TOLERANCE = "42%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "8000"          TOLERANCE = "40%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "10000"          TOLERANCE = "38%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "11000"          TOLERANCE = "36%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "12000"          TOLERANCE = "35%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "13000"          TOLERANCE = "34%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "15000"          TOLERANCE = "32%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "17000"          TOLERANCE = "30%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "20000"          TOLERANCE = "28.000000000000004%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "22000"          TOLERANCE = "27%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "24000"          TOLERANCE = "26%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "26000"          TOLERANCE = "25%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "30000"          TOLERANCE = "24.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "35000"          TOLERANCE = "23.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "40000"          TOLERANCE = "22.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "45000"          TOLERANCE = "21.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "50000"          TOLERANCE = "21%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "55000"          TOLERANCE = "19.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "60000"          TOLERANCE = "18.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "65000"          TOLERANCE = "17.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "70000"          TOLERANCE = "16.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "75000"          TOLERANCE = "15.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "80000"          TOLERANCE = "14.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "90000"          TOLERANCE = "14.2%"        />        
+        <ASSIGNMENTANALYSISTOLERANCEITEM          OBSERVEDVALUE = "100000"          TOLERANCE = "14.099999999999998%"        />        
+      </ASSIGNMENTANALYSISPARA>
+    </OPERATION>
+    <OPERATION
+      NO = "6"
+      CODE = ""
+      OPERATIONTYPE = "PrTAssignment"
+      ACTIVE = "1"
+      COMMENT = ""
+      EXECUTED = "0"
+      STARTTIME = ""
+      ENDTIME = ""
+      DURATION = ""
+      MESSAGES = ""
+      RESULTMESSAGE = ""
+      SUCCESS = "0"
+      COMPUTENODE = ""
+      WARNINGCOUNT = ""
+      ERRORCOUNT = ""
+      INFORMATIONCOUNT = "">
+      <PRTASSIGNMENTPARA        PRTASSIGNMENTVARIANT = "Incremental"        DSEGSET = "Wiver_1,Wiver_10,Wiver_11,Wiver_12,Wiver_14,Wiver_2,Wiver_3,Wiver_4,Wiver_5,Wiver_61,Wiver_62,Wiver_63,Wiver_7,Wiver_8,Wiver_9">
+        <INCREMENTALPARA>
+          <DEMANDSHAREPARA>
+            <ATTRIBUTE              NAME = "DEMANDSHARE">
+              <ATTRITEM                SUBATTR1 = "1"                VALUE = "100"              />              
+              <ATTRITEM                SUBATTR1 = "2"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "3"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "4"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "5"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "6"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "7"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "8"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "9"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "10"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "11"                VALUE = "0"              />              
+              <ATTRITEM                SUBATTR1 = "12"                VALUE = "0"              />              
+            </ATTRIBUTE>
+          </DEMANDSHAREPARA>
+        </INCREMENTALPARA>
+      </PRTASSIGNMENTPARA>
+    </OPERATION>
+  </OPERATIONS>
 </PROCEDURES>

@@ -31,21 +31,21 @@ Wiver_63;Wiver_KEP-Dienste;Lkw
 * Tabelle: Matrizen (eingefügt)
 *
 $+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;PGRUPPENCODE;AKTIVCODE;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;INITMATRIX;SAVEMATRIX;LOADMATRIX;MATRIXFOLDER;CALIBRATIONCODE
-4000;Wiver_1;Wiver_Industrie;Nachfrage;Bezirk;;;Wiver_1_Industrie.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4001;Wiver_2;Wiver_Bauhauptgewerbe;Nachfrage;Bezirk;;;Wiver_2_Bauhauptgewerbe.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4002;Wiver_3;Wiver_Ausbaugewerbe;Nachfrage;Bezirk;;;Wiver_3_Ausbaugewerbe.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4003;Wiver_4;Wiver_Großhandel;Nachfrage;Bezirk;;;Wiver_4_Großhandel.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4004;Wiver_5;Wiver_Einzelhandel_Gastgewerbe;Nachfrage;Bezirk;;;Wiver_5_Einzelhandel_Gastgewerbe.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4005;Wiver_7;Wiver_Dienstleistungen für Personen und Unternehmen;Nachfrage;Bezirk;;;Wiver_7_Dienstleistungen für Personen und Unternehmen.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4006;Wiver_8;Wiver_Dienstleistungen für Unternehmen;Nachfrage;Bezirk;;;Wiver_8_Dienstleistungen für Unternehmen.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4007;Wiver_9;Wiver_Dientleistungen für Personen;Nachfrage;Bezirk;;;Wiver_9_Dientleistungen für Personen.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4008;Wiver_10;Wiver_Gebäudedienstleistungen;Nachfrage;Bezirk;;;Wiver_10_Gebäudedienstleistungen.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4009;Wiver_11;Wiver_Ver_Entsorgung;Nachfrage;Bezirk;;;Wiver_11_Ver_Entsorgung.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4010;Wiver_12;Wiver_Gesundheit;Nachfrage;Bezirk;;;Wiver_12_Gesundheit.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4011;Wiver_14;Wiver_Landwirtschaft;Nachfrage;Bezirk;;;Wiver_14_Landwirtschaft.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4012;Wiver_61;Wiver_Taxi_Mietwagen;Nachfrage;Bezirk;;;Wiver_61_Taxi_Mietwagen.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4013;Wiver_62;Wiver_Güterverkehr;Nachfrage;Bezirk;;;Wiver_62_Güterverkehr.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
-4014;Wiver_63;Wiver_KEP-Dienste;Nachfrage;Bezirk;;;Wiver_63_KEP-Dienste.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;S;
+4000;Wiver_1;Wiver_Industrie;Nachfrage;Bezirk;;;Wiver_1_VG.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4001;Wiver_2;Wiver_Bauhauptgewerbe;Nachfrage;Bezirk;;;Wiver_2_BHG.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4002;Wiver_3;Wiver_Ausbaugewerbe;Nachfrage;Bezirk;;;Wiver_3_ABG.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4003;Wiver_4;Wiver_Großhandel;Nachfrage;Bezirk;;;Wiver_4_GH.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4004;Wiver_5;Wiver_Einzelhandel_Gastgewerbe;Nachfrage;Bezirk;;;Wiver_5_EH_GA.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4005;Wiver_7;Wiver_Dienstleistungen für Personen und Unternehmen;Nachfrage;Bezirk;;;Wiver_7_DL_PU.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4006;Wiver_8;Wiver_Dienstleistungen für Unternehmen;Nachfrage;Bezirk;;;Wiver_8_DL_U.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4007;Wiver_9;Wiver_Dientleistungen für Personen;Nachfrage;Bezirk;;;Wiver_9_DL_P.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4008;Wiver_10;Wiver_Gebäudedienstleistungen;Nachfrage;Bezirk;;;Wiver_10_GEB.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4009;Wiver_11;Wiver_Ver_Entsorgung;Nachfrage;Bezirk;;;Wiver_11_VE.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4010;Wiver_12;Wiver_Gesundheit;Nachfrage;Bezirk;;;Wiver_12_GES.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4011;Wiver_14;Wiver_Landwirtschaft;Nachfrage;Bezirk;;;Wiver_14_LW.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4012;Wiver_61;Wiver_Taxi_Mietwagen;Nachfrage;Bezirk;;;Wiver_61_PV.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4013;Wiver_62;Wiver_Güterverkehr;Nachfrage;Bezirk;;;Wiver_62_GV.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
+4014;Wiver_63;Wiver_KEP-Dienste;Nachfrage;Bezirk;;;Wiver_63_KEP.mtx;2;DATEN;;;;;;;;;;;;;0;0;1;Wiver;
 
 *
 * Tabelle: Nachfragebeschreibungen (eingefügt)
