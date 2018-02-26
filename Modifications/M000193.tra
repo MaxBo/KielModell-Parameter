@@ -1,0 +1,123 @@
+$VISION
+* Gertz Gutsche Rümenapp Stadtentwicklung und Mobilität GbR Hamburg
+* 29.08.17
+* Von:  C:\601 aktuelles Szenario\Modellstand 07-17\Temp\Temp_Mod159.ver
+* Nach: *
+* 
+* Tabelle: Versionsblock
+* 
+$VERSION:VERSNR;FILETYPE;LANGUAGE
+10;Trans;DEU
+
+* 
+* Tabelle: Nachfragesegmente (eingefügt)
+* 
+$+NACHFRAGESEGMENT:CODE;NAME;MODUS
+KfzFuzzy;KfzFuzzy;P
+KfzGesamt;KfzGesamt;P
+PkwFuzzy;PkwFuzzy;P
+PkwGesamt;PkwGesamt;P
+SVFuzzy;SVFuzzy;Lkw
+SVGesamt;SVGesamt;Lkw
+
+* 
+* Tabelle: Benutzerdefinierte Attribute (eingefügt)
+* 
+$+BENUTZERDEFATTRIBUTE:OBJID;ATTID;CODE;NAME;DATENTYP;MINWERT;MAXWERT;STANDARDWERT;STRINGSTANDARDWERT;KOMMENTAR;MAXSTRINGLAENGE;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;SKALIERT;QUERSCHNITTSLOGIK;QSLGESPERRTEIGNORIEREN
+STRECKE;SV_INCL_BUS;SV_INCL_BUS;SV_INCL_BUS;Double;MIN;MAX;;;;0;2;Formel;[BELFZG-NSEG(SVFuzzy,AP)]+[ANZSERVICEFAHRT(AP)];0;SUM;0
+STRECKE;FUZZYTOLERANZ;FuzzyToleranz;FuzzyToleranz;Double;MIN;MAX;;;;0;2;Formel;[ZKFZ_OHNE_OV]*0.05;0;SUM;0
+STRECKE;FUZZYTOLERANZPkw;FuzzyToleranzPkw;FuzzyToleranzPkw;Double;MIN;MAX;;;;0;2;Formel;[Z_P]*0.05;0;SUM;0
+STRECKE;FUZZYTOLERANZLkw;FUZZYTOLERANZLkw;FUZZYTOLERANZLkw;Double;MIN;MAX;;;;0;2;Formel;[ZSV_OHNE_OV]*0.05;0;SUM;0
+SCREENLINE;FUZZYKFZ_UMGELEGT;FuzzyKfz_Umgelegt;FuzzyKfz_Umgelegt;Double;MIN;MAX;;;;0;2;Formel;[SUM:STRINORIENT\BELFZG-NSEG(KFZFUZZY,AP)];0;SUM;0
+SCREENLINE;FUZZYPKW_UMGELEGT;FuzzyPkw_Umgelegt;FuzzyPkw_Umgelegt;Double;MIN;MAX;;;;0;2;Formel;[SUM:STRINORIENT\BELFZG-NSEG(PkwFuzzy,AP)];0;SUM;0
+SCREENLINE;FUZZYSV_UMGELEGT;FuzzySV_Umgelegt;FuzzySV_Umgelegt;Double;MIN;MAX;;;;0;2;Formel;[SUM:STRINORIENT\BELFZG-NSEG(SVFuzzy,AP)];0;SUM;0
+
+
+
+* 
+* Tabelle: Matrizen (eingefügt)
+* 
+$+MATRIX:NR;CODE;NAME;MATRIXTYP;BEZUGSTYP;NSEGCODE;NSCHICHTSET;DATNAME;ANZDEZSTELLEN;DATENQUELLENTYP;FORMEL;TAG;VONZEIT;BISZEIT;ZEITBEZUG;AKTIVCODE;MODUSCODE;MODUSSET;PERSONENGRUPPENSET;QUELLAKTIVITAETSET;ZIELAKTIVITAETSET;CALIBRATIONCODE;INITMATRIX;LOADMATRIX;MATRIXFOLDER;SAVEMATRIX
+10000;Pkw_Fuzzy;Pkw_Fuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10001;PkwFern_Fuzzy;PkwFern_Fuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10002;LkwFern_Fuzzy;LkwFern_Fuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10003;WiverPkw_Fuzzy;WiverPkw_Fuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10004;WiverLfz_Fuzzy;WiverLfz_Fuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10005;WiverLkw12_Fuzzy;WiverLkw12_Fuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10006;WiverLkw40_Fuzzy;WiverLkw40_Fuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10007;Fuzzy_Gesamt;Fuzzy_Gesamt;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Pkw_Fuzzy") + Matrix([CODE] = "PkwFern_Fuzzy") + Matrix([CODE] = "LkwFern_Fuzzy") + Matrix([CODE] = "WiverPkw_Fuzzy") + Matrix([CODE] = "WiverLfz_Fuzzy") + Matrix([CODE] = "WiverLkw12_Fuzzy") + Matrix([CODE] = "WiverLkw40_Fuzzy");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10008;Kfz_Gesamt;Kfz_Gesamt;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Visem_P")+Matrix([CODE] = "FernverkehrPkw")+Matrix([CODE] = "FernverkehrLkw")+Matrix([CODE] = "Pkw_Wirtschaftsverkehr")+Matrix([CODE] = "Lieferfahrzeuge")+Matrix([CODE] = "Lkw_über_12to")+Matrix([CODE] = "Lkw_bis_12to");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10009;FuzzyKfzGes;FuzzyKfzGes;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10010;HRFFuzzyCalc;HRFFuzzy aktuell berechnet;Nachfrage;Bezirk;;;;3;Formel;If(Matrix([CODE]="Kfz_Gesamt"):Matrix([CODE]="FuzzyKfzGes")/Matrix([CODE]="Kfz_Gesamt"):1);;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10011;HRFFuzzy;HRFFuzzy;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10012;KfzGesamtNachFuzzy;Kfz Gesamt mit Fuzzy korrigiert;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE]="Kfz_Gesamt")*Matrix([CODE]="HRFFuzzy");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10013;Fuzzy_Pkw;Fuzzy_Pkw;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Pkw_Fuzzy") + Matrix([CODE] = "PkwFern_Fuzzy") + Matrix([CODE] = "WiverPkw_Fuzzy") + Matrix([CODE] = "WiverLfz_Fuzzy");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10014;Fuzzy_Lkw;Fuzzy_Lkw;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "LkwFern_Fuzzy") + Matrix([CODE] = "WiverLkw12_Fuzzy") + Matrix([CODE] = "WiverLkw40_Fuzzy");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10015;FuzzyPkwGes;FuzzyPkwGes;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10016;FuzzySVGes;FuzzySVGes;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10017;Pkw_Gesamt;Pkw_Gesamt;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "Visem_P")+Matrix([CODE] = "FernverkehrPkw")+Matrix([CODE] = "Pkw_Wirtschaftsverkehr")+Matrix([CODE] = "Lieferfahrzeuge");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10018;SV_Gesamt;SV_Gesamt;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE] = "FernverkehrLkw")+Matrix([CODE] = "Lkw_über_12to")+Matrix([CODE] = "Lkw_bis_12to");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10019;HRFFuzzyPkwCalc;HRFFuzzyPkw aktuell berechnet;Nachfrage;Bezirk;;;;3;Formel;If(Matrix([CODE]="Pkw_Gesamt"):Matrix([CODE]="FuzzyPkwGes")/Matrix([CODE]="Pkw_Gesamt"):1);;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10020;HRFFuzzyPkw;HRFFuzzyPkw;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10021;HRFFuzzySVCalc;HRFFuzzySV aktuell berechnet;Nachfrage;Bezirk;;;;3;Formel;If(Matrix([CODE]="SV_Gesamt"):Matrix([CODE]="FuzzySVGes")/Matrix([CODE]="SV_Gesamt"):1);;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10022;HRFFuzzySV;HRFFuzzySV;Nachfrage;Bezirk;;;;3;Daten;;;;;NEUTRAL;;;;;;;;0;0;Fuzzy;1
+10023;PkwGesamtNachFuzzy;Pkw Gesamt mit Fuzzy korrigiert;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE]="Pkw_Gesamt")*Matrix([CODE]="HRFFuzzyPkw");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+10024;SVGesamtNachFuzzy;SV Gesamt mit Fuzzy korrigiert;Nachfrage;Bezirk;;;;3;Formel;Matrix([CODE]="SV_Gesamt")*Matrix([CODE]="HRFFuzzySV");;;;NEUTRAL;;;;;;;;0;0;Fuzzy;0
+
+* 
+* Tabelle: Nachfragebeschreibungen (eingefügt)
+* 
+$+NACHFRAGEBESCHREIBUNG:NSEGCODE;NACHFRAGEGLNR;MATRIX
+KfzFuzzy;1;Matrix([CODE]="FuzzyKfzGes")
+KfzGesamt;1;Matrix([CODE]="KfzGesamtNachFuzzy")
+PkwFuzzy;1;Matrix([CODE]="FuzzyPkwGes")
+PkwGesamt;1;Matrix([CODE]="PkwGesamtNachFuzzy")
+SVFuzzy;1;Matrix([CODE]="FuzzySVGes")
+SVGesamt;1;Matrix([CODE]="SVGesamtNachFuzzy")
+
+$*MATRIX:NR;CODE;SAVEMATRIX
+1;Visem_P;0
+2;Visem_O;0
+3;Visem_Gesamt;0
+4;Visem_F;0
+5;Visem_R;0
+6;Visem_M;0
+110;DIS;0
+113;TT0;0
+114;TTC;0
+115;TTC_boxcox;0
+718;AllActivity_A;0
+719;AllActivity_B;0
+720;AllActivity_E;0
+721;AllActivity_F;0
+722;AllActivity_G;0
+723;AllActivity_K;0
+724;AllActivity_M;0
+725;AllActivity_O;0
+726;AllActivity_R;0
+727;AllActivity_S;0
+728;AllActivity_T;0
+729;AllActivity_U;0
+730;AllActivity_V;0
+731;AllActivity_W;0
+732;AllActivity_Z;0
+733;AllActivity_Y;0
+734;AllActivity_I;0
+735;AllActivity_J;0
+785;Pendler_A;0
+786;Pendler_M;0
+787;Pendler_U;0
+788;Pendler_Z;0
+789;Pendler_Y;0
+790;Pendlermatrix_modelliert;0
+791;Pendler_OBB_modelliert;0
+794;Pendlermatrix_OBB_Gesamt;0
+
+$*MATRIX:NR;CODE;SAVEMATRIX
+6000;Visem_OV_zurArbeit;0
+6001;Visem_OV_vonArbeit;0
+6002;Visem_OV_zurBildung;0
+6003;Visem_OV_vonBildung;0
+6004;Visem_OV_zurEinkaufErledigung;0
+6005;Visem_OV_vonEinkaufErledigung;0
+6006;Visem_OV_Sonstiges;0
